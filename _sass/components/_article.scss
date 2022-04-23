@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Article
+   ========================================================================== */
+
+.c-article {
+  background-image: url('/bg/saber.jpg');
+  background-size: 100%;
+  background-color: #292929;
+  background-repeat: no-repeat;
+
+}
+
+.c-article__main {
+  max-width: 76rem; // 760px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+  background: fade-out(#222, 0.8);
+  @include fs--body;
+
+  > * {
+    margin-bottom: 1.8rem;
+    color: rgba($c__white, .7);
+  }
+
+  a:not(.c-btn) {
+    text-decoration: underline;
+  }
+
+  blockquote {
+    margin-left: -2.5rem;
+    width: calc(100% + 5rem);
+    padding: 2.5rem;
+    background: fade-out(#222, 1.0);
+  }
+
+  ul, ol {
+    margin-left: 40px;
+  }
+}

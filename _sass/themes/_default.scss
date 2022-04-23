@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Default Theme
+   ========================================================================== */
+
+.t-default {
+
+  .c-navigation{
+      background:fade-out(#222, 0.3);
+  }
+  .c-header {
+    background-image: url('/bg/saber.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .c-article__main a:not(.c-btn) {
+    color: #fff;
+  }
+
+  .c-footer a {
+    color: #222222;
+  }
+}

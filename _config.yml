@@ -1,0 +1,21 @@
+
+title: Zeropio
+email: zeropio@pm.me
+description: >
+  My Private blog for diary, notes, any more.
+baseurl: ""
+url: ""
+
+markdown: kramdown
+
+githubUsername: zeropio
+
+themeColor: default
+fixedNav: 'true'
+
+permalink: /:title.rb
+markdown: kramdown
+include: [_pages]
+exclude: [_site, LICENSE, README.md]
+sass:
+  style: compressed
