@@ -20,5 +20,5 @@ $ gobuster dir -u http://10.129.122.93/ -w /usr/share/wordlists/directory-list-2
 # [](#header-4)Flag
 
 We will have now this page:
-![](./img/Screenshot_2.jpg)
+<img src="./img/Screenshot_2.jpg" weight="50%" />
 With the **admin** login we can enter and get our flag.
