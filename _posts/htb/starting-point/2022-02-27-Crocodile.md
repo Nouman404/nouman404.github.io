@@ -20,5 +20,5 @@ $ gobuster dir -u http://10.129.122.93/ -w /usr/share/wordlists/directory-list-2
 # [](#header-4)Flag
 
 We will have now this page:
-<img src="./img/Screenshot_2.jpg" weight="50%" />
+<img src="https://raw.githubusercontent.com/zeropio/zeropio.github.io/main/_posts/htb/starting-point/img/Screenshot_2.jpg" weight="100%" />
 With the **admin** login we can enter and get our flag.
