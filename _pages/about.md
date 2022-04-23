@@ -3,18 +3,31 @@ layout: page
 title: About
 permalink: /about/
 ---
-Hi.. my name is Rokhimin Wahid and I'm a 19 year old, Programmer, and dairy free guy who's always been passionate about helping others.
-I live in Surabaya and work in Surabaya as a Software Developer. I’ve been a professional developer for more than 2 years.
-I’ve mostly worked professionally with Ruby.
-I like building new stuff and work with other people, nothing really interesting is ever built alone.
 
-My working philosophies is Communication and collaboration with other developers and stakeholders is the key to a successful project, Use the right tool for the job. A programming language is just a tool and Always try to learn something new.
-I also like foreign languages and am currently putting a lot of effort into becoming fluent in Japan. I consider myself advanced right now.
-And of course it is always fun to learn something new about English.
+<h1> Hey there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></h1>
+<div id="badges">
+      <a href="https://www.linkedin.com/in/emilio-s%C3%A1nchez-garc%C3%ADa/">
+        <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white"
+          alt="LinkedIn Badge" />
+      </a>
+      <a href="https://github.com/zeropio">
+        <img src="https://img.shields.io/badge/Github-black?style=for-the-badge&logo=github&logoColor=white"
+          alt="Github Badge" />
+      </a>
+      <a href="https://twitter.com/0xZeropio">
+        <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white"
+          alt="Twitter Badge" />
+      </a>
+    </div>
+<br />
+<br />
+<br />
+  
+- 👉 Junior pentester, CTF enjoyer, future secadmin(?);<br />
+- 💬 Ask me about anything, I am happy to learn;<br />
+- 📫 How to reach me: **<a href="mailto: zeropio@pm.me">zeropio@pm.me</a>**;
 
-### Technology Interest :
-(Ruby, jekyll, Rails, Sinatra, Hanami, Postgresql, Redis, DevOps, Container, ArchitectureMicroservice, Manchine Learning)
+<br>
+<hr />
+<br>
 
-Contact email => rokhim.whd@gmail.com
-
-^_^
