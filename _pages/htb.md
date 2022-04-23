@@ -16,7 +16,7 @@ permalink: /htb/
 #### Tier 1
 - <a href="{{ "/htb/appointment" | prepend: site.baseurl }}">Appointment</a>
 - <a href="{{ "/htb/sequel" | prepend: site.baseurl }}">Sequel</a>
-- <a href="{{ "/htb/cocrodile" | prepend: site.baseurl }}">Cocrodile</a>
+- <a href="{{ "/htb/crocodile" | prepend: site.baseurl }}">Crocodile</a>
 
 #### Tier 2
 - <a href="{{ "/htb/archetype" | prepend: site.baseurl }}">Archetype</a>
