@@ -17,12 +17,14 @@ permalink: /notes/
 
 - <a href="{{ "/notes/web/xss/" | prepend: site.baseurl }}">Cross Site Scripting</a>
 - <a href="{{ "/notes/web/lfi/" | prepend: site.baseurl }}">Local File Inclusion</a>
+- <a href="{{ "/notes/web/csrf-ssrf/" | prepend: site.baseurl }}">CSRF and SSRF</a>
 - <a href="{{ "/notes/web/dorks/" | prepend: site.baseurl }}">Dorks</a>
 
 # [](#header-4)Tools
 
 - <a href="{{ "/notes/tools/metasploit/" | prepend: site.baseurl }}">Metasploit</a>
 - <a href="{{ "/notes/tools/nmap/" | prepend: site.baseurl }}">Nmap</a>
+- <a href="{{ "/notes/tools/web/" | prepend: site.baseurl }}">Web</a>
 
 # [](#header-4)Other
 
