@@ -2,7 +2,7 @@
 layout: post
 title: 'HTB | Archetype'
 date: 2022-02-28
-permalink: /htb/archetype/
+permalink: /htb/starting-point/archetype/
 ---
 
 
