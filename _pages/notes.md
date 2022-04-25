@@ -20,8 +20,11 @@ permalink: /notes/
 - <a href="{{ "/notes/web/dorks/" | prepend: site.baseurl }}">Dorks</a>
 - <a href="{{ "/notes/web/others/" | prepend: site.baseurl }}">Others</a>
 
-# [](#header-4)Services
-- <a href="{{ "/notes/services/ssh/" | prepend: site.baseurl }}">SSH</a>
+# [](#header-4)System
+- <a href="{{ "/notes/system/linux-privilage-escalation/" | prepend: site.baseurl }}">Linux Privilage Escalation</a>
+- <a href="{{ "/notes/system/windows-privilage-escalation/" | prepend: site.baseurl }}">Windows Privilage Escalation</a>
+- <a href="{{ "/notes/system/ssh/" | prepend: site.baseurl }}">SSH</a>
+- <a href="{{ "/notes/system/bash/" | prepend: site.baseurl }}">Bash</a>
 
 # [](#header-4)Tools
 - <a href="{{ "/notes/tools/metasploit/" | prepend: site.baseurl }}">Metasploit</a>
