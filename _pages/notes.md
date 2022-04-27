@@ -12,6 +12,7 @@ permalink: /notes/
 - <a href="{{ "/notes/forensic/linux/" | prepend: site.baseurl }}">Linux</a>
 
 # [](#header-4)Web
+- <a href="{{ "/notes/web/enumeration/" | prepend: site.baseurl }}">Enumeration</a>
 - <a href="{{ "/notes/web/xss/" | prepend: site.baseurl }}">Cross Site Scripting</a>
 - <a href="{{ "/notes/web/xxe/" | prepend: site.baseurl }}">XML External Entity Injection</a>
 - <a href="{{ "/notes/web/lfi/" | prepend: site.baseurl }}">Local File Inclusion</a>
