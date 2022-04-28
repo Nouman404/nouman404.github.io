@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Zeropio | Root me
-permalink: /rootme/
+permalink: /ctf/rootme/
 ---
 
 **Main page:** [root-me](https://www.root-me.org/)

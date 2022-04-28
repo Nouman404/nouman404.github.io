@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Zeropio | HTB
-permalink: /htb/
+permalink: /ctf/htb/
 ---
 
 **Main page:** [Hack The Box](https://www.hackthebox.com/)

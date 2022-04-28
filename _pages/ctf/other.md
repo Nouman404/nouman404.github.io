@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Zeropio | Others CTF
-permalink: /other/
+permalink: /ctf/other/
 ---
 
 # [](#header-4)OverTheWire
