@@ -5,7 +5,7 @@ permalink: /notes/
 ---
 
 # [](#header-4)Databases
-- <a href="{{ "/notes/databases/sqli/" | prepend: site.baseurl }}">SQL Injection</a>
+- <a href="{{ "/notes/databases/sql/" | prepend: site.baseurl }}">SQL</a>
 
 # [](#header-4)Forensic
 - <a href="{{ "/notes/forensic/windows/" | prepend: site.baseurl }}">Windows</a>
@@ -15,7 +15,7 @@ permalink: /notes/
 - <a href="{{ "/notes/web/enumeration/" | prepend: site.baseurl }}">Enumeration</a>
 - <a href="{{ "/notes/web/xss/" | prepend: site.baseurl }}">Cross Site Scripting</a>
 - <a href="{{ "/notes/web/xxe/" | prepend: site.baseurl }}">XML External Entity Injection</a>
-- <a href="{{ "/notes/web/lfi/" | prepend: site.baseurl }}">Local File Inclusion</a>
+- <a href="{{ "/notes/web/lfi-rfi/" | prepend: site.baseurl }}">Local File Inclusion and Remote File Inclusion</a>
 - <a href="{{ "/notes/web/csrf-ssrf/" | prepend: site.baseurl }}">CSRF and SSRF</a>
 - <a href="{{ "/notes/web/poa/" | prepend: site.baseurl }}">Padding Oracle Attack</a>
 - <a href="{{ "/notes/web/dorks/" | prepend: site.baseurl }}">Dorks</a>
