@@ -4,14 +4,14 @@ title: Zeropio | Notes
 permalink: /notes/
 ---
 
-# [](#header-4)Databases
+# Databases
 - <a href="{{ "/notes/databases/sql/" | prepend: site.baseurl }}">SQL</a>
 
-# [](#header-4)Forensic
+# Forensic
 - <a href="{{ "/notes/forensic/windows/" | prepend: site.baseurl }}">Windows</a>
 - <a href="{{ "/notes/forensic/linux/" | prepend: site.baseurl }}">Linux</a>
 
-# [](#header-4)Web
+# Web
 - <a href="{{ "/notes/web/enumeration/" | prepend: site.baseurl }}">Enumeration</a>
 - <a href="{{ "/notes/web/xss/" | prepend: site.baseurl }}">Cross Site Scripting</a>
 - <a href="{{ "/notes/web/xxe/" | prepend: site.baseurl }}">XML External Entity Injection</a>
@@ -21,18 +21,18 @@ permalink: /notes/
 - <a href="{{ "/notes/web/dorks/" | prepend: site.baseurl }}">Dorks</a>
 - <a href="{{ "/notes/web/others/" | prepend: site.baseurl }}">Others</a>
 
-# [](#header-4)System
+# System
 - <a href="{{ "/notes/system/linux-privilage-escalation/" | prepend: site.baseurl }}">Linux Privilage Escalation</a>
 - <a href="{{ "/notes/system/windows-privilage-escalation/" | prepend: site.baseurl }}">Windows Privilage Escalation</a>
 - <a href="{{ "/notes/system/ssh/" | prepend: site.baseurl }}">SSH</a>
 - <a href="{{ "/notes/system/bash/" | prepend: site.baseurl }}">Bash</a>
 
-# [](#header-4)Tools
+# Tools
 - <a href="{{ "/notes/tools/metasploit/" | prepend: site.baseurl }}">Metasploit</a>
 - <a href="{{ "/notes/tools/nmap/" | prepend: site.baseurl }}">Nmap</a>
 - <a href="{{ "/notes/tools/web/" | prepend: site.baseurl }}">Web</a>
 
-# [](#header-4)Other
+# Other
 - <a href="{{ "/notes/other/sources/" | prepend: site.baseurl }}">Sources</a>
 
 

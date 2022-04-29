@@ -6,15 +6,15 @@ permalink: /ctf/rootme/
 
 **Main page:** [root-me](https://www.root-me.org/)
 
-#### [](#header-4)App - Script
+#### App - Script
 
 - <a href="{{ "/rootme/app-script/very-easy/" | prepend: site.baseurl }}">Very Easy</a>
 
-#### [](#header-4)Cryptanalysis
+#### Cryptanalysis
 
 - <a href="{{ "/rootme/cryptanalysis/very-easy/" | prepend: site.baseurl }}">Very Easy</a>
 
-#### [](#header-4)Web - Client
+#### Web - Client
 
 - <a href="{{ "/rootme/web-client/very-easy/" | prepend: site.baseurl }}">Very Easy</a>
 - <a href="{{ "/rootme/web-client/easy/" | prepend: site.baseurl }}">Easy</a>

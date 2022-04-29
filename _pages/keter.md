@@ -4,6 +4,6 @@ title: Zeropio | Keter
 permalink: /keter/
 ---
 
-# [](#header-4)Soon!
+# Soon!
 
 <img src="../bg/tvhead.gif" width="500px" align="middle" />

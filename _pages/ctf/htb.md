@@ -6,7 +6,7 @@ permalink: /ctf/htb/
 
 **Main page:** [Hack The Box](https://www.hackthebox.com/)
 
-# [](#header-4)Starting Point
+# Starting Point
 
 - <a href="{{ "/htb/starting-point/tier-0/" | prepend: site.baseurl }}">Tier 0</a>
 - <a href="{{ "/htb/starting-point/tier-1/" | prepend: site.baseurl }}">Tier 1</a>
