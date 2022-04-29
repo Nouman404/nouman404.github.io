@@ -17,6 +17,7 @@ permalink: /notes/
 - <a href="{{ "/notes/web/xxe/" | prepend: site.baseurl }}">XML External Entity Injection</a>
 - <a href="{{ "/notes/web/lfi-rfi/" | prepend: site.baseurl }}">Local File Inclusion and Remote File Inclusion</a>
 - <a href="{{ "/notes/web/csrf-ssrf/" | prepend: site.baseurl }}">CSRF and SSRF</a>
+- <a href="{{ "/notes/web/session/" | prepend: site.baseurl }}">Session</a>
 - <a href="{{ "/notes/web/poa/" | prepend: site.baseurl }}">Padding Oracle Attack</a>
 - <a href="{{ "/notes/web/dorks/" | prepend: site.baseurl }}">Dorks</a>
 - <a href="{{ "/notes/web/others/" | prepend: site.baseurl }}">Others</a>
@@ -27,10 +28,13 @@ permalink: /notes/
 - <a href="{{ "/notes/system/ssh/" | prepend: site.baseurl }}">SSH</a>
 - <a href="{{ "/notes/system/bash/" | prepend: site.baseurl }}">Bash</a>
 
+# Cryptography
+- <a href="{{ "/notes/cryptography/hash/" | prepend: site.baseurl }}">Hash cracking</a>
+
 # Tools
 - <a href="{{ "/notes/tools/metasploit/" | prepend: site.baseurl }}">Metasploit</a>
 - <a href="{{ "/notes/tools/nmap/" | prepend: site.baseurl }}">Nmap</a>
-- <a href="{{ "/notes/tools/web/" | prepend: site.baseurl }}">Web</a>
+- <a href="{{ "/notes/tools/commands/" | prepend: site.baseurl }}">Commands</a>
 
 # Other
 - <a href="{{ "/notes/other/sources/" | prepend: site.baseurl }}">Sources</a>
