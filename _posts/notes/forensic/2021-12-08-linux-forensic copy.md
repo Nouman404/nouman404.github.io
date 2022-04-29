@@ -1,36 +1,31 @@
 ---
 layout: post
 title: 'Notes | Linux Forensic'
-date: 2021-12-08
 permalink: /notes/forensic/linux/
 ---
 
 
-# [](#header-4)List installed package
-
-{% highlight plain %}
+# List installed package
+{% highlight bash %}
 dpkg-guest -l
 apt list -i
 {% endhighlight %}
 
 
-# [](#header-4)Privilage users
-
-{% highlight plain %}
+# Privilage users
+{% highlight bash %}
 /etc/sudoers
 {% endhighlight %}
 
 
-# [](#header-4)Sign
-
-{% highlight plain %}
+# Sign
+{% highlight bash %}
 sha256sum
 {% endhighlight %}
 
 
-# [](#header-4)Main files
-
-{% highlight plain %}
+# Main files
+{% highlight bash %}
 shadow
 passwd
 lastlog
@@ -39,24 +34,21 @@ auth.log
 {% endhighlight %}
 
 
-# [](#header-4)Search files with permissions
-
-{% highlight plain %}
+# Search files with permissions
+{% highlight bash %}
 find -type f - perm -444
 {% endhighlight %}
 It can be change f to d, and 444 to other permission.
 
 
-# [](#header-4)History
-
+# History
 With the command: diff you can compare and earlier version.
-{% highlight plain %}
+{% highlight bash %}
 cat ~/.bash_history
 {% endhighlight %}
 
 
-# [](#header-4)Some commands
-
+# Some commands
 - dig
 - netstat
 - ip addr

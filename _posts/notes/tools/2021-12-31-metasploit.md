@@ -1,14 +1,13 @@
 ---
 layout: post
 title: 'Notes | Metasploit'
-date: 2021-12-31
 permalink: /notes/tools/metasploit/
 ---
 
-# [](#header-4)Run metasploit
+# Run metasploit
 
 To run Metasploit we need to:
-{% highlight plain %}
+{% highlight bash %}
 @ update msf
 @ postgresql start
 @ msfdb.init
@@ -16,51 +15,51 @@ To run Metasploit we need to:
 {% endhighlight %}
 
 There are other basic commands like:
-{% highlight plain %}
+{% highlight bash %}
 @ db_status
 {% endhighlight %}
 
-# [](#header-4)Basic use
+# Basic use
 
 We have the next commands to move in metasploit:
-{% highlight plain %}
+{% highlight bash %}
 > back
 > exit
 {% endhighlight %}
 
 If we want to search an exploit:
-{% highlight plain %}
+{% highlight bash %}
 > search ...
 {% endhighlight %}
 And then add the service we want to search and the version.
 
 When we find the exploit we need to run it:
-{% highlight plain %}
+{% highlight bash %}
 > use ...
 {% endhighlight %}
 Select one from the search result.
 
 Then we need to configure the exploit:
-{% highlight plain %}
+{% highlight bash %}
 /exploit> options
 /exploit> info
 {% endhighlight %}
 Now we need to check what is the exploit lacking and add it, for example:
-{% highlight plain %}
+{% highlight bash %}
 /exploit> set rhost 192.168.0.1
 /exploit> unset rhost
 {% endhighlight %}
 
 Then we need to run the exploit, there are two options:
-{% highlight plain %}
+{% highlight bash %}
 /exploit> run
 /exploit> exploit
 {% endhighlight %}
 
-# [](#header-4)Payload generator
+# Payload generator
 
 If we want to create or own payload we need to use the msfvenom tool (include in metasploit). 
-{% highlight plain %}
+{% highlight bash %}
 > msfvenom ...
 {% endhighlight %}
 These are the options we have:
@@ -70,10 +69,10 @@ These are the options we have:
 - **-f** extensiones we want to create it (linux: elf, win: exe)
 And at the end **> name.exe** to create into a file.
 
-# [](#header-4)Privilage escalation
+# Privilage escalation
 
 As easy as:
-{% highlight plain %}
+{% highlight bash %}
 > use priv
 /priv> getsystem
 /priv> getuid
