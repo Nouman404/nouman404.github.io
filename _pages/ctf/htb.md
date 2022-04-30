@@ -13,3 +13,4 @@ permalink: /ctf/htb/
 - Tier 2
     - <a href="{{ "/htb/starting-point/archetype/" | prepend: site.baseurl }}">Archetype</a>
     - <a href="{{ "/htb/starting-point/oopsie/" | prepend: site.baseurl }}">Oopsie</a>
+    - <a href="{{ "/htb/starting-point/vaccine/" | prepend: site.baseurl }}">Vaccine</a>
