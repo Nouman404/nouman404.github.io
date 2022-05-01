@@ -14,3 +14,4 @@ permalink: /ctf/htb/
     - <a href="{{ "/htb/starting-point/archetype/" | prepend: site.baseurl }}">Archetype</a>
     - <a href="{{ "/htb/starting-point/oopsie/" | prepend: site.baseurl }}">Oopsie</a>
     - <a href="{{ "/htb/starting-point/vaccine/" | prepend: site.baseurl }}">Vaccine</a>
+    - <a href="{{ "/htb/starting-point/unified/" | prepend: site.baseurl }}">Unified</a>
