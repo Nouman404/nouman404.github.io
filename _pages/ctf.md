@@ -8,4 +8,5 @@ permalink: /ctf/
 
 - <a href="{{ "/ctf/htb/" | prepend: site.baseurl }}">Hack The Box</a>
 - <a href="{{ "/ctf/rootme/" | prepend: site.baseurl }}">Root Me</a>
+- <a href="{{ "/ctf/thm/" | prepend: site.baseurl }}">TryHackMe</a>
 - <a href="{{ "/ctf/other/" | prepend: site.baseurl }}">Others</a>
