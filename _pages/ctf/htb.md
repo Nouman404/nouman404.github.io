@@ -8,7 +8,7 @@ permalink: /ctf/htb/
 
 # Machines
 
-- <a href="{{ "/ctf/htb/machines/paper/" | prepend: site.baseurl }}">Paper</a>
+
 
 # Starting Point
 
