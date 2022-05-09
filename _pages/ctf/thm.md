@@ -8,4 +8,4 @@ permalink: /ctf/thm/
 
 #### Writeups
 
-- <a href="{{ "/thm/pickle-rick/" | prepend: site.baseurl }}">Pickle Rick</a>
+- <a href="{{ "/ctf/thm/pickle-rick/" | prepend: site.baseurl }}">Pickle Rick</a>

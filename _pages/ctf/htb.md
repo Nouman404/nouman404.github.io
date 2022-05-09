@@ -8,14 +8,14 @@ permalink: /ctf/htb/
 
 # Machines
 
-- <a href="{{ "/htb/machines/paper/" | prepend: site.baseurl }}">Paper</a>
+- <a href="{{ "/ctf/htb/machines/paper/" | prepend: site.baseurl }}">Paper</a>
 
 # Starting Point
 
-- <a href="{{ "/htb/starting-point/tier-0/" | prepend: site.baseurl }}">Tier 0</a>
-- <a href="{{ "/htb/starting-point/tier-1/" | prepend: site.baseurl }}">Tier 1</a>
+- <a href="{{ "/ctf/htb/starting-point/tier-0/" | prepend: site.baseurl }}">Tier 0</a>
+- <a href="{{ "/ctf/htb/starting-point/tier-1/" | prepend: site.baseurl }}">Tier 1</a>
 - Tier 2
-    - <a href="{{ "/htb/starting-point/archetype/" | prepend: site.baseurl }}">Archetype</a>
-    - <a href="{{ "/htb/starting-point/oopsie/" | prepend: site.baseurl }}">Oopsie</a>
-    - <a href="{{ "/htb/starting-point/vaccine/" | prepend: site.baseurl }}">Vaccine</a>
-    - <a href="{{ "/htb/starting-point/unified/" | prepend: site.baseurl }}">Unified</a>
+    - <a href="{{ "/ctf/htb/starting-point/archetype/" | prepend: site.baseurl }}">Archetype</a>
+    - <a href="{{ "/ctf/htb/starting-point/oopsie/" | prepend: site.baseurl }}">Oopsie</a>
+    - <a href="{{ "/ctf/htb/starting-point/vaccine/" | prepend: site.baseurl }}">Vaccine</a>
+    - <a href="{{ "/ctf/htb/starting-point/unified/" | prepend: site.baseurl }}">Unified</a>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'XSS Pwnfunction | WarmUps'
-permalink: /other/xss-pwnfunction/warmups/
+permalink: /ctf/xss-pwnfunction/warmups/
 ---
 
 # Ma Spaghet!

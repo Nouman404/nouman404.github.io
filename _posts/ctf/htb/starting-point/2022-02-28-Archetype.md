@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'HTB | Archetype'
-permalink: /htb/starting-point/archetype/
+permalink: /ctf/htb/starting-point/archetype/
 ---
 
 

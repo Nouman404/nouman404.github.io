@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'XSS Pwnfunction | Challenges'
-permalink: /other/xss-pwnfunction/challenges/
+permalink: /ctf/xss-pwnfunction/challenges/
 ---
 
 # Area 51
