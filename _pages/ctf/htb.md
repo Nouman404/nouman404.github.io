@@ -6,6 +6,10 @@ permalink: /ctf/htb/
 
 **Main page:** [Hack The Box](https://www.hackthebox.com/)
 
+# Machines
+
+- <a href="{{ "/htb/machines/paper/" | prepend: site.baseurl }}">Paper</a>
+
 # Starting Point
 
 - <a href="{{ "/htb/starting-point/tier-0/" | prepend: site.baseurl }}">Tier 0</a>

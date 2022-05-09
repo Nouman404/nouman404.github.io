@@ -15,3 +15,7 @@ permalink: /notes/web/enumeration/
 - [Knock Subdomain Scan](https://github.com/guelfoweb/knock) dictionary to guess subdomains
 - [Maltego](https://www.maltego.com/) to enumerate
 - [ZAP](https://www.zaproxy.org/)
+
+# Tips
+
+To check if a webpage has php we can add to the url **index.html** and **index.php**.

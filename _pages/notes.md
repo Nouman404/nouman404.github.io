@@ -19,6 +19,7 @@ permalink: /notes/
 - <a href="{{ "/notes/web/csrf-ssrf/" | prepend: site.baseurl }}">CSRF and SSRF</a>
 - <a href="{{ "/notes/web/session/" | prepend: site.baseurl }}">Session</a>
 - <a href="{{ "/notes/web/poa/" | prepend: site.baseurl }}">Padding Oracle Attack</a>
+- <a href="{{ "/notes/web/fuzzer/" | prepend: site.baseurl }}">Fuzzer</a>
 - <a href="{{ "/notes/web/dorks/" | prepend: site.baseurl }}">Dorks</a>
 - <a href="{{ "/notes/web/others/" | prepend: site.baseurl }}">Others</a>
 
