@@ -8,10 +8,11 @@ permalink: /ctf/htb/
 
 # Machines
 
+- <a href="{{ "/ctf/htb/lab/paper/" | prepend: site.baseurl }}">Paper</a>
 
+---
 
 # Starting Point
-
 - <a href="{{ "/ctf/htb/starting-point/tier-0/" | prepend: site.baseurl }}">Tier 0</a>
 - <a href="{{ "/ctf/htb/starting-point/tier-1/" | prepend: site.baseurl }}">Tier 1</a>
 - Tier 2
