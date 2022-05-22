@@ -10,6 +10,7 @@ permalink: /ctf/htb/
 
 - <a href="{{ "/ctf/htb/lab/paper/" | prepend: site.baseurl }}">Paper</a>
 
+&nbsp;
 ---
 
 # Starting Point

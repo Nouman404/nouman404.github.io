@@ -10,9 +10,15 @@ permalink: /ctf/rootme/
 
 - <a href="{{ "/ctf/rootme/app-script/very-easy/" | prepend: site.baseurl }}">Very Easy</a>
 
+&nbsp;
+---
+
 #### Cryptanalysis
 
 - <a href="{{ "/ctf/rootme/cryptanalysis/very-easy/" | prepend: site.baseurl }}">Very Easy</a>
+
+&nbsp;
+---
 
 #### Web - Client
 
