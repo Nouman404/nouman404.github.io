@@ -4,7 +4,7 @@ title: Zeropio | Root me
 permalink: /ctf/rootme/
 ---
 
-**Main page:** [root-me](https://www.root-me.org/)
+**Profile:** [Zeropio](https://www.root-me.org/zeropio)
 
 #### App - Script
 

@@ -4,7 +4,7 @@ title: Zeropio | TryHackMe
 permalink: /ctf/thm/
 ---
 
-**Main page:** [TryHackMe](https://tryhackme.com/)
+**Profile:** [Zeropio](https://tryhackme.com/p/zeropio)
 
 #### Writeups
 
