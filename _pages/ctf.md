@@ -6,22 +6,22 @@ permalink: /ctf/
 
 # Writeups
 
-### <a href="{{ "/ctf/htb/" | prepend: site.baseurl }}">📦 Hack The Box</a>
+## <a href="{{ "/ctf/htb/" | prepend: site.baseurl }}">📦 Hack The Box</a>
 
 &nbsp;
 ---
 
-### <a href="{{ "/ctf/rootme/" | prepend: site.baseurl }}">💀 Root Me</a>
+## <a href="{{ "/ctf/rootme/" | prepend: site.baseurl }}">💀 Root Me</a>
 
 &nbsp;
 ---
 
-### <a href="{{ "/ctf/thm/" | prepend: site.baseurl }}">🏴󠁭󠁥󠀰󠀲󠁿 TryHackMe</a>
+## <a href="{{ "/ctf/thm/" | prepend: site.baseurl }}">🏴󠁭󠁥󠀰󠀲󠁿 TryHackMe</a>
 
 &nbsp;
 ---
 
-### ⌨️ Others
+## ⌨️ Others
 #### OverTheWire
 - <a href="{{ "/ctf/overthewire/bandit/" | prepend: site.baseurl }}">Bandit</a>
 
