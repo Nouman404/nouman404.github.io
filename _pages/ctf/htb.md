@@ -9,6 +9,7 @@ permalink: /ctf/htb/
 # Machines
 
 - <a href="{{ "/ctf/htb/lab/paper/" | prepend: site.baseurl }}">Paper</a>
+- <a href="{{ "/ctf/htb/lab/timelapse/" | prepend: site.baseurl }}">Timelapse</a>
 
 &nbsp;
 ---
