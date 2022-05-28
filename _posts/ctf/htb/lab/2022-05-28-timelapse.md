@@ -4,7 +4,7 @@ title: 'HTB | Timelapse'
 permalink: /ctf/htb/lab/timelapse/
 ---
 
-<img src="https://raw.githubusercontent.com/zeropio/zeropio.github.io/main/_posts/ctf/htb/lab/img/timelapse.png" style="text-align: center" weight="100%" />
+<img src="https://raw.githubusercontent.com/zeropio/zeropio.github.io/main/_posts/ctf/htb/lab/img/Timelapse.png" style="text-align: center" weight="100%" />
 
 # Enumeration
 We can see thanks to the ping that is a Windows:
