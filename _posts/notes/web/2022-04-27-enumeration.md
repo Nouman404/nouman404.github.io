@@ -1,7 +1,10 @@
 ---
-layout: post
-title: 'Notes | Web Enumeration'
-permalink: /notes/web/enumeration/
+title: Notes | Enumeration Web
+author: Zeropio
+date: 2022-04-27
+categories: [Notes, Web]
+tags: [enumeration]
+permalink: /notes/web/enumeration
 ---
 
 # Webpages
@@ -18,4 +21,5 @@ permalink: /notes/web/enumeration/
 
 # Tips
 
-To check if a webpage has php we can add to the url **index.html** and **index.php**.
+> To check if a webpage has php we can add to the url **index.html** and **index.php**.
+{: .prompt-tip }

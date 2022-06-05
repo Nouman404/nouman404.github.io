@@ -1,17 +1,20 @@
 ---
-layout: post
-title: 'Notes | Windows Forensic'
-permalink: /notes/forensic/windows/
+title: Notes | Windows Forensic
+author: Zeropio
+date: 2021-12-02
+categories: [Notes, Forensic]
+tags: [windows, forensic]
+permalink: /notes/forensic/windows
 ---
 
-First of all, we need to use a cmd (as admin).
-
+> First of all, we need to use a cmd (as admin).
+{: .prompt-tip }
 
 # Cookies
 With this we can show all the cookies in the system.
-{% highlight batch %}
+```console
 dir cookie*.* /s/p
-{% endhighlight %}
+```
 Also, we can use the extension SQLite Manager to see it.
 
 - /s: enumerate
@@ -20,43 +23,43 @@ Also, we can use the extension SQLite Manager to see it.
 
 # History
 If we want to list all the history (from web browsers).
-{% highlight batch %}
+```console
 dir index.dat /s/p/a
-{% endhighlight %}
+```
 
 - /a: attributes
 
 
 # Executed app
 If we want to list all the executed apps.
-{% highlight batch %}
+```console
 dir *.pf /s/a/p
-{% endhighlight %}
+```
 
 
 # Thumbnail
 If we want to see all the thumb in the system.
-{% highlight batch %}
+```console
 dir thumb*.db /s/p/a
-{% endhighlight %}
+```
 
 
 # History
 If we want to list all the history (from web browsers).
-{% highlight batch %}
+```console
 dir index.dat /s/p/a
-{% endhighlight %}
+```
 
 
 # List files
 Order the files from modification date.
-{% highlight batch %}
+```console
 dir /t:w /a /s /o:d
-{% endhighlight %}
+```
 Order the files from last access.
-{% highlight batch %}
+```console
 dir /t:a /a /s /o:d
-{% endhighlight %}
+```
 
 - /t:w type
 - /o:d date

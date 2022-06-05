@@ -1,5 +1,17 @@
-_site
-.sass-cache
-Gemfile.lock
-.bundle
+# hidden files
+.*
+!.git*
+!.editorconfig
+!.nojekyll
+!.travis.yml
 
+# bundler cache
+_site
+vendor
+
+# rubygem
+*.gem
+
+# npm dependencies
+node_modules
+package-lock.json

@@ -1,80 +1,84 @@
 ---
-layout: post
-title: 'Notes | Metasploit'
-permalink: /notes/tools/metasploit/
+title: Notes | Metasploit
+author: Zeropio
+date: 2021-12-31
+categories: [Notes, Tools]
+tags: [tool, metasploit]
+permalink: /notes/tools/metasploit
 ---
+
 
 # Run metasploit
 
 To run Metasploit we need to:
-{% highlight bash %}
+```console
 @ update msf
 @ postgresql start
 @ msfdb.init
 @ msfconsole
-{% endhighlight %}
+```
 
 There are other basic commands like:
-{% highlight bash %}
+```console
 @ db_status
-{% endhighlight %}
+```
 
 # Basic use
 
 We have the next commands to move in metasploit:
-{% highlight bash %}
-> back
-> exit
-{% endhighlight %}
+```console
+$ back
+$ exit
+```
 
 If we want to search an exploit:
-{% highlight bash %}
-> search ...
-{% endhighlight %}
+```console
+$ search ...
+```
 And then add the service we want to search and the version.
 
 When we find the exploit we need to run it:
-{% highlight bash %}
-> use ...
-{% endhighlight %}
+```console
+$ use ...
+```
 Select one from the search result.
 
 Then we need to configure the exploit:
-{% highlight bash %}
-/exploit> options
-/exploit> info
-{% endhighlight %}
+```console
+/exploit$ options
+/exploit$ info
+```
 Now we need to check what is the exploit lacking and add it, for example:
-{% highlight bash %}
-/exploit> set rhost 192.168.0.1
-/exploit> unset rhost
-{% endhighlight %}
+```console
+/exploit$ set rhost 192.168.0.1
+/exploit$ unset rhost
+```
 
 Then we need to run the exploit, there are two options:
-{% highlight bash %}
-/exploit> run
-/exploit> exploit
-{% endhighlight %}
+```console
+/exploit$ run
+/exploit$ exploit
+```
 
 # Payload generator
 
 If we want to create or own payload we need to use the msfvenom tool (include in metasploit). 
-{% highlight bash %}
-> msfvenom ...
-{% endhighlight %}
+```console
+$ msfvenom ...
+```
 These are the options we have:
 - **-p** select the payload
 - **-e** encode
 - **-i** encode X times
 - **-f** extensiones we want to create it (linux: elf, win: exe)
-And at the end **> name.exe** to create into a file.
+And at the end **$ name.exe** to create into a file.
 
 # Privilage escalation
 
 As easy as:
-{% highlight bash %}
-> use priv
-/priv> getsystem
-/priv> getuid
-{% endhighlight %}
+```console
+$ use priv
+/priv$ getsystem
+/priv$ getuid
+```
 We can see the options of **getsystem** with **-h**.
