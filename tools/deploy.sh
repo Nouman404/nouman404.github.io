@@ -109,7 +109,6 @@ deploy() {
 main() {
   init
   build
-  test
   resume_site_dir
   setup_gh
   backup
