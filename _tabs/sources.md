@@ -1,10 +1,8 @@
 ---
 title: Sources
 order: 4
-toc: true
+icon: fas fa-folder-open
 ---
-
-
 
 ## Databases
 - [Exploitdb](https://www.exploit-db.com/)
