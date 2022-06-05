@@ -1,30 +1,31 @@
 ---
 title: Sources
-order: 5
+order: 4
+toc: true
 ---
 
 
 
-# Databases
+## Databases
 - [Exploitdb](https://www.exploit-db.com/)
 - [API Searcher](https://www.programmableweb.com/apis/directory)
 - [CVE Searcher](https://cve.mitre.org/)
 - [GitHub Searcher](https://awesomeopensource.com/)
 
-# Crypto
+## Crypto
 - [CyberChef](https://icyberchef.com/)
 - [Soumya decoder](https://decode.soumya.dev/)
 - [DCode](https://www.dcode.fr/en)
 
-# OSINT
+## OSINT
 - [OSINT Framework](https://osintframework.com/)
 - [Domaintools](https://www.domaintools.com/)
 
-# Dorks
+## Dorks
 - [Search operators](https://drive.google.com/file/d/1GIfRKE0ctkOoqnc2lwGzYu5rh88T4hs8/view) (spanish)
 - [Shodan](https://www.shodan.io/)
 
-# Info
+## Info
 - [SecTools](https://sectools.org/)
 - [Explain shel](https://explainshell.com/)
 - [Privacy Guides](https://privacyguides.org/)
@@ -35,14 +36,14 @@ order: 5
 - [TheHackerRecipes](https://www.thehacker.recipes/)
 - [samsclass](https://samsclass.info/127/ED_2020.shtml)
 
-# Resources
+## Resources
 - [VirusTotal](https://www.virustotal.com/gui/home/upload)
 - [WADComs](https://wadcoms.github.io/)
 - [Have I been pwned](https://haveibeenpwned.com/)
 - [Reverse Shell](https://www.revshells.com/)
 - [GTFObins](https://gtfobins.github.io/)
 
-# CTF
+## CTF
 - [CTFlearn](https://ctflearn.com/)
 - [Hack The Box](https://www.hackthebox.com/)
 - [Root Me](https://www.root-me.org/)
@@ -54,20 +55,20 @@ order: 5
 - [Juice Shop](https://github.com/juice-shop/juice-shop)
 - [CTF Challenge](https://ctfchallenge.com/)
 
-# Bug Bounty Hunter
+## Bug Bounty Hunter
 - [HackerOne](https://www.hackerone.com/)
 - [BugCrowd](https://bugcrowd.com/programs)
 - [Intigriti](https://www.intigriti.com/)
 - [Google](https://bughunters.google.com/)
 
-# News
+## News
 - [DanielMiessler](https://danielmiessler.com/)
 - [TheHackerNews](https://thehackernews.com/)
 - [Wired](https://www.wired.com/category/security/)
 - [Securib](https://securib.ee/)
 
 
-# Hmmm...
+## Hmmm...
 - [Ransomwiki](https://darkfeed.io/ransomwiki/)
 - [vx underground](https://www.vx-underground.org/)
 - [ContiNews ](https://continewsnv5otx5kaoje7krkto2qbu3gtqef22mnr7eaxw3y6ncz3ad.onion.ly/)
