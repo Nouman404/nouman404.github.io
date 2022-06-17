@@ -4,16 +4,20 @@
   type: github
   icon: 'fab fa-github'
 -
+  type: hackthebox
+  icon: 'fas fa-cube'
+  url: 'https://app.hackthebox.com/profile/380109'
+-
   type: twitter
   icon: 'fab fa-twitter'
--
-  type: email
-  icon: 'fas fa-envelope'
-  noblank: true            # open link in current tab
--
-  type: rss
-  icon: 'fas fa-rss'
-  noblank: true
+# -
+#   type: email
+#   icon: 'fas fa-envelope'
+#   noblank: true            # open link in current tab
+# -
+#   type: rss
+#   icon: 'fas fa-rss'
+#   noblank: true
 
 # Uncomment and complete the url below to enable more contact options
 # -
