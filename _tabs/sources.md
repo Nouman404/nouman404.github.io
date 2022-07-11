@@ -40,6 +40,7 @@ icon: fas fa-folder-open
 - [Have I been pwned](https://haveibeenpwned.com/)
 - [Reverse Shell](https://www.revshells.com/)
 - [GTFObins](https://gtfobins.github.io/)
+- [BeautifyTools](https://beautifytools.com/)
 
 ## CTF
 - [CTFlearn](https://ctflearn.com/)
