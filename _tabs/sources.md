@@ -4,70 +4,87 @@ order: 4
 icon: fas fa-folder-open
 ---
 
-## Databases
-- [Exploitdb](https://www.exploit-db.com/)
-- [API Searcher](https://www.programmableweb.com/apis/directory)
-- [CVE Searcher](https://cve.mitre.org/)
-- [GitHub Searcher](https://awesomeopensource.com/)
+# Major help
 
-## Crypto
-- [CyberChef](https://icyberchef.com/)
-- [Soumya decoder](https://decode.soumya.dev/)
-- [DCode](https://www.dcode.fr/en)
+| **Link** | **Description** |
+|----------|-----------------|
+| **General info** |
+| [SecTools](https://sectools.org/) | Tools recommended by nmap |
+| [Explain shel](https://explainshell.com/) | Web explaining shell commands |
+| [Privacy Guides](https://privacyguides.org/) | Guide for a better privacy |
+| [Distrotest](https://distrotest.net/index.php) | Forum for Linux Distro |
+| [Game hacking](https://guidedhacking.com/) | Forum for game hacking |
+| [HackTricks](https://book.hacktricks.xyz/) | Many information about pentesting and CTFs |
+| [SecurityZines](https://securityzines.com/) | Cybersec terms |
+| [TheHackerRecipes](https://www.thehacker.recipes/) | More hacking information |
+| [samsclass](https://samsclass.info/127/ED_2020.shtml) | More hacking information |
+| **Resources** |
+| [VirusTotal](https://www.virustotal.com/gui/home/upload) | Best page for searching malware |
+| [WADComs](https://wadcoms.github.io/) | Set of tools for Windows/AD environments |
+| [Reverse Shell](https://www.revshells.com/) | Create reverse shell payloads |
+| [GTFObins](https://gtfobins.github.io/) | Unix binaries |
+| [BeautifyTools](https://beautifytools.com/) | Beautify for minifies codes |
+| **Databases** |
+| [Exploitdb](https://www.exploit-db.com/) | Bigger database with exploits |
+| [API Searcher](https://www.programmableweb.com/apis/directory) | Largest API Directory on the Web |
+| [CVE Searcher](https://cve.mitre.org/) | Mitre CVE searcher |
+| [GitHub Searcher](https://awesomeopensource.com/) | Searcher for GitHub projects |
+| **Crypto** |
+| [CyberChef](https://icyberchef.com/) | Major encrypter and decrypter |
+| [Soumya decoder](https://decode.soumya.dev/) | ROT13 decoder |
+| [DCode](https://www.dcode.fr/en) | Many encoding tools that CyberChef doesn't have |
+| **OSINT** |
+| [OSINT Framework](https://osintframework.com/) | OSINT tools |
+| [Domaintools](https://www.domaintools.com/) | Searcer for domains |
+| **Web enumeration** |
+| [Whois](https://whois.domaintools.com/) | Web information |
+| [netcraft](https://sitereport.netcraft.com/) | Web technology |
+| [robtex](https://www.robtex.com/) | DNS information |
+| [reverseip](https://viewdns.info/reverseip/) | Reverse IP information |
+| **Dorks** |
+| [Search operators](https://drive.google.com/file/d/1GIfRKE0ctkOoqnc2lwGzYu5rh88T4hs8/view) | Spanish dorks examples |
+| [Shodan](https://www.shodan.io/) | Major IP search |
+| **Other** |
+| [Have I been pwned](https://haveibeenpwned.com/) | Check if your email has been in a data leak |
 
-## OSINT
-- [OSINT Framework](https://osintframework.com/)
-- [Domaintools](https://www.domaintools.com/)
+---
 
-## Dorks
-- [Search operators](https://drive.google.com/file/d/1GIfRKE0ctkOoqnc2lwGzYu5rh88T4hs8/view) (spanish)
-- [Shodan](https://www.shodan.io/)
+# Training, CTFs,...
 
-## Info
-- [SecTools](https://sectools.org/)
-- [Explain shel](https://explainshell.com/)
-- [Privacy Guides](https://privacyguides.org/)
-- [Distrotest](https://distrotest.net/index.php)
-- [Game hacking](https://guidedhacking.com/)
-- [HackTricks](https://book.hacktricks.xyz/)
-- [SecurityZines](https://securityzines.com/)
-- [TheHackerRecipes](https://www.thehacker.recipes/)
-- [samsclass](https://samsclass.info/127/ED_2020.shtml)
+| **Link** | **Description** |
+|----------|-----------------|
+| **Machines** |
+| [Hack The Box](https://www.hackthebox.com/) | Best hacking platform |
+| [TryHackMe](https://tryhackme.com/) | One of the best page for learning |
+| [HackMyVM](https://hackmyvm.eu/) | Some VMs for hacking |
+| **CTF** |
+| [CTFlearn](https://ctflearn.com/) | Page for learning CTFs |
+| [Root Me](https://www.root-me.org/) | French page with useful challenges |
+| [Atenea](https://atenea.ccn-cert.cni.es/) | CNI CTFs |
+| [XSS Pwnfunction](https://xss.pwnfunction.com/) | XSS challenges |
+| [Juice Shop](https://github.com/juice-shop/juice-shop) | OWASP challenges |
+| [CTF Challenge](https://ctfchallenge.com/) | CTFs challenges |
+| **Other** |
+| [Hackrocks](https://hackrocks.com/) | Spanish page for learn |
 
-## Resources
-- [VirusTotal](https://www.virustotal.com/gui/home/upload)
-- [WADComs](https://wadcoms.github.io/)
-- [Have I been pwned](https://haveibeenpwned.com/)
-- [Reverse Shell](https://www.revshells.com/)
-- [GTFObins](https://gtfobins.github.io/)
-- [BeautifyTools](https://beautifytools.com/)
+---
 
-## CTF
-- [CTFlearn](https://ctflearn.com/)
-- [Hack The Box](https://www.hackthebox.com/)
-- [Root Me](https://www.root-me.org/)
-- [Hackrocks](https://hackrocks.com/) (spanish)
-- [TryHackMe](https://tryhackme.com/)
-- [Atenea](https://atenea.ccn-cert.cni.es/) (spanish)
-- [HackMyVM](https://hackmyvm.eu/)
-- [XSS Pwnfunction](https://xss.pwnfunction.com/)
-- [Juice Shop](https://github.com/juice-shop/juice-shop)
-- [CTF Challenge](https://ctfchallenge.com/)
+# Other
 
-## Bug Bounty Hunter
-- [HackerOne](https://www.hackerone.com/)
-- [BugCrowd](https://bugcrowd.com/programs)
-- [Intigriti](https://www.intigriti.com/)
-- [Google](https://bughunters.google.com/)
+| **Link** | **Description** |
+|----------|-----------------|
+| **Bug Bounty Hunter** |
+| [HackerOne](https://www.hackerone.com/) | Best platform for bug bounty |
+| [BugCrowd](https://bugcrowd.com/programs) | Another bug bounty platform |
+| [Intigriti](https://www.intigriti.com/) | European bug bounty platform |
+| [Google](https://bughunters.google.com/) | Google bug bounty platform |
+| **News** |
+| [DanielMiessler](https://danielmiessler.com/) | Unsupervised Learning Community |
+| [TheHackerNews](https://thehackernews.com/) | Most famous hacking news |
+| [Wired](https://www.wired.com/category/security/) | Another security newspaper |
+| [Securib](https://securib.ee/) | Security newspaper |
+| **Ransomware** |
+| [Ransomwiki](https://darkfeed.io/ransomwiki/) | Info about major ransom groups |
+| [vx underground](https://www.vx-underground.org/) | Major ransomware repository |
+| [ContiNews ](https://continewsnv5otx5kaoje7krkto2qbu3gtqef22mnr7eaxw3y6ncz3ad.onion.ly/) | Enterprises leaks |
 
-## News
-- [DanielMiessler](https://danielmiessler.com/)
-- [TheHackerNews](https://thehackernews.com/)
-- [Wired](https://www.wired.com/category/security/)
-- [Securib](https://securib.ee/)
-
-
-## Hmmm...
-- [Ransomwiki](https://darkfeed.io/ransomwiki/)
-- [vx underground](https://www.vx-underground.org/)
-- [ContiNews ](https://continewsnv5otx5kaoje7krkto2qbu3gtqef22mnr7eaxw3y6ncz3ad.onion.ly/)
