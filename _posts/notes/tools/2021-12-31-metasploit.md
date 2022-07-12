@@ -27,38 +27,42 @@ There are other basic commands like:
 
 We have the next commands to move in metasploit:
 ```console
-$ back
-$ exit
+msf6> back
+msf6> exit
 ```
 
 If we want to search an exploit:
 ```console
-$ search ...
+msf6> search exploit <name>
 ```
 And then add the service we want to search and the version.
 
 When we find the exploit we need to run it:
 ```console
-$ use ...
+msf6> use ...
 ```
 Select one from the search result.
 
 Then we need to configure the exploit:
 ```console
-/exploit$ options
-/exploit$ info
+msf6 exploit(...)> options
+msf6 exploit(...)> info
 ```
 Now we need to check what is the exploit lacking and add it, for example:
 ```console
-/exploit$ set rhost 192.168.0.1
-/exploit$ unset rhost
+msf6 exploit(...)> set rhost 192.168.0.1
+msf6 exploit(...)> unset rhost
 ```
 
-Then we need to run the exploit, there are two options:
+Then we need to run the exploit:
 ```console
-/exploit$ run
-/exploit$ exploit
+msf6 exploit(...)> check
+msf6 exploit(...)> exploit
 ```
+The check option will see if the server is vulnerable (not all the exploit have the `check` function).
+
+> It can be use `run` instead of `exploit`
+{: .prompt-tip }
 
 # Payload generator
 
