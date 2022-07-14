@@ -24,6 +24,8 @@ icon: fas fa-folder-open
 | [Reverse Shell](https://www.revshells.com/) | Create reverse shell payloads |
 | [GTFObins](https://gtfobins.github.io/) | Unix binaries |
 | [BeautifyTools](https://beautifytools.com/) | Beautify for minifies codes |
+| [Windows ISO](https://www.heidoc.net/joomla/technology-science/microsoft/67-microsoft-windows-and-office-iso-download-tool%EF%BB%BF) | Old ISOs for Windows |
+| [bashrc Generator](https://bashrcgenerator.com/) | For generate bash prompts |
 | **Databases** |
 | [Exploitdb](https://www.exploit-db.com/) | Bigger database with exploits |
 | [API Searcher](https://www.programmableweb.com/apis/directory) | Largest API Directory on the Web |
