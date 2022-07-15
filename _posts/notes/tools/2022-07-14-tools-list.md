@@ -13,7 +13,7 @@ This are my personal selection of **must have** tools for pentesting, bug bounty
 ```
 netcat
 curl
-tmux
+kitty
 nmap
 hashcat
 ffuf
