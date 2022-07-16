@@ -31,6 +31,23 @@ icon: fas fa-folder-open
 | [API Searcher](https://www.programmableweb.com/apis/directory) | Largest API Directory on the Web |
 | [CVE Searcher](https://cve.mitre.org/) | Mitre CVE searcher |
 | [GitHub Searcher](https://awesomeopensource.com/) | Searcher for GitHub projects |
+| **Engine Search** |
+| [Google](https://google.com/) | Dorks |
+| [Shodan](https://www.shodan.io/) | Servers |
+| [Onyphe](https://onyphe.io/) | Servers |
+| [Censys](https://censys.io/) | Servers |
+| [IVRE](https://ivre.rocks/) | Servers |
+| [Hunter](https://hunter.io/) | Mail addresses |
+| [FullHunt](https://fullhunt.io/) | Attack Surface |
+| [BinaryEdge](https://binaryedge.io/) | Attack Surface |
+| [Socradar](https://socradar.io/) | Threat Intelligence |
+| [PulseDive](https://pulsedive.com/) | Threat Intelligence |
+| [GreyNoise](https://viz.greynoise.io/) | Threat Intelligence |
+| [crt](https://crt.sh/) | Certificates search |
+| [Vulners](https://vulners.com/) | Vulnerabilities |
+| [publicwww](https://publicwww.com/) | Source code |
+| [IntelX](https://intelx.io/) | OSINT |
+| [Wiglet](https://wigle.net/) | Wifi Networks |
 | **Crypto** |
 | [CyberChef](https://icyberchef.com/) | Major encrypter and decrypter |
 | [Soumya decoder](https://decode.soumya.dev/) | ROT13 decoder |
