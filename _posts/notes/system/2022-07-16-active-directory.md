@@ -308,7 +308,7 @@ SMB         10.129.43.9     445    DC01      [*] Windows 10.0 Build 17763 (name:
 SMB         10.129.43.9     445    DC01      [+] INLANEFREIGHT.LOCAL\zeropio:e46b9e548fa0d122de7f59fb6d48eaa2 (Pwn3d!)
 ```
 
-# NTLMv1 (Net-NTMLv1)
+### NTLMv1 (Net-NTMLv1)
 
 The NTLM protocol performs a challenge/response between a server and client using the NT hash. TLMv1 uses both the NT and the LM hash, which can make it easier to "crack" offline after capturing a hash using a tool such as [Responder](https://github.com/lgandx/Responder) or via an [NTLM relay attack](https://byt3bl33d3r.github.io/practical-guide-to-ntlm-relaying-in-2017-aka-getting-a-foothold-in-under-5-minutes.html).
 
