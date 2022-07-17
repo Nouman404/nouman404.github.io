@@ -492,6 +492,234 @@ Rights are typically assigned to users or groups and deal with permissions to ac
 | **Schema Admins** |	Members can modify the Active Directory schema, which is the way all objects with AD are defined. This group only exists in the root domain of an AD forest. The Administrator account for the forest root domain is the only member of this group by default. |
 | **Server Operators** |	This group only exists on domain controllers. Members can modify services, access SMB shares, and backup files on domain controllers. By default, this group has no members. |
 
+- Server Operators Group Details
+
+```console
+PS C:\zeropio> Get-ADGroup -Identity "Server Operators" -Properties *
+
+adminCount                      : 1
+CanonicalName                   : INLANEFREIGHT.LOCAL/Builtin/Server Operators
+CN                              : Server Operators
+Created                         : 10/27/2021 8:14:34 AM
+createTimeStamp                 : 10/27/2021 8:14:34 AM
+Deleted                         : 
+Description                     : Members can administer domain servers
+DisplayName                     : 
+DistinguishedName               : CN=Server Operators,CN=Builtin,DC=ZEROPIO,DC=LOCAL
+dSCorePropagationData           : {10/28/2021 1:47:52 PM, 10/28/2021 1:44:12 PM, 10/28/2021 1:44:11 PM, 10/27/2021 
+                                  8:50:25 AM...}
+GroupCategory                   : Security
+GroupScope                      : DomainLocal
+groupType                       : -2147483643
+HomePage                        : 
+instanceType                    : 4
+isCriticalSystemObject          : True
+isDeleted                       : 
+LastKnownParent                 : 
+ManagedBy                       : 
+MemberOf                        : {}
+Members                         : {}
+Modified                        : 10/28/2021 1:47:52 PM
+modifyTimeStamp                 : 10/28/2021 1:47:52 PM
+Name                            : Server Operators
+nTSecurityDescriptor            : System.DirectoryServices.ActiveDirectorySecurity
+ObjectCategory                  : CN=Group,CN=Schema,CN=Configuration,DC=ZEROPIO,DC=LOCAL
+ObjectClass                     : group
+ObjectGUID                      : 0887487b-7b07-4d85-82aa-40d25526ec17
+objectSid                       : S-1-5-32-549
+ProtectedFromAccidentalDeletion : False
+SamAccountName                  : Server Operators
+sAMAccountType                  : 536870912
+sDRightsEffective               : 0
+SID                             : S-1-5-32-549
+SIDHistory                      : {}
+systemFlags                     : -1946157056
+uSNChanged                      : 228556
+uSNCreated                      : 12360
+whenChanged                     : 10/28/2021 1:47:52 PM
+whenCreated                     : 10/27/2021 8:14:34 AM
+```
+
+- Domain Admins Group Membership 
+
+```console
+PS C:\zeropio> Get-ADGroup -Identity "Domain Admins" -Properties * | select DistinguishedName,GroupCategory,GroupScope,Name,Members
+
+DistinguishedName : CN=Domain Admins,CN=Users,DC=ZEROPIO,DC=LOCAL
+GroupCategory     : Security
+GroupScope        : Global
+Name              : Domain Admins
+```
+
+### User Rights Assignment 
+
+Users can have various rights assigned to their account. With [SharpGPOAbuse](https://github.com/FSecureLABS/SharpGPOAbuse) we can elevate privileges.
+[Here](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment) Microsoft provides a wide range of privileges. Some of the common one are:
+
+| **Privilege**   | **Description**    |
+|--------------- | --------------- |
+| **SeRemoteInteractiveLogonRight** |	This privilege could give our target user the right to log onto a host via Remote Desktop (RDP), which could potentially be used to obtain sensitive data or escalate privileges. |
+| **SeBackupPrivilege** |	This grants a user the ability to create system backups and could be used to obtain copies of sensitive system files that can be used to retrieve passwords such as the SAM and SYSTEM Registry hives and the NTDS.dit Active Directory database file. |
+| **SeDebugPrivilege** | 	This allows a user to debug and adjust the memory of a process. With this privilege, attackers could utilize a tool such as Mimikatz to read the memory space of the Local System Authority (LSASS) process and obtain any credentials stored in memory. |
+| **SeImpersonatePrivilege** | 	This privilege allows us to impersonate a token of a privileged account such as NT AUTHORITY\SYSTEM. This could be leveraged with a tool such as JuicyPotato, RogueWinRM, PrintSpoofer, etc., to escalate privileges on a target system. |
+| **SeLoadDriverPrivilege** | 	A user with this privilege can load and unload device drivers that could potentially be used to escalate privileges or compromise a system. |
+| **SeTakeOwnershipPrivilege** | 	This allows a process to take ownership of an object. At its most basic level, we could use this privilege to gain access to a file share or a file on a share that was otherwise not accessible to us. |
+
+Some techniques for escalation could be [this](https://blog.palantir.com/windows-privilege-abuse-auditing-detection-and-defense-3078a403d74e?gi=9d148d729c71) or [this](https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-abusing-tokens).
+
+### Viewing a User's Privileges 
+
+- Standard Domain User's Rights 
+
+```console
+PS C:\zeropio> whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                    State
+============================= ============================== ========
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set Disabled
+```
+
+- Domain Admin Rights Non-Elevated
+
+```console
+PS C:\zeropio> whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                          State
+============================= ==================================== ========
+SeShutdownPrivilege           Shut down the system                 Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking             Enabled
+SeUndockPrivilege             Remove computer from docking station Disabled
+SeIncreaseWorkingSetPrivilege Increase a process working set       Disabled
+SeTimeZonePrivilege           Change the time zone                 Disabled
+```
+
+- Domain Admin Rights Elevated
+
+```console
+PS C:\zeropio> whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                            Description                                                        State
+========================================= ================================================================== ========
+SeIncreaseQuotaPrivilege                  Adjust memory quotas for a process                                 Disabled
+SeMachineAccountPrivilege                 Add workstations to domain                                         Disabled
+SeSecurityPrivilege                       Manage auditing and security log                                   Disabled
+SeTakeOwnershipPrivilege                  Take ownership of files or other objects                           Disabled
+SeLoadDriverPrivilege                     Load and unload device drivers                                     Disabled
+SeSystemProfilePrivilege                  Profile system performance                                         Disabled
+SeSystemtimePrivilege                     Change the system time                                             Disabled
+SeProfileSingleProcessPrivilege           Profile single process                                             Disabled
+SeIncreaseBasePriorityPrivilege           Increase scheduling priority                                       Disabled
+SeCreatePagefilePrivilege                 Create a pagefile                                                  Disabled
+SeBackupPrivilege                         Back up files and directories                                      Disabled
+SeRestorePrivilege                        Restore files and directories                                      Disabled
+SeShutdownPrivilege                       Shut down the system                                               Disabled
+SeDebugPrivilege                          Debug programs                                                     Enabled
+SeSystemEnvironmentPrivilege              Modify firmware environment values                                 Disabled
+SeChangeNotifyPrivilege                   Bypass traverse checking                                           Enabled
+SeRemoteShutdownPrivilege                 Force shutdown from a remote system                                Disabled
+SeUndockPrivilege                         Remove computer from docking station                               Disabled
+SeEnableDelegationPrivilege               Enable computer and user accounts to be trusted for delegation     Disabled
+SeManageVolumePrivilege                   Perform volume maintenance tasks                                   Disabled
+SeImpersonatePrivilege                    Impersonate a client after authentication                          Enabled
+SeCreateGlobalPrivilege                   Create global objects                                              Enabled
+SeIncreaseWorkingSetPrivilege             Increase a process working set                                     Disabled
+SeTimeZonePrivilege                       Change the time zone                                               Disabled
+SeCreateSymbolicLinkPrivilege             Create symbolic links                                              Disabled
+SeDelegateSessionUserImpersonatePrivilege Obtain an impersonation token for another user in the same session Disabled
+```
+
+- Backup Operator Rights
+
+```console
+PS C:\zeropio> whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                    State
+============================= ============================== ========
+SeShutdownPrivilege           Shut down the system           Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set Disabled
+```
+
+---
+
+# Securing AD 
+
+## General Hardening Measures 
+
+### LAPS 
+
+Accounts can be set up to have their password rotated on a fixed interval (i.e., 12 hours, 24 hours, etc.).
+
+### Audit Policy Settings (Logging and Monitoring) 
+
+Every organization needs to have logging and monitoring setup to detect and react to unexpected changes or activities that may indicate an attack. 
+
+### Group Policy Security Settings 
+
+hese can be used to apply a wide variety of security policies to help harden Active Directory. For example:
+- Account Policies 
+- Local Policies 
+- Software Restriction Policies
+- Application Control Policies 
+- Advanced Audit Policy Configuration
+
+### Update Management (SCCM/WSUS)
+
+The Windows Server Update Service (WSUS) can be installed as a role on a Windows Server and can be used to minimize the manual task of patching Windows systems. System Center Configuration Manager (SCCM) is a paid solution that relies on the WSUS Windows Server role being installed and offers more features than WSUS on its own.
+
+### Group Managed Service Accounts (gMSA) 
+
+A gMSA is an account managed by the domain that offers a higher level of security than other types of service accounts for use with non-interactive applications, services, processes, and tasks that are run automatically but require credentials to run. 
+
+### Security Groups 
+
+Security groups offer an easy way to assign access to network resources.
+
+### Account Separation 
+
+Administrators must have two separate accounts. One for their day-to-day work and a second for any administrative tasks they must perform. This can help ensure that if a user's host is compromised (through a phishing attack, for example).
+
+### Password Complexity Policies + Passphrases + 2FA 
+
+### Limiting Domain Admin Account Usage 
+
+All-powerful Domain Admin accounts should only be used to log in to Domain Controllers, not personal workstations, jump hosts, web servers, etc. 
+
+### Periodically Auditing and Removing Stale Users and Objects 
+
+### Auditing Permissions and Access 
+
+### Audit Policies & Logging 
+
+### Using Restricted Groups 
+
+### Limiting Server Roles 
+
+It is important not to install additional roles on sensitive hosts, such as installing the Internet Information Server (IIS) role on a Domain Controller.  
+
+### Limiting Local Admin and RDP Rights 
+
+Organizations should tightly control which users have local admin rights on which computers. As stated above, this can be achieved using Restricted Groups.
+
+More secured practices [here](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/best-practices-for-securing-active-directory).
+
+
+
+
+
 
 
 
