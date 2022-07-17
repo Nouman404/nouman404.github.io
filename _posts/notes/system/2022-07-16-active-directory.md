@@ -126,6 +126,7 @@ An object can be defined as ANY resource present within an AD.
 ## Functionality
 
 Taking back the **FSMO** roles:
+
 | **Roles**   | **Description**    |
 |--------------- | --------------- |
 | *Schema Master*   | This role manages the read/write copy of the AD schema, which defines all attributes that can apply to an object in AD.   |
@@ -263,18 +264,58 @@ MSRPC is Microsoft's implementation of Remote Procedure Call (RPC), an interproc
 | *samr*   | Remote SAM (samr) provides management functionality for the domain account database, storing information about users and groups. IT administrators use the protocol to manage users, groups, and computers by enabling admins to create, read, update, and delete information about security principles. Attackers (and pentesters) can use the samr protocol to perform reconnaissance about the internal domain using tools such as BloodHound to visually map out the AD network and create "attack paths" to illustrate visually how administrative access or full domain compromise could be achieved.   |
 | *drsuapi*   | Is the Microsoft API that implements the Directory Replication Service (DRS) Remote Protocol which is used to perform replication-related tasks across Domain Controllers in a multi-DC environment. Attackers can utilize drsuapi to create a copy of the Active Directory domain database (NTDS.dit) file to retrieve password hashes for all accounts in the domain, which can then be used to perform Pass-the-Hash attacks to access more systems or cracked offline using a tool such as Hashcat to obtain the cleartext password to log in to systems using remote management protocols such as Remote Desktop (RDP) and WinRM.  |
 
+## NTLM Authentication
 
+Other authentication method used is NTLM (**LM**, **NTLM**, **NTLMv1**, and **NTLMv2**). **LM** and **NTLM** are the hashes names. **NTLMv1** and **NTLMv2** are authentication protocols that utilize the LM or NT hash.
 
+| **Hash/Protocol**    | **Cryptographic technique**    | **Mutual Authentication**    | **Message Type** | **Trusted Third Party** |
+|---------------- | --------------- | --------------- | ------------------------ | ----------------- |
+| *NTLM*   | Symmetric key cryptography	   | No    | Random number | Domain Controller |
+| *NTLMv1*   | Symmetric key cryptography	   | No    | MD4 hash, random number | Domain Controller |
+| *NTLMv2*  | Symmetric key cryptography	   | No   | MD4 hash, random number | Domain Controller |
+| *Kerberos*   | Symmetric key cryptography & asymmetric cryptography   | Yes   | Encrypted ticket using DES, MD5 | Domain Controller,/Key Distribution Center (KDC) |
 
+### LM 
 
+**Lan Manager** (LM) hashes are the oldest password storage mechanism used by the Windows operating system. If in use, they are stored in the SAM database on a Windows host and the NTDS.DIT database on a Domain Controller. Passwords using LM are limited to a maximum of **14** characters. Passwords are not case sensitive and are converted to uppercase before generating the hashed value, limiting the keyspace to a total of 69 characters making it relatively easy to crack these hashes using a tool such as Hashcat.
 
+### NTHash (NTLM)
 
+**NT LAN Manager** (NTLM) hashes are used on modern Windows systems. It is a challenge-response authentication protocol in three steps:
+1. a client first sends a **NEGOTIATE_MESSAGE** to the server
+2. whose response is a **CHALLENGE_MESSAGE** to verify the client's identity
+3. the client responds with an **AUTHENTICATE_MESSAGE**
 
+These hashes are stored locally in the SAM database or the NTDS.DIT database file on a Domain Controller.
+NTLM is vulnerable to the **pass-the-hash** attack, which means an attacker can use just the NTLM hash (after obtaining via another successful attack) to authenticate to target systems where the user is a local admin without needing to know the cleartext value of the password.
 
+An NTLM hash seems like:
+```
+Zeropio:500:aad3c435b514a4eeaad3b935b51304fe:e46b9e548fa0d122de7f59fb6d48eaa2:::
+```
 
+Where:
+- **Zeropio** is the username
+- **500** is the RID (500 for **administrator** account)
+- **aad3c435b514a4eeaad3b935b51304fe** is the LM hash 
+- **e46b9e548fa0d122de7f59fb6d48eaa2** is the NT hash
 
+With a tool, like [CrackMapExec](https://github.com/Porchetta-Industries/CrackMapExec), we can break the hash:
+```console
+zero@pio$ crackmapexec smb 10.129.41.19 -u zeropio -H e46b9e548fa0d122de7f59fb6d48eaa2
 
+SMB         10.129.43.9     445    DC01      [*] Windows 10.0 Build 17763 (name:DC01) (domain:ZEROPIO.LOCAL) (signing:True) (SMBv1:False)
+SMB         10.129.43.9     445    DC01      [+] INLANEFREIGHT.LOCAL\zeropio:e46b9e548fa0d122de7f59fb6d48eaa2 (Pwn3d!)
+```
 
+# NTLMv1 (Net-NTMLv1)
+
+The NTLM protocol performs a challenge/response between a server and client using the NT hash. TLMv1 uses both the NT and the LM hash, which can make it easier to "crack" offline after capturing a hash using a tool such as [Responder](https://github.com/lgandx/Responder) or via an [NTLM relay attack](https://byt3bl33d3r.github.io/practical-guide-to-ntlm-relaying-in-2017-aka-getting-a-foothold-in-under-5-minutes.html).
+
+An example could be:
+```
+u4-netntlm::kNS:338d08f8e26de93300000000000000000000000000000000:9526fb8c23a90751cdd619b6cea564742e1e4bf33006ba41:cb8086049ec4736c
+```
 
 
 
