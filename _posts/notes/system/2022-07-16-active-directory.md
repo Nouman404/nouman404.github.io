@@ -317,30 +317,180 @@ An example could be:
 u4-netntlm::kNS:338d08f8e26de93300000000000000000000000000000000:9526fb8c23a90751cdd619b6cea564742e1e4bf33006ba41:cb8086049ec4736c
 ```
 
+### NTLMv2 (Net-NTLMv2)
+
+The NTLMv2 protocol was created as a stronger alternative to NTLMv1.
+
+An example could be:
+```
+admin::N46iSNekpT:08ca45b7d7ea58ee:88dcbe4446168966a153a0064958dac6:5c7830315c7830310000000000000b45c67103d07d7b95acd12ffa11230e0000000052920b85f78d013c31cdb3b92f5d765c783030
+```
+
+### MSCache2
+
+The Domain Cached Credentials (**DCC**), also known as **MS Cache v1** and **v2** solve the potential issue of a domain-joined host being unable to communicate with a domain controller. Hosts save the last ten hashes for any domain users that successfully log into the machine in the `HKEY_LOCAL_MACHINE\SECURITY\Cache`{: .filepath} registry key. The **pass-the-hash** attacks don't work.
 
 
+---
 
+# Users
 
+User accounts are created on both local systems and in Active Directory to give a person or a program the ability to log on to a computer and access resources based on their rights. 
 
+## Local Accounts 
 
+Local accounts are stored locally on a particular server or workstation. Any rights assigned can only be granted to that specific host and will not work across the domain. Local user accounts are considered security principals but can only manage access to and secure resources on a standalone host.
+There are some default local user:
+- **Administrator**: this account has the SID S-1-5-domain-500. It has full control over almost every resource on the system. It cannot be deleted or locked, but it can be disabled or renamed. 
+- **Guest**: this account is disabled by default.
+- **SYSTEM**: The SYSTEM (or **NT AUTHORITY\SYSTEM**) account on a Windows host is the default account installed and used by the operating system to perform many of its internal functions. Unlike the Root account on Linux, SYSTEM is a service account and does not run entirely in the same context as a regular user. A SYSTEM account is the highest permission level one can achieve on a Windows host and, by default, is granted Full Control permissions to all files on a Windows system.
+- **Network Service**: this is a predefined local account used by the Service Control Manager (SCM) for running Windows services.
+- **Local Service**: this is another predefined local account used by the Service Control Manager (SCM) for running Windows services.
 
+More info [here](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts).
 
+## Domain Users
 
+Domain users differ from local users in that they are granted rights from the domain to access resources such as file servers, printers, intranet hosts, and other objects based on the permissions granted to their user account or the group that account is a member of.
+One key account is **KRBTGT**, this account acts as a service account for the Key Distribution service providing authentication and access for domain resources. It can be leveraged for privilege escalation and persistence in a domain through attacks such as the [Golden Ticket](https://attack.mitre.org/techniques/T1558/001/) attack.
 
+## User naming attributes 
 
+| *UserPrincipalName* (UPN)   | This is the primary logon name for the user. By convention, the UPN uses the email address of the user.    |
+| *ObjectGUID*	  | This is a unique identifier of the user. In AD, the ObjectGUID attribute name never changes and remains unique even if the user is removed.   |
+| *SAMAccountName*  | This is a logon name that supports the previous version of Windows clients and servers.   |
+| *objectSID*	   | The user's Security Identifier (SID). This attribute identifies a user and its group memberships during security interactions with the server.   |
+| *sIDHistory*   | This contains previous SIDs for the user object if moved from another domain and is typically seen in migration scenarios from domain to domain. After a migration occurs, the last SID will be added to the **sIDHistory** property, and the new SID will become its **objectSID**.   |
 
+To check attributes:
+```console
+PS C:\zeropio> Get-ADUser -Identity zero-pio
 
+DistinguishedName : CN=zero,CN=Users,DC=ZEROPIO,DC=LOCAL
+Enabled           : True
+GivenName         : zero
+Name              : zeropio
+ObjectClass       : user
+ObjectGUID        : aa799587-c641-4c23-a2f7-75850b4dd7e3
+SamAccountName    : zero-pio
+SID               : S-1-5-21-3842939050-3880317879-2865463114-1111
+Surname           : pio
+UserPrincipalName : zero-pio@ZEROPIO.LOCAL
+```
 
+More attributes [here](https://docs.microsoft.com/en-us/windows/win32/ad/user-object-attributes).
 
+## Domain joined machines 
 
+- **Domain joined**: Hosts joined to a domain have greater ease of information sharing within the enterprise and a central management point (the DC) to gather resources, policies, and updates from. A host joined to a domain will acquire any configurations or changes necessary through the domain's Group Policy. 
 
+- **Non-domain joined**: are not managed by domain policy. Sharing resources outside your local network is much more complicated than it would be on a domain. This is fine for computers meant for home use or small business clusters on the same LAN.
 
+## Groups
 
+Groups can place similar users together and mass assign rights and access. They are another key target for attackers and penetration testers.
 
+### Types
+The are to main types:
+- **Security groups**: for assigning permissions and rights to a collection of users instead of one at a time.
+- **Distribution Groups**: is used by email applications to distribute messages to group members.
 
+### Scopes
 
+There are three different scopes:
+- **Domain Local Group**: can only be used to manage permissions to domain resources in the domain where it was created. Local groups cannot be used in other domains but CAN contain users from OTHER domains. Local groups can be nested into other local groups but NOT within global groups.
+- **Global Group**: can be used to grant access to resources in another domain.
+- **Universal Group**: can be used to manage resources distributed across multiple domains and can be given permissions to any object within the same forest.
 
+An example could be:
+```console
+PS C:\zeropio> et-ADGroup  -Filter * |select samaccountname,groupscope
 
+samaccountname                           groupscope
+--------------                           ----------
+Administrators                          DomainLocal
+Users                                   DomainLocal
+Guests                                  DomainLocal
+Print Operators                         DomainLocal
+Backup Operators                        DomainLocal
+Replicator                              DomainLocal
+Remote Desktop Users                    DomainLocal
+Network Configuration Operators         DomainLocal
+Distributed COM Users                   DomainLocal
+IIS_IUSRS                               DomainLocal
+Cryptographic Operators                 DomainLocal
+Event Log Readers                       DomainLocal
+Certificate Service DCOM Access         DomainLocal
+RDS Remote Access Servers               DomainLocal
+RDS Endpoint Servers                    DomainLocal
+RDS Management Servers                  DomainLocal
+Hyper-V Administrators                  DomainLocal
+Access Control Assistance Operators     DomainLocal
+Remote Management Users                 DomainLocal
+Storage Replica Administrators          DomainLocal
+Domain Computers                             Global
+Domain Controllers                           Global
+Schema Admins                             Universal
+Enterprise Admins                         Universal
+Cert Publishers                         DomainLocal
+Domain Admins                                Global
+Domain Users                                 Global
+Domain Guests                                Global
+```
+
+Scopes can be changed with some restrictions:
+- A Global Group can only be converted to a Universal Group if it is NOT part of another Global Group.
+- A Domain Local Group can only be converted to a Universal Group if the Domain Local Group does NOT contain any other Domain Local Groups as members.
+- A Universal Group can be converted to a Domain Local Group without any restrictions.
+- A Universal Group can only be converted to a Global Group if it does NOT contain any other Universal Groups as members.
+
+There are some built-in groups, some examples can be **Domain Admins**.
+
+### Nested Group Membership 
+
+Through this membership, a user may inherit privileges not assigned directly to their account or even the group they are directly a member of. This could lead to privilege escalation.
+
+[BloodHound](https://github.com/BloodHoundAD/BloodHound) helps finding it.
+
+### Attributes 
+
+Some of the most importan attributes:
+- **cn**: Common-Name
+- **member**: which user, group, and contact objects are members of the group 
+- **groupType**: specifies the group type and scope 
+- **memberOf**: nested group membership 
+- **objectSid**: SID of the group 
+
+## Rights and Privileges 
+
+Rights are typically assigned to users or groups and deal with permissions to access an object such as a file, while privileges grant a user permission to perform an action such as run a program, shut down a system, reset passwords, etc. Windows computers have a concept called User Rights Assignment, which, while referred to as rights, are actually types of privileges granted to a user. 
+
+### Built-in AD Groups 
+
+| **Group Name** | **Description**    |
+|--------------- | --------------- |
+| Account Operators |	Members can create and modify most types of accounts, including those of users, local groups, and global groups, and members can log in locally to domain controllers. They cannot manage the Administrator account, administrative user accounts, or members of the Administrators, Server Operators, Account Operators, Backup Operators, or Print Operators groups. |
+| Administrators |	Members have full and unrestricted access to a computer or an entire domain if they are in this group on a Domain Controller. |
+| Backup Operators |	Members can back up and restore all files on a computer, regardless of the permissions set on the files. Backup Operators can also log on to and shut down the computer. Members can log onto DCs locally and should be considered Domain Admins. They can make shadow copies of the SAM/NTDS database, which, if taken, can be used to extract credentials and other juicy info. |
+| DnsAdmins |	Members have access to network DNS information. The group will only be created if the DNS server role is or was at one time installed on a domain controller in the domain. |
+| Domain Admins |	Members have full access to administer the domain and are members of the local administrator's group on all domain-joined machines. |
+| Domain Computers |	Any computers created in the domain (aside from domain controllers) are added to this group. |
+| Domain Controllers |	Contains all DCs within a domain. New DCs are added to this group automatically. |
+| Domain Guests |	This group includes the domain's built-in Guest account. Members of this group have a domain profile created when signing onto a domain-joined computer as a local guest. |
+| Domain Users |	This group contains all user accounts in a domain. A new user account created in the domain is automatically added to this group. |
+| Enterprise Admins |	Membership in this group provides complete configuration access within the domain. The group only exists in the root domain of an AD forest. Members in this group are granted the ability to make forest-wide changes such as adding a child domain or creating a trust. The Administrator account for the forest root domain is the only member of this group by default. |
+| Event Log Readers |	Members can read event logs on local computers. The group is only created when a host is promoted to a domain controller. |
+| Group Policy Creator Owners |	Members create, edit, or delete Group Policy Objects in the domain. |
+| Hyper-V Administrators |	Members have complete and unrestricted access to all the features in Hyper-V. If there are virtual DCs in the domain, any virtualization admins, such as members of Hyper-V Administrators, should be considered Domain Admins. |
+| IIS_IUSRS |	This is a built-in group used by Internet Information Services (IIS), beginning with IIS 7.0. |
+| Pre–Windows 2000 Compatible Access |	This group exists for backward compatibility for computers running Windows NT 4.0 and earlier. Membership in this group is often a leftover legacy configuration. It can lead to flaws where anyone on the network can read information from AD without requiring a valid AD username and password. |
+| Print Operators |	Members can manage, create, share, and delete printers that are connected to domain controllers in the domain along with any printer objects in AD. Members are allowed to log on to DCs locally and may be used to load a malicious printer driver and escalate privileges within the domain. |
+| Protected Users |	Members of this group are provided additional protections against credential theft and tactics such as Kerberos abuse. |
+| Read-only Domain Controllers |	Contains all Read-only domain controllers in the domain. |
+| Remote Desktop Users |	This group is used to grant users and groups permission to connect to a host via Remote Desktop (RDP). This group cannot be renamed, deleted, or moved. |
+| Remote Management Users |	This group can be used to grant users remote access to computers via Windows Remote Management (WinRM)
+| Schema Admins |	Members can modify the Active Directory schema, which is the way all objects with AD are defined. This group only exists in the root domain of an AD forest. The Administrator account for the forest root domain is the only member of this group by default. |
+| Server Operators |	This group only exists on domain controllers. Members can modify services, access SMB shares, and backup files on domain controllers. By default, this group has no members. |
 
 
 
