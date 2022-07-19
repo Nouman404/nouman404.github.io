@@ -23,6 +23,7 @@ icon: fas fa-folder-open
 | [WADComs](https://wadcoms.github.io/) | Set of tools for Windows/AD environments |
 | [Reverse Shell](https://www.revshells.com/) | Create reverse shell payloads |
 | [GTFObins](https://gtfobins.github.io/) | Unix binaries |
+| [LOLBAS](https://lolbas-project.github.io/) | Living Off The Land Binaries, Scripts and Libraries |
 | [BeautifyTools](https://beautifytools.com/) | Beautify for minifies codes |
 | [Windows ISO](https://www.heidoc.net/joomla/technology-science/microsoft/67-microsoft-windows-and-office-iso-download-tool%EF%BB%BF) | Old ISOs for Windows |
 | [bashrc Generator](https://bashrcgenerator.com/) | For generate bash prompts |
