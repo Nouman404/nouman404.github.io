@@ -67,10 +67,10 @@ There are a difference in these functions between read and execute. Some of the 
 | **Function**    | **Read content**   | **Execute**    | **Remote URL** |
 |---------------- | --------------- | --------------- | -------------- |
 | **PHP** |     
-| `include()`/`include_once()` | &check; | &check; | &check; | 
-| `require()`/`require_once()` | - [x] | - [x] | &#9746; |
-| `file_get_contents()` | - [x] | - [ ] | - [x] |
-| `fopen()`/`file()` | - [x] | - [ ] | - [ ] |
+| `include()`/`include_once()` | ✅| ✅| ✅| 
+| `require()`/`require_once()` | ✅| ✅ | ⬜️|
+| `file_get_contents()` | ✅ | ⬜️ | ✅ |
+| `fopen()`/`file()` | -✅ | ⬜️ | ⬜️ |
 
 For example:
 ```
