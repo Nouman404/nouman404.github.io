@@ -20,6 +20,56 @@ if (isset($_GET['language'])) {
 }
 ```
 
+- NodeJS 
+
+```javascript
+if(req.query.language) {
+    fs.readFile(path.join(__dirname, req.query.language), function (err, data) {
+        res.write(data);
+    });
+}
+```
+
+- Express.js 
+
+```javascript
+app.get("/about/:language", function(req, res) {
+    res.render(`/${req.params.language}/about.html`);
+});
+```
+
+- Java 
+
+```jsp
+<c:if test="${not empty param.language}">
+    <jsp:include file="<%= request.getParameter('language') %>" />
+</c:if>
+```
+
+- .NET 
+
+```cs
+@if (!string.IsNullOrEmpty(HttpContext.Request.Query['language'])) {
+    <% Response.WriteFile("<% HttpContext.Request.Query['language'] %>"); %> 
+}
+```
+```cs
+@Html.Partial(HttpContext.Request.Query['language'])
+```
+```cs
+<!--#include file="<% HttpContext.Request.Query['language'] %>"-->
+```
+
+## Read vs Execute
+
+There are a difference in these functions between read and execute. Some of the above functions **only read** the content of the specified files, while others also **execute** the specified files:
+
+| **Function**    | **Read content**   | **Execute**    | **Remote URL** |
+|---------------- | --------------- | --------------- | -------------- |
+| **PHP** |     
+| `include()`/`include_once()` | - [x] | - [x] | - [x] | 
+
+
 For example:
 ```
 http://localhost/example.php?file=../../../../../../../etc/passwd
