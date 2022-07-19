@@ -332,7 +332,8 @@ zero@pio$ perl -e 'use LWP::Simple; getstore("<target url file>", "<output file>
 ## JavaScript 
 
 We can simulate a `wget` command in Windows with the following file:
-```JavaScript
+
+```javascript
 var WinHttpReq = new ActiveXObject("WinHttp.WinHttpRequest.5.1");
 WinHttpReq.Open("GET", WScript.Arguments(0), /*async=*/false);
 WinHttpReq.Send();
