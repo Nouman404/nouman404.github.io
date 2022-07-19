@@ -9,7 +9,17 @@ permalink: /notes/vulnerabilities/lfi
 
 
 # Local file inclusion
-**LFI** is the process to include files locate in the server through the exploiting of vulnerable inclusion.
+**LFI** is the process to include files locate in the server through the exploiting of vulnerable inclusion. The most common place we usually find LFI within is templating engines, for example `/index.php?page=about`. Where `index.php` sets static content and the parameter `page` dinamically. LFI vulnerabilities can lead to source code disclosure, sensitive data exposure, and even remote code execution under certain conditions.
+
+Some examples of insecure code:
+- PHP 
+
+```php
+if (isset($_GET['language'])) {
+    include($_GET['language']);
+}
+```
+
 For example:
 ```
 http://localhost/example.php?file=../../../../../../../etc/passwd
