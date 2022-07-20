@@ -1,10 +1,7 @@
 ---
 title: Projects
-author: Zeropio
-date: 2022-06-02
-categories: [Projects]
-pin: true
-permalink: /projects/
+icon: fas fa-lightbulb-o
+order: 4
 ---
 
 # The Helpful Scripts

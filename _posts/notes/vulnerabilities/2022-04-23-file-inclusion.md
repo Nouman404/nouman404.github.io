@@ -1,10 +1,10 @@
 ---
-title: Notes | LFI
+title: Notes | File Inclusion
 author: Zeropio
 date: 2022-04-23
 categories: [Notes, Vulnerabilities]
 tags: [lfi]
-permalink: /notes/vulnerabilities/lfi
+permalink: /notes/vulnerabilities/file-inclusion
 ---
 
 
