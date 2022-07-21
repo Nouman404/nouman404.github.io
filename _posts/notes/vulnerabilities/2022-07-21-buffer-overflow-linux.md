@@ -1,7 +1,7 @@
 ---
 title: Notes | Stack-Based Buffer Overflow - Linux
 author: Zeropio
-date: 2021-07-21
+date: 2022-07-21
 categories: [Notes, Vulnerabilities]
 tags: [linux, buffer]
 permalink: /notes/vulnerabilities/buffer-overflow-linux
