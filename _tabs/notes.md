@@ -63,6 +63,7 @@ order: 2
 | [CSRF and SSRF](https://zeropio.github.io/notes/vulnerabilities/csrf-ssrf) | Info about CSRF and SSRF |
 | [Padding Oracle Attack](https://zeropio.github.io/notes/vulnerabilities/poa) | Info about POA |
 | [Buffer Overflow Linux](/notes/vulnerabilities/buffer-overflow-linux) | Buffer Overflow for Linux |
+| [Buffer Overflow Windows](/notes/vulnerabilities/buffer-overflow-windows) | Buffer Overflow for Windows |
 | [Others](https://zeropio.github.io/notes/vulnerabilities/others) | Info about many vulnerabilities |
 
 ---
