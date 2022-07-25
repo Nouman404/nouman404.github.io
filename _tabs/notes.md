@@ -78,3 +78,11 @@ order: 2
 | [Nmap](https://zeropio.github.io/notes/tools/nmap) | Info about Nmap |
 | [Metasploit](https://zeropio.github.io/notes/tools/metasploit) | Metasploit usage |
 
+---
+
+# Languages 
+
+| **Link**   | **Description**    |
+|--------------- | --------------- |
+| [Bash](/notes/languages/bash-scripting)   | Scripting with bash   |
+

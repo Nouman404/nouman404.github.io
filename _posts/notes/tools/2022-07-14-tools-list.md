@@ -32,6 +32,8 @@ git
 wsl2
 openssh
 openvpn
+x32dbg
+x64dbg
 ```
 
 > Recommend using [Chocolatey](https://chocolatey.org/) for the installation.
