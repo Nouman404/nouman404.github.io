@@ -191,6 +191,13 @@ We have an interactive option to run with `-i`, which will be asking us for entr
 zero@pio$ cupp -i
 ```
 
+## Usernames 
+
+We can use the following Github, [Username Anarchy](https://github.com/urbanadventurer/username-anarchy), to generate wordlist of usernames from one word:
+```console
+zero@pio$ ./username-anarchy <word> > wordlist.txt
+```
+
 ---
 
 # Service Authentication Brute Forcing 

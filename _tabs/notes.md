@@ -74,10 +74,11 @@ order: 2
 |--------------- | --------------- |
 | [Tools](https://zeropio.github.io/notes/tools)   | Set of personal must-have tools   |
 | [Commands](https://zeropio.github.io/notes/tools/commands) | Variaty of commands for multiple purposes |
-| [Dorks](https://zeropio.github.io/notes/web/dorks) | Dorks for many search engines |
+| [Dorks](https://zeropio.github.io/notes/tools/dorks) | Dorks for many search engines |
 | [Nmap](https://zeropio.github.io/notes/tools/nmap) | Info about Nmap |
 | [Metasploit](https://zeropio.github.io/notes/tools/metasploit) | Metasploit usage |
-| [Brute Forcing]((notes/tools/brute-forcing) | Set of tools for brute forcing |
+| [Brute Forcing](/notes/tools/brute-forcing) | Set of tools for brute forcing |
+| [Hashcat](/notes/tools/hashcat) | Usage of Hashcat |
 
 ---
 
