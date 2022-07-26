@@ -77,6 +77,7 @@ order: 2
 | [Dorks](https://zeropio.github.io/notes/web/dorks) | Dorks for many search engines |
 | [Nmap](https://zeropio.github.io/notes/tools/nmap) | Info about Nmap |
 | [Metasploit](https://zeropio.github.io/notes/tools/metasploit) | Metasploit usage |
+| [Brute Forcing]((notes/tools/brute-forcing) | Set of tools for brute forcing |
 
 ---
 
