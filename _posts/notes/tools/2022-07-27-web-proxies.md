@@ -34,11 +34,11 @@ For Burp, in the `Proxy` tab, the `Intercept` sub-tab. Now load the page we want
 
 ZAP interception is off by default. We can see at the top (green means is off). Clicking or with `ctrl + b` we can turn on/off.
 
-![Proxy ZAP](/assets/img/notes/zap_intercept_htb_on.jpg)
+![Proxy ZAP](/assets/img/notes/tools/zap_intercept_htb_on.jpg)
 
 ZAP also has a feature called **HUD** (Heads Up Display) which allows us to control ZAP's features within the pre-configured browser. We can enable it in the following button:
 
-![Button ZAP](/assets/img/notes/zap_enable_HUD.jpg)
+![Button ZAP](/assets/img/notes/tools/zap_enable_HUD.jpg)
 
 ### Manipulating Intercepted Requests 
 
@@ -69,7 +69,7 @@ In some instances, we may need to intercept the HTTP responses from the server b
 
 In Burp, we can enable response interception by going to (`Proxy>Options`) and enabling **Intercept Response** under **Intercept Server Responses**:
 
-![Burp Responses](/assets/img/notes/response_interception_enable.jpg)
+![Burp Responses](/assets/img/notes/tools/response_interception_enable.jpg)
 
 Refresh the page and check the intercepted response. We can know modify the code and click on `Forward` to send that page. It also has some features, which can be enabled in `Proxy > Options > Response Modification`, where we can select `Unhide hidden form fields`.
 
