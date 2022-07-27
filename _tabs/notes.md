@@ -80,6 +80,7 @@ order: 2
 | [Brute Forcing](/notes/tools/brute-forcing) | Set of tools for brute forcing |
 | [Hashcat](/notes/tools/hashcat) | Usage of Hashcat |
 | [SQLMap](/notes/tools/sqlmap) | Usage of SQLMap |
+| [Web Proxies](/notes/tools/web-proxies) | Usage of Burp and ZAP |
 
 ---
 
