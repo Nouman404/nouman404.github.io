@@ -1,7 +1,7 @@
 ---
 title: Notes | Web Proxies
 author: Zeropio
-date: 2022-07-22
+date: 2022-07-27
 categories: [Notes, Tools]
 tags: [proxy]
 permalink: /notes/tools/web-proxies
