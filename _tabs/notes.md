@@ -79,6 +79,7 @@ order: 2
 | [Metasploit](https://zeropio.github.io/notes/tools/metasploit) | Metasploit usage |
 | [Brute Forcing](/notes/tools/brute-forcing) | Set of tools for brute forcing |
 | [Hashcat](/notes/tools/hashcat) | Usage of Hashcat |
+| [SQLMap](/notes/tools/sqlmap) | Usage of SQLMap |
 
 ---
 
