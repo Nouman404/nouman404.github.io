@@ -27,7 +27,8 @@ order: 2
 | [Network](https://zeropio.github.io/notes/system/network) | Network aid |
 | [Shell](https://zeropio.github.io/notes/system/shell) | Reverse shell and more
 | [File Transfer](https://zeropio.github.io/notes/system/transfer-files) | Help for transfer files |
-| [Privilege Escalation](https://zeropio.github.io/notes/system/privilage-escalation) | PE for Linux and Windows |
+| **Linux** |
+| [Linux Privilege Escalation](/notes/system/linux-privilege-escalation) | PE for Linux |
 | **Windows** |
 | [Windows](https://zeropio.github.io/notes/system/windows) | Basic info about Windows |
 | [Active Directory](https://zeropio.github.io/notes/system/active-directory) | Basic info about Active Directory |
