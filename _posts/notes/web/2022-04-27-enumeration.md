@@ -269,7 +269,11 @@ zero@pio$ ffuf -w ./vhosts -u http://<target> -H "HOST: FUZZ.<target>" -fs <byte
 
 
 ## Tools
-- [Knock Subdomain Scan](https://github.com/guelfoweb/knock) dictionary to guess subdomains
+
+| **Link**   | **Description**    |
+|--------------- | --------------- |
+| [Knock Subdomain Scan](https://github.com/guelfoweb/knock) | Dictionary to guess subdomains |
+| [Sublist3r](https://github.com/aboul3la/Sublist3r) | List subdomains |
 
 ## Tips
 
