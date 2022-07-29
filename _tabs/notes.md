@@ -65,6 +65,7 @@ order: 2
 | [Padding Oracle Attack](https://zeropio.github.io/notes/vulnerabilities/poa) | Info about POA |
 | [Buffer Overflow Linux](/notes/vulnerabilities/buffer-overflow-linux) | Buffer Overflow for Linux |
 | [Buffer Overflow Windows](/notes/vulnerabilities/buffer-overflow-windows) | Buffer Overflow for Windows |
+| [Command Injections](/notes/vulnerabilities(command-injections) | Performing commands injections |
 | [Others](https://zeropio.github.io/notes/vulnerabilities/others) | Info about many vulnerabilities |
 
 ---
