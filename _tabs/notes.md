@@ -66,6 +66,7 @@ order: 2
 | [Buffer Overflow Linux](/notes/vulnerabilities/buffer-overflow-linux) | Buffer Overflow for Linux |
 | [Buffer Overflow Windows](/notes/vulnerabilities/buffer-overflow-windows) | Buffer Overflow for Windows |
 | [Command Injections](/notes/vulnerabilities(command-injections) | Performing commands injections |
+| [File Upload](/notes/vulnerabilities/file-upload) | File Upload Attacks |
 | [Others](https://zeropio.github.io/notes/vulnerabilities/others) | Info about many vulnerabilities |
 
 ---
