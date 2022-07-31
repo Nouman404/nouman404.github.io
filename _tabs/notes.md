@@ -61,12 +61,13 @@ order: 2
 | [Cross Site Scripting](https://zeropio.github.io/notes/vulnerabilities/xss) | Info about XSS |
 | [File Inclusion](https://zeropio.github.io/notes/vulnerabilities/file-inclusion) | Info about LFI and RFI |
 | [XMl External Entity](https://zeropio.github.io/notes/vulnerabilities/xxe) | Info about XXE |
-| [CSRF and SSRF](https://zeropio.github.io/notes/vulnerabilities/csrf-ssrf) | Info about CSRF and SSRF |
+| [Cross Site Request Forgeries](https://zeropio.github.io/notes/vulnerabilities/csrf) | Info about CSRF |
 | [Padding Oracle Attack](https://zeropio.github.io/notes/vulnerabilities/poa) | Info about POA |
 | [Buffer Overflow Linux](/notes/vulnerabilities/buffer-overflow-linux) | Buffer Overflow for Linux |
 | [Buffer Overflow Windows](/notes/vulnerabilities/buffer-overflow-windows) | Buffer Overflow for Windows |
 | [Command Injections](/notes/vulnerabilities(command-injections) | Performing commands injections |
 | [File Upload](/notes/vulnerabilities/file-upload) | File Upload Attacks |
+| [Server Side Attacks](/note/vulnerabilities/server-side-attacks) | Server Side Attacks: SSRF, SSI, ESI and SSTI |
 | [Others](https://zeropio.github.io/notes/vulnerabilities/others) | Info about many vulnerabilities |
 
 ---
