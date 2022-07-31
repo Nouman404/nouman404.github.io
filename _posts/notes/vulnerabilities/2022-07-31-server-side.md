@@ -71,14 +71,19 @@ This will be the process:
 zero@pio$ sudo apt install libapache2-mod-jk 
 zero@pio$ sudo a2enmod proxy_ajp; sudo a2enmod proxy_http 
 zero@pio$ export TARGET="<TARGET_IP>" 
-zero@pio$ echo -n """<Proxy *>
+zero@pio$ echo -n "" | sudo tee /etc/apache2/sites-available/ajp-proxy.conf 
+zero@pio$ sudo ln -s /etc/apache2/sites-available/ajp-proxy.conf /etc/apache2/sites-enabled/ajp-proxy.conf 
+zero@pio$ sudo systemctl start apache2
+```
+
+The echo should contain:
+```
+""<Proxy *>
 Order allow,deny
 Allow from all
 </Proxy>
 ProxyPass / ajp://$TARGET:8009/
-ProxyPassReverse / ajp://$TARGET:8009/""" | sudo tee /etc/apache2/sites-available/ajp-proxy.conf 
-zero@pio$ sudo ln -s /etc/apache2/sites-available/ajp-proxy.conf /etc/apache2/sites-enabled/ajp-proxy.conf 
-zero@pio$ sudo systemctl start apache2
+ProxyPassReverse / ajp://$TARGET:8009/""
 ```
 
 Now we can access the Tomcat Manager with a cURL or even in the browser accessing the localhost. 
