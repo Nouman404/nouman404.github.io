@@ -9,12 +9,12 @@ order: 2
 
 | **Link**   | **Description**    |
 |--------------- | --------------- |
-| [HTTP](https://zeropio.github.io/notes/web/http)  | Basic explanation of HTTP and HTTPS   |
-| [Web Enumaration](https://zeropio.github.io/notes/web/enumeration) | Set of tools and resource for web enumaration |
-| [Web Applications](https://zeropio.github.io/notes/web/web-applications) | Basic explanation of Web Applications |
-| [Sessions](https://zeropio.github.io/notes/web/sessions) | Vulnerable sessions |
-| [Fuzzing](https://zeropio.github.io/notes/web/fuzzer) | Explanation and set of tools for fuzzing |
-| [JavaScript Deobfuscation](https://zeropio.github.io/notes/web/javascript-deobfuscation) | Help for JavaScript Deobfuscation |
+| [HTTP](/notes/web/http)  | Basic explanation of HTTP and HTTPS   |
+| [Web Enumaration](/notes/web/enumeration) | Set of tools and resource for web enumaration |
+| [Web Applications](/notes/web/web-applications) | Basic explanation of Web Applications |
+| [Fuzzing](/notes/web/fuzzer) | Explanation and set of tools for fuzzing |
+| [Broken Authentication](/notes/web/broken-auth) | Brute Force, Passwords Attacks and Session Attacks |
+| [JavaScript Deobfuscation](/notes/web/javascript-deobfuscation) | Help for JavaScript Deobfuscation |
 
 ---
 
@@ -23,15 +23,15 @@ order: 2
 | **Link**   | **Description**    |
 |--------------- | --------------- |
 | **General**  |
-| [Services](https://zeropio.github.io/notes/system/services) | Common services |
-| [Network](https://zeropio.github.io/notes/system/network) | Network aid |
-| [Shell](https://zeropio.github.io/notes/system/shell) | Reverse shell and more
-| [File Transfer](https://zeropio.github.io/notes/system/transfer-files) | Help for transfer files |
+| [Services](/notes/system/services) | Common services |
+| [Network](/notes/system/network) | Network aid |
+| [Shell](/notes/system/shell) | Reverse shell and more
+| [File Transfer](/notes/system/transfer-files) | Help for transfer files |
 | **Linux** |
 | [Linux Privilege Escalation](/notes/system/linux-privilege-escalation) | PE for Linux |
 | **Windows** |
-| [Windows](https://zeropio.github.io/notes/system/windows) | Basic info about Windows |
-| [Active Directory](https://zeropio.github.io/notes/system/active-directory) | Basic info about Active Directory |
+| [Windows](/notes/system/windows) | Basic info about Windows |
+| [Active Directory](/notes/system/active-directory) | Basic info about Active Directory |
 
 ---
 
@@ -39,8 +39,8 @@ order: 2
 
 | **Link** | **Description**    |
 |--------------- | --------------- |
-| [Linux Forensic](https://zeropio.github.io/notes/forensic/linux)  | Forensic for Linux   |
-| [Windows Forensic](https://zeropio.github.io/notes/forensic/windows)   | Forensic for Windows   |
+| [Linux Forensic](/notes/forensic/linux)  | Forensic for Linux   |
+| [Windows Forensic](/notes/forensic/windows)   | Forensic for Windows   |
 
 ---
 
@@ -48,8 +48,8 @@ order: 2
 
 | **Link**   | **Description**    |
 |--------------- | --------------- |
-| [Classical Ciphers](https://zeropio.github.io/notes/cryptography/classical-ciphers)  | Information about common ciphers   |
-| [Hash](https://zeropio.github.io/notes/cryptography/hash)  | Information about hashes   |
+| [Classical Ciphers](/notes/cryptography/classical-ciphers)  | Information about common ciphers   |
+| [Hash](/notes/cryptography/hash)  | Information about hashes   |
 
 ---
 
@@ -57,18 +57,18 @@ order: 2
 
 | **Link**   | **Description**    |
 |--------------- | --------------- |
-| [SQL Injection](https://zeropio.github.io/notes/vulnerabilities/sqli)   | Info about SQLi   |
-| [Cross Site Scripting](https://zeropio.github.io/notes/vulnerabilities/xss) | Info about XSS |
-| [File Inclusion](https://zeropio.github.io/notes/vulnerabilities/file-inclusion) | Info about LFI and RFI |
-| [XMl External Entity](https://zeropio.github.io/notes/vulnerabilities/xxe) | Info about XXE |
-| [Cross Site Request Forgeries](https://zeropio.github.io/notes/vulnerabilities/csrf) | Info about CSRF |
-| [Padding Oracle Attack](https://zeropio.github.io/notes/vulnerabilities/poa) | Info about POA |
+| [SQL Injection](/notes/vulnerabilities/sqli)   | Info about SQLi   |
+| [Cross Site Scripting](/notes/vulnerabilities/xss) | Info about XSS |
+| [File Inclusion](/notes/vulnerabilities/file-inclusion) | Info about LFI and RFI |
+| [XMl External Entity](/notes/vulnerabilities/xxe) | Info about XXE |
+| [Cross Site Request Forgeries](/notes/vulnerabilities/csrf) | Info about CSRF |
+| [Padding Oracle Attack](/notes/vulnerabilities/poa) | Info about POA |
 | [Buffer Overflow Linux](/notes/vulnerabilities/buffer-overflow-linux) | Buffer Overflow for Linux |
 | [Buffer Overflow Windows](/notes/vulnerabilities/buffer-overflow-windows) | Buffer Overflow for Windows |
-| [Command Injections](/notes/vulnerabilities(command-injections) | Performing commands injections |
+| [Command Injections](/notes/vulnerabilities/command-injections) | Performing commands injections |
 | [File Upload](/notes/vulnerabilities/file-upload) | File Upload Attacks |
-| [Server Side Attacks](/note/vulnerabilities/server-side-attacks) | Server Side Attacks: SSRF, SSI, ESI and SSTI |
-| [Others](https://zeropio.github.io/notes/vulnerabilities/others) | Info about many vulnerabilities |
+| [Server Side Attacks](/notes/vulnerabilities/server-side-attacks) | Server Side Attacks: SSRF, SSI, ESI and SSTI |
+| [Others](/notes/vulnerabilities/others) | Info about many vulnerabilities |
 
 ---
 
@@ -76,11 +76,11 @@ order: 2
 
 | **Link**   | **Description**    |
 |--------------- | --------------- |
-| [Tools](https://zeropio.github.io/notes/tools)   | Set of personal must-have tools   |
-| [Commands](https://zeropio.github.io/notes/tools/commands) | Variaty of commands for multiple purposes |
-| [Dorks](https://zeropio.github.io/notes/tools/dorks) | Dorks for many search engines |
-| [Nmap](https://zeropio.github.io/notes/tools/nmap) | Info about Nmap |
-| [Metasploit](https://zeropio.github.io/notes/tools/metasploit) | Metasploit usage |
+| [Tools](/notes/tools)   | Set of personal must-have tools   |
+| [Commands](/notes/tools/commands) | Variaty of commands for multiple purposes |
+| [Dorks](/notes/tools/dorks) | Dorks for many search engines |
+| [Nmap](/notes/tools/nmap) | Info about Nmap |
+| [Metasploit](/notes/tools/metasploit) | Metasploit usage |
 | [Brute Forcing](/notes/tools/brute-forcing) | Set of tools for brute forcing |
 | [Hashcat](/notes/tools/hashcat) | Usage of Hashcat |
 | [SQLMap](/notes/tools/sqlmap) | Usage of SQLMap |

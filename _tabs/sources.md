@@ -32,6 +32,7 @@ icon: fas fa-folder-open
 | [API Searcher](https://www.programmableweb.com/apis/directory) | Largest API Directory on the Web |
 | [CVE Searcher](https://cve.mitre.org/) | Mitre CVE searcher |
 | [GitHub Searcher](https://awesomeopensource.com/) | Searcher for GitHub projects |
+| [cirt](https://www.cirt.net/) | Nikto webpage, with default creds DB |
 | **Engine Search** |
 | [Google](https://google.com/) | Dorks |
 | [Shodan](https://www.shodan.io/) | Servers |
@@ -97,7 +98,9 @@ icon: fas fa-folder-open
 | [HackerOne](https://www.hackerone.com/) | Best platform for bug bounty |
 | [BugCrowd](https://bugcrowd.com/programs) | Another bug bounty platform |
 | [Intigriti](https://www.intigriti.com/) | European bug bounty platform |
-| [Google](https://bughunters.google.com/) | Google bug bounty platform |
+| [Google](https://bughunters.google.com/) | Google bug bounty program |
+| [Meta](https://www.facebook.com/whitehat) | Meta bug bounty program |
+| [Github](https://bounty.github.com/) | GitHub bug bountu program |
 | **News** |
 | [DanielMiessler](https://danielmiessler.com/) | Unsupervised Learning Community |
 | [TheHackerNews](https://thehackernews.com/) | Most famous hacking news |
