@@ -60,15 +60,14 @@ order: 2
 | [SQL Injection](/notes/vulnerabilities/sqli)   | Info about SQLi   |
 | [Cross Site Scripting](/notes/vulnerabilities/xss) | Info about XSS |
 | [File Inclusion](/notes/vulnerabilities/file-inclusion) | Info about LFI and RFI |
-| [XMl External Entity](/notes/vulnerabilities/xxe) | Info about XXE |
-| [Cross Site Request Forgeries](/notes/vulnerabilities/csrf) | Info about CSRF |
-| [Padding Oracle Attack](/notes/vulnerabilities/poa) | Info about POA |
+| [Session Security](/notes/vulnerabilities/session-security) | Session security, hijacking, XSS and CSRF |
 | [Buffer Overflow Linux](/notes/vulnerabilities/buffer-overflow-linux) | Buffer Overflow for Linux |
 | [Buffer Overflow Windows](/notes/vulnerabilities/buffer-overflow-windows) | Buffer Overflow for Windows |
 | [Command Injections](/notes/vulnerabilities/command-injections) | Performing commands injections |
 | [File Upload](/notes/vulnerabilities/file-upload) | File Upload Attacks |
+| [Web Attacks](/notes/vulnerabilities/web-attacks) | HTTP Verb Tampering, IDOR and XXE |
 | [Server Side Attacks](/notes/vulnerabilities/server-side-attacks) | Server Side Attacks: SSRF, SSI, ESI and SSTI |
-| [Others](/notes/vulnerabilities/others) | Info about many vulnerabilities |
+| [Others](/notes/vulnerabilities/others) | Info about some vulnerabilities (Shellshock, Type Juggling, POA...) |
 
 ---
 

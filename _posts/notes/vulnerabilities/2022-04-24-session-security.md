@@ -1,10 +1,10 @@
 ---
-title: Notes | CSRF
+title: Notes | Session Security
 author: Zeropio
 date: 2022-04-24
 categories: [Notes, Vulnerabilities]
-tags: [csrf]
-permalink: /notes/vulnerabilities/csrf
+tags: [csrf, xss]
+permalink: /notes/vulnerabilities/session-security
 ---
 
 # Cross Site Request Forgery
