@@ -12,6 +12,7 @@ order: 2
 | [HTTP](/notes/web/http)  | Basic explanation of HTTP and HTTPS   |
 | [Web Enumaration](/notes/web/enumeration) | Set of tools and resource for web enumaration |
 | [Web Applications](/notes/web/web-applications) | Basic explanation of Web Applications |
+| [Web Services and APIS](/notes/web/services-api) | Attacks to Web Services and APIs |
 | [Fuzzing](/notes/web/fuzzer) | Explanation and set of tools for fuzzing |
 | [Broken Authentication](/notes/web/broken-auth) | Brute Force, Passwords Attacks and Session Attacks |
 | [JavaScript Deobfuscation](/notes/web/javascript-deobfuscation) | Help for JavaScript Deobfuscation |
