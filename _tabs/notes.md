@@ -60,7 +60,7 @@ order: 2
 | [SQL Injection](/notes/vulnerabilities/sqli)   | Info about SQLi   |
 | [Cross Site Scripting](/notes/vulnerabilities/xss) | Info about XSS |
 | [File Inclusion](/notes/vulnerabilities/file-inclusion) | Info about LFI and RFI |
-| [Session Security](/notes/vulnerabilities/session-security) | Session security, hijacking, XSS and CSRF |
+| [Session Security](/notes/vulnerabilities/session-security) | Session security, hijacking, XSRF and CSRF |
 | [Buffer Overflow Linux](/notes/vulnerabilities/buffer-overflow-linux) | Buffer Overflow for Linux |
 | [Buffer Overflow Windows](/notes/vulnerabilities/buffer-overflow-windows) | Buffer Overflow for Windows |
 | [Command Injections](/notes/vulnerabilities/command-injections) | Performing commands injections |
