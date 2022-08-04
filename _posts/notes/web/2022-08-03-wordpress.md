@@ -42,8 +42,8 @@ The root directory of WordPress contains files that are needed to configure Word
 - `license.txt`{: .filepath}: contains useful information such as the version WordPress installed
 - `wp-activatr.php`{: .filepath}: is used for the email activation process when setting up a new WordPress site
 - `wp-admin`{: .filepath}: folder contains the login page for administrator access and the backend dashboard, the login page can be located at one of the following paths:
-  - `/wp-admin/login.php`{: .filpath}
-  - `/wp-admin/wp-login.php`{: .filpath}
+  - `/wp-admin/login.php`{: .filepath}
+  - `/wp-admin/wp-login.php`{: .filepath}
   - `/login.php`{: .filepath}
   - `/wp-login.php`{: .filepath}
 - `xmlrpc.php`{: .filepath}: is a file representing a feature of WordPress that enables data to be transmitted with HTTP acting as the transport mechanism and XML as the encoding mechanism, this type of communication has been replaced by the WordPress REST API 
@@ -131,7 +131,7 @@ zero@pio$ curl -s -X GET http://<TARGET> | sed 's/href=/\n/g' | sed 's/src=/\n/g
 
 The response headers may also contain version numbers for specific plugins. However, not all installed plugins and themes can be discovered passively. In this case, we have to send requests to the server actively to enumerate them. We can do this by sending a GET request that points to a directory or file that may exist on the server:
 ```console
-curl -I -X GET http://<TARGET>/wp-content/plugins/mail-masta
+zero@pio$ curl -I -X GET http://<TARGET>/wp-content/plugins/mail-masta
 ```
 
 ## Directory Indexing 
