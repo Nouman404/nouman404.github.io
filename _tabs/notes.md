@@ -15,6 +15,7 @@ order: 2
 | [Web Services and APIS](/notes/web/services-api) | Attacks to Web Services and APIs |
 | [Fuzzing](/notes/web/fuzzer) | Explanation and set of tools for fuzzing |
 | [Broken Authentication](/notes/web/broken-auth) | Brute Force, Passwords Attacks and Session Attacks |
+| [Wordpress](/notes/web/wordpress) | Attacking Wordpress |
 | [JavaScript Deobfuscation](/notes/web/javascript-deobfuscation) | Help for JavaScript Deobfuscation |
 
 ---
