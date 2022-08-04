@@ -18,6 +18,14 @@ icon: fas fa-folder-open
 | [SecurityZines](https://securityzines.com/) | Cybersec terms |
 | [TheHackerRecipes](https://www.thehacker.recipes/) | More hacking information |
 | [samsclass](https://samsclass.info/127/ED_2020.shtml) | More hacking information |
+| **Vulnerability Disclosures** |
+| [CVEdetails](https://www.cvedetails.com/) | Info about CVE |
+| [packet storm](https://packetstormsecurity.com/) | Info about vulnerabilities |
+| [Exploitdb](https://www.exploit-db.com/) | Database for exploits |
+| [NIST](https://nvd.nist.gov/vuln/search?execution=e2s1) | National Vulnerability Database |
+| [BugTraq](https://bugtraq.securityfocus.com/archive) | Mailing list for vulnerabilities |
+| [First CVSS calculator](https://www.first.org/cvss/calculator/3.1) | Common Vulnerability Scoring System Version 3.1 Calculator |
+| [NVD CVSS calculator](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator) | Common Vulnerability Scoring System Version 3.1 Calculator |
 | **Resources** |
 | [VirusTotal](https://www.virustotal.com/gui/home/upload) | Best page for searching malware |
 | [WADComs](https://wadcoms.github.io/) | Set of tools for Windows/AD environments |
@@ -28,7 +36,6 @@ icon: fas fa-folder-open
 | [Windows ISO](https://www.heidoc.net/joomla/technology-science/microsoft/67-microsoft-windows-and-office-iso-download-tool%EF%BB%BF) | Old ISOs for Windows |
 | [bashrc Generator](https://bashrcgenerator.com/) | For generate bash prompts |
 | **Databases** |
-| [Exploitdb](https://www.exploit-db.com/) | Bigger database with exploits |
 | [API Searcher](https://www.programmableweb.com/apis/directory) | Largest API Directory on the Web |
 | [CVE Searcher](https://cve.mitre.org/) | Mitre CVE searcher |
 | [GitHub Searcher](https://awesomeopensource.com/) | Searcher for GitHub projects |
