@@ -10,7 +10,7 @@ order: 2
 | **Link**   | **Description**    |
 |--------------- | --------------- |
 | [HTTP](/notes/web/http)  | Basic explanation of HTTP and HTTPS   |
-| [Web Enumaration](/notes/web/enumeration) | Set of tools and resource for web enumaration |
+| [Web Enumaration](/notes/web/enumeration-web) | Set of tools and resource for web enumaration |
 | [Web Applications](/notes/web/web-applications) | Basic explanation of Web Applications |
 | [Web Services and APIS](/notes/web/services-api) | Attacks to Web Services and APIs |
 | [Fuzzing](/notes/web/fuzzer) | Explanation and set of tools for fuzzing |
@@ -25,6 +25,7 @@ order: 2
 | **Link**   | **Description**    |
 |--------------- | --------------- |
 | **General**  |
+| [Enumaration](/notes/system/enumaration) | Enumeration techniques and tools |
 | [Services](/notes/system/services) | Common services |
 | [Network](/notes/system/network) | Network aid |
 | [Shell](/notes/system/shell) | Reverse shell and more

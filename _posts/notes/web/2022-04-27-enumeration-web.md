@@ -4,7 +4,7 @@ author: Zeropio
 date: 2022-04-27
 categories: [Notes, Web]
 tags: [enumeration]
-permalink: /notes/web/enumeration
+permalink: /notes/web/enumeration-web
 ---
 
 The information gathering phase is the first step in every penetration test where we need to simulate external attackers without internal information from the target organization. During this process, our objective is to identify as much information as we can from the following areas:
@@ -250,6 +250,15 @@ zero@pio$ ffuf -w ./vhosts -u http://<target> -H "HOST: FUZZ.<target>" -fs <byte
 
 ---
 
+# Cloud Resources 
+
+The use of cloud, such as AWS, GCP, Azure, and others, is now one of the essential components for many companies nowadays. There are often vulnerabilities between Amazon (AWS), Google (GCP), and Microsoft (Azure). We can use the Google Dorks `inurl:` and `intext:` to narrow our search to specific terms: `intex:<EXAMPLE> inurl:amazonaws.com` or `intext:<EXAMPLE> inurl:blob.core.windows.net`.
+
+With the help of some tools like [GrayHat](https://buckets.grayhatwarfare.com/) we can make a faster enumeration. Sometimes, this page can contain leaked SSH keys.
+
+
+---
+
 # Other
 
 ## Webpages 
@@ -266,6 +275,9 @@ zero@pio$ ffuf -w ./vhosts -u http://<target> -H "HOST: FUZZ.<target>" -fs <byte
 | [robtex](https://www.robtex.com/) | To get more DNS information |
 | [reverseip](https://viewdns.info/reverseip/) | To get reverse ip information |
 | [HackerTarget](https://hackertarget.com/) | Major tools |
+| [Domain Glass](https://domain.glass/) | DNS Record, IP address hostname, and WHOIS |
+| [GrayHat Buckets](https://buckets.grayhatwarfare.com/) | Cloud information |
+
 
 
 ## Tools
