@@ -804,6 +804,6 @@ zero@pio$ wmiexec.py <USER>:<PASSWORD>@<TARGET> "hostname"
 | **WMI** |
 | [Impacket](https://raw.githubusercontent.com/SecureAuthCorp/impacket/master/examples/wmiexec.py) | Impacket for WMI |
 
-> For Web Enumeration check [here](https://zeropio.github.io/notes/web/enumeration)
+> For Web Enumeration check [here](https://zeropio.github.io/notes/web/enumeration-web)
 {: .prompt-alert}
 
