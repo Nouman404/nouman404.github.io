@@ -23,7 +23,7 @@ timezone: Europe/Madrid
 
 title: Zeropio's Blog                          # the main title
 
-tagline: Junior Pentester and Bug Hunter    # it will display as the sub-title
+tagline: Junior Pentester & Bug Hunter    # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Personal blog, for writeups, own documentation and stuff.
