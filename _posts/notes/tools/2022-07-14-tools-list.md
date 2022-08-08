@@ -22,6 +22,7 @@ zaproxy
 maltego
 seclists
 nvim
+smtp-user-enum 
 ```
 
 # For Windows
