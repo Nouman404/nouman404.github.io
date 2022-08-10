@@ -233,9 +233,6 @@ msf6 auxiliary(server/socks_proxy) > set SRVPORT 9050
 msf6 auxiliary(server/socks_proxy) > set SRVHOST 0.0.0.0
 msf6 auxiliary(server/socks_proxy) > set version 4a
 msf6 auxiliary(server/socks_proxy) > run
-[*] Auxiliary module running as background job 0.
-
-[*] Starting the SOCKS proxy server
 ```
 
 We can test it is working with the `jobs` command. Assure that proxychains is properly configure.
@@ -610,7 +607,7 @@ C:\pivot> regsvr32.exe SocksOverRDP-Plugin.dll
 
 Now we can connect through RDP, we will see a prompt saying that SocksOverRDP is enable. We will need to transfer SocksOverRDPx64.zip or just the SocksOverRDP-Server.exe to the target. Then start it with admin privileges. When we go back to our foothold target and check with Netstat, we should see our SOCKS listener started on 127.0.0.1:1080:
 ```console
-C:\pivot> etstat -antb | findstr 1080
+C:\pivot> netstat -antb | findstr 1080
 
   TCP    127.0.0.1:1080         0.0.0.0:0              LISTENING
 ```

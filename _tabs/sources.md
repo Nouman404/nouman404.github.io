@@ -13,7 +13,6 @@ icon: fas fa-folder-open
 | [Explain shel](https://explainshell.com/) | Web explaining shell commands |
 | [Privacy Guides](https://privacyguides.org/) | Guide for a better privacy |
 | [Distrotest](https://distrotest.net/index.php) | Forum for Linux Distro |
-| [Game hacking](https://guidedhacking.com/) | Forum for game hacking |
 | [HackTricks](https://book.hacktricks.xyz/) | Many information about pentesting and CTFs |
 | [SecurityZines](https://securityzines.com/) | Cybersec terms |
 | [TheHackerRecipes](https://www.thehacker.recipes/) | More hacking information |
@@ -114,9 +113,11 @@ icon: fas fa-folder-open
 | [TheHackerNews](https://thehackernews.com/) | Most famous hacking news |
 | [Wired](https://www.wired.com/category/security/) | Another security newspaper |
 | [Securib](https://securib.ee/) | Security newspaper |
-| **Hmmm...** |
+| **Forums** |
+| [breached](https://breached.to/) | Forum for breached data |
+| [Guided Hacking](https://guidedhacking.com/) | Forum for game hacking |
+| **Ransomware** |
 | [Ransomwiki](https://darkfeed.io/ransomwiki/) | Info about major ransom groups |
 | [vx underground](https://www.vx-underground.org/) | Major ransomware repository |
 | [ContiNews ](https://continewsnv5otx5kaoje7krkto2qbu3gtqef22mnr7eaxw3y6ncz3ad.onion.ly/) | Enterprises leaks |
-| [breached](https://breached.to/) | Forum for breached data |
 
