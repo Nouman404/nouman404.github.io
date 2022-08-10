@@ -35,6 +35,7 @@ icon: fas fa-folder-open
 | [BeautifyTools](https://beautifytools.com/) | Beautify for minifies codes |
 | [Windows ISO](https://www.heidoc.net/joomla/technology-science/microsoft/67-microsoft-windows-and-office-iso-download-tool%EF%BB%BF) | Old ISOs for Windows |
 | [bashrc Generator](https://bashrcgenerator.com/) | For generate bash prompts |
+| [WhereGoes](https://wheregoes.com/) | Set a redirection paths from links |
 | **Databases** |
 | [API Searcher](https://www.programmableweb.com/apis/directory) | Largest API Directory on the Web |
 | [CVE Searcher](https://cve.mitre.org/) | Mitre CVE searcher |
@@ -113,8 +114,9 @@ icon: fas fa-folder-open
 | [TheHackerNews](https://thehackernews.com/) | Most famous hacking news |
 | [Wired](https://www.wired.com/category/security/) | Another security newspaper |
 | [Securib](https://securib.ee/) | Security newspaper |
-| **Ransomware** |
+| **Hmmm...** |
 | [Ransomwiki](https://darkfeed.io/ransomwiki/) | Info about major ransom groups |
 | [vx underground](https://www.vx-underground.org/) | Major ransomware repository |
 | [ContiNews ](https://continewsnv5otx5kaoje7krkto2qbu3gtqef22mnr7eaxw3y6ncz3ad.onion.ly/) | Enterprises leaks |
+| [breached](https://breached.to/) | Forum for breached data |
 

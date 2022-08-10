@@ -25,12 +25,13 @@ order: 2
 | **Link**   | **Description**    |
 |--------------- | --------------- |
 | **General**  |
-| [Enumaration](/notes/system/enumaration) | Enumeration techniques and tools |
+| [Enumaration](/notes/system/enumeration) | Enumeration techniques and tools |
 | [Services](/notes/system/services) | Common services |
 | [Network](/notes/system/network) | Network aid |
 | [Shell](/notes/system/shell) | Reverse shell and more |
 | [File Transfer](/notes/system/transfer-files) | Help for transfer files |
 | [Password Attacks](/notes/system/password-attacks) | Remote, Windows, Linux password attacks and cracking |
+| [Pivoting, Tunneling, and Port Forwarding](/notes/system/pivoting-tunneling-portforwarding) | SSH Socket,... |
 | **Linux** |
 | [Linux Privilege Escalation](/notes/system/linux-privilege-escalation) | PE for Linux |
 | **Windows** |
