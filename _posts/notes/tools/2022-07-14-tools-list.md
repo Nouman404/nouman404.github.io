@@ -23,6 +23,7 @@ maltego
 seclists
 nvim
 smtp-user-enum 
+eyewitness
 ```
 
 # For Windows

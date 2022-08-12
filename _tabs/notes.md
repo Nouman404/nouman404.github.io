@@ -11,7 +11,8 @@ order: 2
 |--------------- | --------------- |
 | [HTTP](/notes/web/http)  | Basic explanation of HTTP and HTTPS   |
 | [Web Enumaration](/notes/web/enumeration-web) | Set of tools and resource for web enumaration |
-| [Web Applications](/notes/web/web-applications) | Basic explanation of Web Applications |
+| [Common Applications](/notes/web/common-applications) | Attacks to CMS, Servlet Containers, Splunk and GitLab |
+| 
 | [Web Services and APIS](/notes/web/services-api) | Attacks to Web Services and APIs |
 | [Fuzzing](/notes/web/fuzzer) | Explanation and set of tools for fuzzing |
 | [Broken Authentication](/notes/web/broken-auth) | Brute Force, Passwords Attacks and Session Attacks |

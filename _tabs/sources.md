@@ -43,6 +43,7 @@ icon: fas fa-folder-open
 | **Engine Search** |
 | [Google](https://google.com/) | Dorks |
 | [Shodan](https://www.shodan.io/) | Servers |
+| [DeHashed](https://dehashed.com/) | hacked-database search-engine |
 | [Onyphe](https://onyphe.io/) | Servers |
 | [Censys](https://censys.io/) | Servers |
 | [IVRE](https://ivre.rocks/) | Servers |
