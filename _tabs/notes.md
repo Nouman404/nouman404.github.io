@@ -12,7 +12,6 @@ order: 2
 | [HTTP](/notes/web/http)  | Basic explanation of HTTP and HTTPS   |
 | [Web Enumaration](/notes/web/enumeration-web) | Set of tools and resource for web enumaration |
 | [Common Applications](/notes/web/common-applications) | Attacks to CMS, Servlet Containers, Splunk and GitLab |
-| 
 | [Web Services and APIS](/notes/web/services-api) | Attacks to Web Services and APIs |
 | [Fuzzing](/notes/web/fuzzer) | Explanation and set of tools for fuzzing |
 | [Broken Authentication](/notes/web/broken-auth) | Brute Force, Passwords Attacks and Session Attacks |
@@ -37,6 +36,7 @@ order: 2
 | [Linux Privilege Escalation](/notes/system/linux-privilege-escalation) | PE for Linux |
 | **Windows** |
 | [Windows](/notes/system/windows) | Basic info about Windows |
+| [Windows Privilege Escalation](/notes/system/windows-privelege-escalation) | PE for Windows |
 | [Active Directory](/notes/system/active-directory) | Basic info about Active Directory |
 
 ---

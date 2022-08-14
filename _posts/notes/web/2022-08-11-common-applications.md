@@ -2,9 +2,9 @@
 title: Notes | Attacking Common Applications
 author: Zeropio
 date: 2022-08-11
-categories: [Notes, System]
+categories: [Notes, Web]
 tags: [cms, tomcat, jenkins, splunk, gitlab]
-permalink: /notes/system/common-applications
+permalink: /notes/web/common-applications
 ---
 
 Web-based applications are the most prevalent system during pentesting. We will face CMS, web applications, intranet portals, repositories, network monitoring tools, ticketing systems, wikis, knowledge bases, issue trackers, servlet container applications,... Web applications are interactive applications that can be accessed via web browsers, with a client-server architecture. Usually, made with a frontend and a backend. For example, some of the applications we may face:
