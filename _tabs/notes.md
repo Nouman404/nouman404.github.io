@@ -36,7 +36,7 @@ order: 2
 | [Linux Privilege Escalation](/notes/system/linux-privilege-escalation) | PE for Linux |
 | **Windows** |
 | [Windows](/notes/system/windows) | Basic info about Windows |
-| [Windows Privilege Escalation](/notes/system/windows-privilege-escalation) | PE for Windows |
+| [Windows Privilege Escalation](/notes/system/windows-privilage-escalation) | PE for Windows |
 | [Active Directory](/notes/system/active-directory) | Basic info about Active Directory |
 | [AD Enumeration & Attacks](/notes/system/ad-enum-attack) | Enumeration and attacks for Active Directory |
 
