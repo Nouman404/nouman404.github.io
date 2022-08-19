@@ -1141,6 +1141,7 @@ PS C:\zeropio> select-string -Path C:\Users\htb-student\Documents\*.txt -Pattern
 C:\zeropio> dir /S /B *pass*.txt == *pass*.xml == *pass*.ini == *cred* == *vnc* == *.config*
 C:\zeropio> where /R C:\ *.config
 PS C:\zeropio> Get-ChildItem C:\ -Recurse -Include *.rdp, *.config, *.vnc, *.cred -ErrorAction Ignore
+PS C:\zeropio> dir C:\ /s /b | find "<FILE>" | findstr"<FILE>"
 ```
 
 People often use the StickyNotes app on Windows workstations to save passwords and other information, not realizing it is a database file. This file is located at `C:\Users\<user>\AppData\Local\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe\LocalState\plum.sqlite`{: .filepath}:
@@ -1223,7 +1224,7 @@ zero@pio$ python2.7 keepass2john.py ILFREIGHT_Help_Desk.kdbx
 
 Now we can use the 13400 mode from hashcat:
 ```console
-hashcat -m 13400 keepass_hash <WORDLIST>
+zero@pio$ hashcat -m 13400 keepass_hash <WORDLIST>
 ```
 
 ### Email
