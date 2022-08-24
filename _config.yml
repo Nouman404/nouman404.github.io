@@ -16,36 +16,36 @@ lang: en
 prefer_datetime_locale:
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Europe/Madrid
+timezone: Europe/Paris
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Zeropio's Blog                          # the main title
+title: BatBato's Blog                          # the main title
 
-tagline: Junior Pentester & Bug Hunter    # it will display as the sub-title
+tagline: Here is my blog   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Personal blog, for writeups, own documentation and stuff.
+  A blog to take notes of what I learn, Writ-Up and many more...
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'zeropio.github.io'
+url: 'https://nouman404.github.io/'
 
 github:
-  username: zeropio             # change to your github username
+  username: Batbato             # change to your github username
 
 twitter:
-  username: ZeropioWasTaken            # change to your twitter username
+  username:             # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: zeropio
-  email: zeropio@pm.me            # change to your email address
+  name: Bat
+  email: batbato@pm.me             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/zeropiowastaken      # change to your twitter homepage
-    - https://github.com/zeropio       # change to your github homepage
+    #- https://twitter.com/username      # change to your twitter homepage
+    - https://github.com/Nouman404/       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
