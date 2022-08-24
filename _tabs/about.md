@@ -21,6 +21,6 @@ order: 5
 ![scripting](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/assets/img/tux.png){: width="40" height="40" }
 ![scripting](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/assets/img/docker.png){: width="40" height="40" }
 ![scripting](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/assets/img/burpsuite.png){: width="35" height="35" }
-![scripting](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/assets/img/c.png){: width="35" height="35" }
+![scripting](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/assets/img/C.png){: width="35" height="35" }
 ![scripting](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/assets/img/js.png){: width="35" height="35" }
 ![scripting](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/assets/img/php.png){: width="35" height="35" }
