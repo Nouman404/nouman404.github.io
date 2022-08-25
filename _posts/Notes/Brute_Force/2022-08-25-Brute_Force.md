@@ -4,7 +4,7 @@ author: BatBato
 date: 2022-08-25
 categories: [Notes, Web, Brute Force]
 tags: [Web, Brute Force, Passwords, Credentials]
-permalink: /Notes/Brute_Force/Brute_Force.md
+permalink: /Notes/Brute_Force/Brute_Force
 ---
 
 # Brute Force
