@@ -24,6 +24,9 @@ Most of the time in Linux OS (Operating System), we are going to use the termina
 ```
 Let's break this down. This tells you that your current user is kali (the first one), that the host name (name of the machine) is kali (second one), that you are in the directory located at ```~/Desktop``` and that you are a regular user (the ```$``` sign). If you were an administrator (called ```root```) on Linux, then you should have a ```#``` instead of the ```$```.
 
+> From now I will use the notation ```└─$ COMMAND```. Don't write ```└─$``` in your terminal, just write the command.
+{: .prompt-warning }
+
 ## Directories
 
 On Linux, we begin the directories at the root ```/```. There is nothing before. Any user on the machine has a "home directory" which is located at ```/home/username```. So if your name is "bob" then your home directory is located at ```/home/bob```. Your home directory can also be written as ```~/``` it's the same as ```/home/username```.
@@ -51,10 +54,59 @@ drwxr-xr-x  2 kali kali 4096 Aug 24 18:14 test_dir
 ```
 Here we see the line of the object called ```test_dir``` begin with a "d" which means "directory" and the line of the object ```test_file``` begin with a "-" which means that it's a file. We can also see the hidden file ```.hidden_file```.
 
+You can change your position in the machine by using the ```cd``` command. First we need to clarify some notations. The ```./``` or ```.``` means "the curent directory" (the one we are in). ```../``` means the previous one. For exemple if we are in ```~/``` and we want to go on the desktop we should type :
+```console
+└─$ cd Desktop 
+```
+Or 
+```console
+└─$ cd ./Desktop 
+```
+Or
+```console
+└─$ cd ~/Desktop 
+```
+> You can use multiple ```../```` like ```../..``` to go back in two or more directories
+{: .prompt-tip }
+
+
 ### Rights
 
 Thank's to the ```-l``` option of the ```ls``` command you can also see the right of a file or directory. So if we skip the first character ("d" or "-") we get something like this ```rw-r--r--```. This can be split in 3 parts like this ```XXXYYYZZZ```. The "X" part represents the rights for the user  that owns the file. The "Y" part represents the rights for the group that owns the file. The "Z" part represents the rights for the other users on the machine.
 You can notice that there is either a "r", a "w" or a "x". They are respectively for "read" permission, "write" permission and "eXecute" permission. 
 
-The user that owns the file is, here, ```kali``` (the first one) and the group is ```kali``` (the second one).
+The user that owns the file is (here) ```kali``` (the first one) and the group is ```kali``` (the second one). Here is an [article](https://linuxfoundation.org/blog/classic-sysadmin-understanding-linux-file-permissions/) about rights in linux.
 
+## Files
+
+You can see the content of a file with the ```cat``` command as follow :
+```console
+└─$ cat test_file
+Some text in a file
+```
+
+You can also open it in a text editor like ```nano```, ```vi``` or ```vim```. You use these commands like this : ```text_editor text_file```
+To save your modification in nano we use the shortcut ```CTRL+O``` and ```CTRL+X``` to leave the text editor. For ```vi``` or ```vim``` you need to enter in ```insert mode``` by typing ```I```. When you have finished modifying the file you need to press ```ESC``` and write ```:x```. If you made a mistake and need to live the text editor you can use the command ```:qa!```.
+
+# Find things on the machine
+
+If you need to find a file or directory on the machine you can use the ```find``` command as follows :
+```console
+└─$ find / -type f -name my_name 2>/dev/null
+```
+The ```/``` means that we want to search from the root directory. The ```f``` means that we want to look for a file (respectively "d" for a directory).
+
+> You can use the -iname instead of -name if you are not sure about the case of the name (if it's "my_name" or "mY_NaMe")
+{: .prompt-tip }
+> Note the ```2>/dev/null```, this is just to redirect errors so you don't see them and don't overload the output.
+{: .prompt-info }
+
+
+If you know a word that the file contains then you can use the ```grep``` command. the grep command is usualy used like this :
+```console
+└─$ grep "word(s) to find" file_name
+```
+But if you don't know in which file to look then you can use the command as follows :
+```console
+└─$ grep -iRl "word(s) to find" / 2>/dev/null
+```
