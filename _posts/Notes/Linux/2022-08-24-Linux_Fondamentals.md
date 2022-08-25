@@ -66,7 +66,7 @@ Or
 ```console
 └─$ cd ~/Desktop 
 ```
-> You can use multiple ```../```` like ```../..``` to go back in two or more directories
+> You can use multiple ```../``` like ```../..``` to go back in two or more directories
 {: .prompt-tip }
 
 
@@ -96,7 +96,7 @@ If you need to find a file or directory on the machine you can use the ```find``
 ```
 The ```/``` means that we want to search from the root directory. The ```f``` means that we want to look for a file (respectively "d" for a directory).
 
-> You can use the -iname instead of -name if you are not sure about the case of the name (if it's "my_name" or "mY_NaMe")
+> You can use the ```-iname``` instead of ```-name``` if you are not sure about the case of the name (if it's "my_name" or "mY_NaMe")
 {: .prompt-tip }
 > Note the ```2>/dev/null```, this is just to redirect errors so you don't see them and don't overload the output.
 {: .prompt-info }
