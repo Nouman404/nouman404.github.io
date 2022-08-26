@@ -9,8 +9,8 @@ order: 2
 
 | **Link**   | **Description**    |
 |--------------- | --------------- |
-| [Brute Force](/Notes/Brute_Force/2022-08-25-Brute_Force.md)  | Basic brute force attacks   |
-| [Password Cracking](/Notes/Brute_Force/2022-08-26-Password_Cracking.md)  | Basic brute force attacks   |
+| [Brute Force](/Notes/Brute_Force/2022-08-25-Brute_Force)  | Basic brute force attacks   |
+| [Password Cracking](/Notes/Brute_Force/2022-08-26-Password_Cracking)  | Basic brute force attacks   |
 
 ---
 
