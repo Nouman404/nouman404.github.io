@@ -1,5 +1,5 @@
 ---
-title: Notes | Brute Force
+title: Notes | Password_Cracking
 author: BatBato
 date: 2022-08-25
 categories: [Notes, Brute Force]
