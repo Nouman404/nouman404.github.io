@@ -22,6 +22,13 @@ order: 2
 
 ---
 
+# Web
+
+| **Link**   | **Description**    |
+|--------------- | --------------- |
+| [Command Injection](/Notes/Web/Command_Injection) | Command injection, RFI, LFI, bypass techniques... |
+---
+
 # Privilege Escalation
 
 | **Link**   | **Description**    |
