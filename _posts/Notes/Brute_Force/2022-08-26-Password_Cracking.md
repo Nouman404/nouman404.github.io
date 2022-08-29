@@ -160,6 +160,8 @@ COMMING SOON
 Just like ```hashcat``` ```John The Ripper``` also known as ```john``` is a password cracking tool. You can use ```john``` as follows:
 ```john HASHFILE``` or ```john --wordlist=WORDLIST HASHFILE```. You don't need to specify the type of hash but it's preferable to do so because if not it will take more time. You can use it like this ```john hash.txt --format=raw-md5 --wordlist=wordlist.txt```
 
+> You can install ```John``` with the following command : ```sudo apt install john```
+{: .prompt-info }
 > You can see all formats with the command ```john --list=formats```. I advise you to grep the type you are looking for like ```john --list=formats | grep -iF "md5"```
 {: .prompt-tip }
 
