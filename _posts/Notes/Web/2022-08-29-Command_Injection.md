@@ -16,7 +16,10 @@ A command injection occurs when a user input is not sanitised. A basic example c
 Local File Inclusion (```LFI```) is caused when an application builds a path to executable code using an attacker-controlled variable in a way that allows the attacker to control which file is executed at run time.
 
 Some basic LFI could be :
-[http://SITE/index.php?SOMETHING=/etc/passwd](http://SITE/index.php?SOMETHING=/etc/passwd)
+
+```console
+http://SITE/index.php?SOMETHING=/etc/passwd
+```
 
 This can print the ```passwd``` file if the site is vulnerable to ```LFI```.
 
