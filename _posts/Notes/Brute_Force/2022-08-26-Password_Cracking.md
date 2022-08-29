@@ -158,7 +158,10 @@ COMMING SOON
 ## John The Ripper
 
 Just like ```hashcat``` ```John The Ripper``` also known as ```john``` is a password cracking tool. You can use ```john``` as follows:
-```john HASHFILE``` or ```john --wordlist=WORDLIST HASHFILE```. You don't need to specify the type of hash but it's preferable to do so because if not it will take more time. You can use it like this ```john hash.txt --format=raw-md5 --wordlist=wordlist.txt```
+```john HASHFILE``` or ```john --wordlist=WORDLIST HASHFILE```. You don't need to specify the type of hash but it's preferable to do so because if not it will take more time. You can use it like this 
+```console
+john hash.txt --format=raw-md5 --wordlist=wordlist.txt
+```
 
 > You can install ```John``` with the following command : ```sudo apt install john```
 {: .prompt-info }
@@ -171,8 +174,14 @@ John can also be used to crack files protected with a password. We are going to 
 
 ```SSH keys``` can be used to connect to a server without passwords. Thank's to this an attacker can't connect to the server if he doesn't have the key. To increase the security, we can add a ```password``` to the SSH key. John allows us to crack this password. 
 
-1. ```python  /usr/share/john/ssh2john.py id_rsa > id_rsa.hash```
-2. ```john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa.hash```
+1. 
+```console
+python  /usr/share/john/ssh2john.py id_rsa > id_rsa.hash
+```
+2. 
+```console
+john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa.hash
+```
 
 The first step put the password hash in a file called ```id_rsa.hash```. The second step try to crack it. You can now connect to the victim machine with the command and then provide the password for the ssh key: 
 ```ssh -i id_rsa user@IP```
@@ -182,7 +191,9 @@ The first step put the password hash in a file called ```id_rsa.hash```. The sec
 If you arrive on a machine and can access the ```passwd``` and the ```shadow``` file, this can be leveraged to get the password of any user (if their hash can be cracked). The ```unshadow``` command is a Linux command that allows us to combine the passwd and the shadow files. It can be used like this : ```unshadow passwd shadow > unshadowed.txt```. We can now try to crack the passwords of each user with the following command :
 
 
-```john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt unshadowed.txt```
+```console
+john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt unshadowed.txt
+```
 
 ### Zir and RAR files
 
@@ -190,16 +201,28 @@ You can encounter zip or rar files protected with a password. As for the SSH key
 
 #### Zip
 
-```zip2john crack2.zip > zip.hashes```
+```console
+zip2john crack2.zip > zip.hashes
+```
 
-```john zip.hashes```     or     ```john --wordlist=wordlist.txt zip.hashes```
+```console
+john zip.hashes
+```
+or
+```console
+john --wordlist=wordlist.txt zip.hashes
+```
 
 
 #### Rar
 
-```rar2john crack.rar > zip.hashes```
+```console
+rar2john crack.rar > zip.hashes
+```
 
-```john --wordlist=wordlist.txt zip.hashes```
+```console
+john --wordlist=wordlist.txt zip.hashes
+```
 
 ### More John functionalities
 
