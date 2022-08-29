@@ -17,7 +17,9 @@ Local File Inclusion (```LFI```) is caused when an application builds a path to 
 
 Some basic LFI could be :
 
-```http://SITE/index.php?SOMETHING=/etc/passwd```
+```console
+http://SITE/index.php?SOMETHING=/etc/passwd
+```
 
 This can print the ```passwd``` file if the site is vulnerable to ```LFI```.
 
