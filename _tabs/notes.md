@@ -18,7 +18,6 @@ order: 2
 
 | **Link**   | **Description**    |
 |--------------- | --------------- |
-| **General**  |
 | [Linux Fondamentals](/Notes/Linux/) | Linux Fondamentals, must know commands |
 
 ---
@@ -27,5 +26,4 @@ order: 2
 
 | **Link**   | **Description**    |
 |--------------- | --------------- |
-| **General**  |
 | [Linux Privilege Escalation](Notes/Privilege_Escalation/) | Linux basic PE |
