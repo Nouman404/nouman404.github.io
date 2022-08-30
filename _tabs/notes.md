@@ -30,6 +30,14 @@ order: 2
 
 ---
 
+# Footprinting
+
+| **Link**   | **Description**    |
+|--------------- | --------------- |
+| [Port Enumeration](/Notes/Footprinting/Port_Enumeration) | Nmap basic commands and how to use it |
+
+---
+
 # Privilege Escalation
 
 | **Link**   | **Description**    |
