@@ -35,6 +35,7 @@ order: 2
 | **Link**   | **Description**    |
 |--------------- | --------------- |
 | [Port Enumeration](/Notes/Footprinting/Port_Enumeration) | Nmap basic commands and how to use it |
+| [OSINT](/Notes/Footprinting/OSINT) | Basic OSINT, DNS and VHOST enumeration |
 
 ---
 
