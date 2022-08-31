@@ -2,7 +2,7 @@
 title: Notes | Port Enumeration
 author: BatBato
 date: 2022-08-30
-categories: [Notes, Port Enumeration]
+categories: [Notes, Footprinting, Port Enumeration]
 tags: [Web, Fuzzing, Ports, Enumeration, Nmap]
 permalink: /Notes/Footprinting/Port_Enumeration
 ---
