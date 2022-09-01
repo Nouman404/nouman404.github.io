@@ -80,20 +80,20 @@ ffuf -u https://FUZZ.example.com/ -w WORDLIST
 
 
 >  If you don't have it yet you can download [Seclists](https://www.kali.org/tools/seclists/) with ```sudo apt install seclists```. You will find a lot of wordlist and the ones we are interested in here are the ones in the ```/usr/share/seclists/Discovery/DNS/``` directory. The ```subdomains-top1million-110000.txt``` is a pretty complete.
-{: prompt-tip }
+{: .prompt-tip }
 
 > As you can see, ```ffuf``` is pretty versatile tool and can basically fuzz anything. You can also use it for brute force if you want, for example.
-{: prompt-info }
+{: .prompt-info }
 
 ## FTP
 
 File Transfert Protocol (FTP) is a standard communication protocol used for the transfer of files from a server to a client. To connect to an FTP server we can use the ```ftp IP -P PORT```command. The default FTP port is ```21``` so if you have the same port for the FTP server on the machine you are attacking then you don't have to specify the ```-P``` flag. When you run the command, you will be asked to connect with a ```username``` and ```password```. If you don't have such things, you can try to use the default ```anonymous``` user without a password. The ```anonymous``` connexion should be disabled but it's worth trying.
 
 > The ```-sC``` of ```nmap``` can list files if anonymous login is enabled.
-{: prompt-tip }
+{: .prompt-tip }
 
 > There may be hidden files so don't forget the ```-a``` flag of the ```ls``` command. The ```-R``` flag can also become handy to list files recursively.
-{: prompt-tip }
+{: .prompt-tip }
 
 On an FTP server you can't read files like on a normal machine with ```cat``` or your preferred text editor. You'll have to download the file to read it locally. To download a file you can use the ```get FILE``` command and to upload a file the ```put FILE``` command. Whether it is for the ```get``` or the ```put``` command the default directory will be the one where the ```ftp``` command was launched. If you launched the command on the ```Desktop``` the files will be downloaded here and if the file you want to upload isn't on the desktop then you will need to specify its path.
 
