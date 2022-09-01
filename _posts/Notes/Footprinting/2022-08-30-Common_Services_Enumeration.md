@@ -365,6 +365,21 @@ xfreerdp /v:IP:PORT /u:USERNAME /p:PASSWORD /drive:SHARENAME,"PATH_TO_THE_FILES_
 
 ### RDP Session Hijacking
 
+If we obtain access to a computer and have a ```local administrator account```. The user's remote desktop session can be ```hijacked``` in order to elevate our privileges and assume the user's identity if they are connecting via RDP to our hacked system. In an ```Active Directory``` setting, this can lead to us taking control of a ```Domain Admin account``` or gaining more access to the domain.
+
+We can use the Powershell command ```query user``` to look for other connected users. If you already have a ```SYSTEM CMD``` opened you can lauch the command ```tscon TARGET_SESSION_ID /dest:OUR_SESSION_NAME```. 
+If you don't have a ```SYSTEM CMD``` you can create a service that, by default, will run as ```local SYSTEM``` :
+
+```console
+sc.exe create sessionhijack binpath= "cmd.exe /k tscon TARGET_SESSION_ID /dest:OUR_SESSION_NAME"
+```
+
+This will launch our service called ```sessionhijack```.
+
+```console
+net start sessionhijack
+```
+
 ### RDP Pass-the-Hash (PtH)
 
 What is wonderful with RDP is that even if we only have the ```NT hash``` and not the clear text password, we can still connect to the machine with the ```Pass-the-Hash``` technique. To use ```xfreerdp``` fot the PtH attack you can do :
