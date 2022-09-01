@@ -1,10 +1,10 @@
 ---
-title: Notes | Common Services Enumeration
+title: Notes | Common Services Enumeration & Attacks
 author: BatBato
 date: 2022-08-31
-categories: [Notes, Footprinting, Common Services Enumeration]
+categories: [Notes, Footprinting, Common Services Enumeration& Attacks]
 tags: [Common Services, Enumeration, Web, FTP, SMB, SMTP, POP3]
-permalink: /Notes/Footprinting/Common_Services_Enumeration
+permalink: /Notes/Footprinting/Common_Services_Enumeration_&_Attacks
 ---
 
 # Common Services Enumeration
@@ -101,3 +101,7 @@ On an FTP server you can't read files like on a normal machine with ```cat``` or
 {: .prompt-warning }
 
 ## SMB
+
+"Server Message Block (SMB) is a communication protocol originally developed in 1983 by Barry A. Feigenbaum at IBM[2] and intended to provide shared access to files and printers across nodes on a network of systems running IBM's OS/2." Wikipedia
+
+
