@@ -393,3 +393,106 @@ This attack is only possible if the ```Restricted Admin Mode``` is enabled (it i
 ```console
 reg add HKLM\System\CurrentControlSet\Control\Lsa /t REG_DWORD /v DisableRestrictedAdmin /d 0x0 /f
 ```
+
+## SMTP / POP3 / IMAP
+
+All those protocols are used to allow people to receive and send mails. You can find the list of ports that they are using here :
+
+| **Port** | **Service** |
+| -------- | ----------- |
+| TCP/25 | SMTP Unencrypted |
+| TCP/143 |	IMAP4 Unencrypted |
+| TCP/110 |	POP3 Unencrypted |
+| TCP/465 |	SMTP Encrypted |
+| TCP/993 |	IMAP4 Encrypted |
+| TCP/995 |	POP3 Encrypted |
+
+> Either for ```SMTP``` or ```POP3``` server you can try to ```brute force``` them or ```password spray``` them using [hydra](https://nouman404.github.io/Notes/Brute_Force/Brute_Force#hydra)
+{: .prompt-tip }
+
+### SMTP 
+
+You can easily connect to a ```SMTP``` server with ```telnet``` using the command ```telnet IP 25```. You can use the commands ```VRFY```, ```EXPN```, and ```RCPT TO``` to enumerate users on the server. 
+
+The ```VRFY``` command allows us to check for existing users and can be used like this ```VRFY root```. If the user ```root``` exist, then we will see a line containing this username like ```250 USERNAME```. If the user isn't found we may get the error code ```252```.
+
+The ```EXPN``` command will list all users of a certain list. For example, if we type ```EXPN batbato``` we will get my email but if we type ```EXPN students``` we may get all emails that belongs to students.
+
+```RCPT TO``` can be used to check the recipient of a mail. We try to send a mail to many users in order to find valid ones.
+
+```console
+MAIL FROM: Anyone@X.com
+250 OK - (Server acknowledges and accepts)
+RCPT TO: bob@X.dom
+250 OK
+```
+
+Here we can see that ```bob``` is a valid user.
+
+You can use tools such as [smtp-user-enum](https://www.kali.org/tools/smtp-user-enum/) to automate this process. The ```-M``` flag allows us to specify the method we want to use (```VRFY```, ```RCPT``` or ```EXPN```).
+
+```console
+smtp-user-enum -M RCPT -U USER_LIST -D DOMAIN -t IP
+```
+
+> You also can use tools such as ```Metaploit``` to automate your process. You can use modules like ```auxiliary/scanner/smtp/smtp_version``` or ```auxiliary/scanner/smtp/smtp_enum```.
+{: .prompt-tip }
+
+### POP3
+
+The ```POP3``` can also be used to enumerate users. We can do so by using the ```USER``` command as follows :
+```console
+USER bob
++OK
+USER bib
+-ERR
+```
+
+The most useful commands are ```USER``` and ```PASS``` to connect to the server, ```LIST``` to list mails and ```RETR X``` to get the content of the mail ```X```.	But here is a list of useful ```POP3``` commands :
+
+
+| **Command** | **Description** |
+| ---------- | ---------- |
+| USER username | Identifies the user. |
+| PASS password | Authentication of the user using its password. |
+| STAT | Requests the number of saved emails from the server. |
+| LIST | Requests from the server the number and size of all emails. |
+| RETR id | Requests the server to deliver the requested email by ID. |
+| DELE id | Requests the server to delete the requested email by ID. |
+| CAPA | Requests the server to display the server capabilities. |
+| RSET | Requests the server to reset the transmitted information. |
+| QUIT | Closes the connection with the POP3 server. |
+
+> You can find more information about ```POP3``` commands on [this site](https://electrictoolbox.com/pop3-commands/).
+{: .prompt-tip }
+
+### IMAP 
+
+As for ```SMTP``` and ```POP3``` you can execute bunch of commands on a ```IMAP``` server, here is a list of some that may help you :
+
+| **Command** | **Description** |
+| ---------- | ---------- |
+| 1 LOGIN username password | User's login. |
+| 1 LIST "" * | Lists all directories. |
+| 1 CREATE "INBOX" | Creates a mailbox with a specified name. |
+| 1 DELETE "INBOX" | Deletes a mailbox. |
+| 1 RENAME "ToRead" "Important" | Renames a mailbox. |
+| 1 LSUB "" * | Returns a subset of names from the set of names that the User has declared as being active or subscribed. |
+| 1 SELECT INBOX | Selects a mailbox so that messages in the mailbox can be accessed. |
+| 1 UNSELECT INBOX | Exits the selected mailbox. |
+| 1 FETCH <ID> all | Retrieves data associated with a message in the mailbox. |
+| tag FETCH <ID>:<ID> (BODY[HEADER]) | Get header of message |
+| tag FETCH <ID> (BODY[n]) | Get the part number n of the body |
+| 1 CLOSE | Removes all messages with the Deleted flag set. |
+| 1 LOGOUT | Closes the connection with the IMAP server. |
+
+### POP3s & IMAPs
+  
+If we encounter the encrypted version of ```POP3``` and ```IMAP```, we still can connect to it but not with ```telnet```. We can do so by using ```openssl``` :
+  
+```console
+openssl s_client -connect IP:pop3s
+```
+
+> You can replace ```pop3s``` by ```imaps``` to connect to a ```IMAPs``` server.
+{: .prompt-warning }
