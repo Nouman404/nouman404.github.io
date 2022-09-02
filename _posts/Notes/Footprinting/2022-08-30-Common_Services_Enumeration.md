@@ -480,9 +480,9 @@ As for ```SMTP``` and ```POP3``` you can execute bunch of commands on a ```IMAP`
 | 1 LSUB "" * | Returns a subset of names from the set of names that the User has declared as being active or subscribed. |
 | 1 SELECT INBOX | Selects a mailbox so that messages in the mailbox can be accessed. |
 | 1 UNSELECT INBOX | Exits the selected mailbox. |
-| 1 FETCH <ID> all | Retrieves data associated with a message in the mailbox. |
-| tag FETCH <ID>:<ID> (BODY[HEADER]) | Get header of message |
-| tag FETCH <ID> (BODY[n]) | Get the part number n of the body |
+| 1 FETCH \<ID\> all | Retrieves data associated with a message in the mailbox. |
+| tag FETCH \<ID\>:\<ID\> (BODY[HEADER]) | Get header of message |
+| tag FETCH \<ID\> (BODY[n]) | Get the part number n of the body |
 | 1 CLOSE | Removes all messages with the Deleted flag set. |
 | 1 LOGOUT | Closes the connection with the IMAP server. |
 
@@ -496,3 +496,5 @@ openssl s_client -connect IP:pop3s
 
 > You can replace ```pop3s``` by ```imaps``` to connect to a ```IMAPs``` server.
 {: .prompt-warning }
+
+## NFS
