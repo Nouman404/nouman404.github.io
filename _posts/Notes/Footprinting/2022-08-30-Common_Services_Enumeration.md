@@ -180,7 +180,7 @@ mount -t nfs IP:REMOTE_SHARE ./NFS_SHARE_DIR/
 cd NFS_SHARE_DIR
 ```
 
-> If you want to unmount your newly created mounted share you can use the ```umount``` command like : ```umount ./NFS_SHARE_DIR```
+> If you want to dismount your newly created mounted share you can use the ```umount``` command like : ```umount ./NFS_SHARE_DIR```
 {: .prompt-warning }
 
 ## SQL
