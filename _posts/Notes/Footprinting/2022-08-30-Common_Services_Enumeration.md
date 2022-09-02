@@ -152,6 +152,37 @@ crackmapexec smb IP -u USER_LIST -p 'Company01!'
 > When you found valid credentials you can try dumping credentials with ```crackmapexec``` using the ```--sam```, ```--lsa``` or the ```--ntds``` flag.
 {: .prompt-tip }
 
+## NFS
+
+```Network File System``` (NFS) is pretty similar to ```SMB``` but you can find the main differences in [this article](https://www.educba.com/nfs-vs-smb/).
+It's running on port ```111``` but since it's last version (```NFSv4```) it uses one UDP and TCP port ```2049```.
+
+> You can use the ```--script nfs*``` flag to have more details about the ```NFS shares``` in your [nmap](https://www.kali.org/tools/nmap/) scan.
+{: .prompt-tip }
+
+If you want to manually check for shares on a server, you can use the ```showmount``` command as follows :
+
+```console
+showmount -e IP
+```
+
+Now that you know the share name, you can mount it on your device by following this steps :
+1. Create a directory where the share is going to be mounted :
+```console
+mkdir NFS_SHARE_DIR
+```
+2. Mount the remote share on your machine :
+```console
+mount -t nfs IP:REMOTE_SHARE ./NFS_SHARE_DIR/
+```
+3. Navigate and enumeate your mounted share
+```console
+cd NFS_SHARE_DIR
+```
+
+> If you want to unmount your newly created mounted share you can use the ```umount``` command like : ```umount ./NFS_SHARE_DIR```
+{: .prompt-warning }
+
 ## SQL
 
 There are many ```database management system``` (DBMS) but by default ```MSSQL``` uses port ```TCP/1433```, and ```MySQL``` uses ```TCP/3306```.
@@ -497,4 +528,4 @@ openssl s_client -connect IP:pop3s
 > You can replace ```pop3s``` by ```imaps``` to connect to a ```IMAPs``` server.
 {: .prompt-warning }
 
-## NFS
+
