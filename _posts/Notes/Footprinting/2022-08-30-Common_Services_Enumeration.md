@@ -1,7 +1,7 @@
 ---
 title: Notes | Common Services Enumeration & Attacks
 author: BatBato
-date: 2022-08-31
+date: 2022-09-02
 categories: [Notes, Footprinting, Common Services Enumeration& Attacks]
 tags: [Common Services, Enumeration, Web, FTP, SMB, SMTP, POP3]
 permalink: /Notes/Footprinting/Common_Services_Enumeration_&_Attacks
