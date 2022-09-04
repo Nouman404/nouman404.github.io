@@ -45,3 +45,4 @@ order: 2
 | **Link**   | **Description**    |
 |--------------- | --------------- |
 | [Linux Privilege Escalation](Notes/Privilege_Escalation/) | Linux basic PE |
+| [Windows Privilege Escalation](Notes/Privilege_Escalation/Windows_PE) | Windows basic PE |
