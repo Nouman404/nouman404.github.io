@@ -23,7 +23,7 @@ timezone: Europe/Paris
 
 title: BatBato's Blog                          # the main title
 
-tagline: Here is my blog   # it will display as the sub-title
+tagline: BatBato was here :)   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A blog to take notes of what I learn, Writ-Up and many more...
