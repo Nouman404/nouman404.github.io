@@ -45,6 +45,20 @@ The ```alert``` JS function will create a pop-up that will display the text betw
 
 ```Second-order``` or ```persistent XSS```, often known as ```Stored XSS```, occurs when an application obtains data from an unreliable source and includes that data inadvertently in subsequent HTTP responses.
 
+As its name suggest, the ```Stored XSS``` is ```Stored``` in the server. It often appears when someone leaves a comment and that other people can read it. The attack is basically the same for every type of XSS so you can use the previous techniques to check if the website is vulnerable. 
+
 ### DOM-based XSS
 
 When client-side JavaScript in an application handles data from an untrusted source in an unsafe manner, typically by publishing the data back to the DOM, this is referred to as ```DOM-based XSS```, also known as ```DOM XSS```.
+
+```DOM-based XSS``` are a bit harder to find. First we want to check for JS code in the page that we can interact with, like a ```document.write``` that write our input, for example. Once we understand how the script work we may want to close some HTML tags so that we can input our JS malicious code. This is an example that show how to close a simple HTML tag that includes our input in its field (like an image for example) :
+
+```console
+https://insecure-website.com/search?name="><script>JS_CODE</script>
+```
+
+> You can find more detailed information about XSS on the [PortSwigger website](https://portswigger.net/web-security/cross-site-scripting).
+{: .prompt-info }
+
+> You can use the ```document.cookie``` JS function to retrieve the cookie of a user.
+{: .prompt-tip }
