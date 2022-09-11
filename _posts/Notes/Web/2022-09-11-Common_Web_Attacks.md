@@ -24,6 +24,21 @@ XSS vulnerability result in the possibility for a user to execute Java Script co
 
 The most basic type of cross-site scripting is ```Reflected XSS```. It occurs when an application receives data from an HTTP request and unsafely incorporates that data into the immediate response.
 
+A very simple example will be the following. Imagine a webpage that ask for the user name and execute the following ```GET``` request :
+```https://insecure-website.com/search?name=bob```
+
+This request will then print ```Your name is : NAME``` where ```NAME``` will be replaced by the name given. If the website is vulnerable to ```Reflected XSS```, we could put a script as a name like :
+```console
+https://insecure-website.com/search?name=<script>JS_CODE</script>
+```
+You can replace ```JS_CODE``` by anything you want. A basic test could be :
+```js
+<script>alert(1)</script>
+```
+
+The ```alert``` JS function will create a pop-up that will display the text between the brackets. But as stated in [this video](https://www.youtube.com/watch?v=KHwVjzWei1c) of [LiveOverflow](https://www.youtube.com/c/LiveOverflow), the ```alert(1)``` isn't a good practice and can lead to false positive. A better way to test XSS could be the use of ```alert(document.domain)``` or ```alert(windows.origin)``` you could even use the ```console.log``` JS function.
+
+
 ### Stored XSS
 
 ```Second-order``` or ```persistent XSS```, often known as ```Stored XSS```, occurs when an application obtains data from an unreliable source and includes that data inadvertently in subsequent HTTP responses.
