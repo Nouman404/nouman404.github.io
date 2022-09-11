@@ -15,9 +15,9 @@ The World Wide Web allows us to access a lot of information over the internet, w
 
 XSS vulnerability result in the possibility for a user to execute Java Script code in the web page. This can change the content of the page or steal connection cookies, for example. You can find a basic exmplanation of XSS on [this video](https://www.youtube.com/watch?v=L5l9lSnNMxg). There are three different type of XSS :
 
-- [Reflected XSS](/Notes/Web/Common_Web_Attacks#Reflected_XSS), where the malicious script comes from the current HTTP request.
-- [Stored XSS](/Notes/Web/Common_Web_Attacks#Stored_XSS), where the malicious script comes from the website's database.
-- [DOM-based XSS](/Notes/Web/Common_Web_Attacks#DOM-based_XSS), where the vulnerability exists in client-side code rather than server-side code.
+- [Reflected XSS](/Notes/Web/Common_Web_Attacks#reflected-xss), where the malicious script comes from the current HTTP request.
+- [Stored XSS](/Notes/Web/Common_Web_Attacks#stored-xss), where the malicious script comes from the website's database.
+- [DOM-based XSS](/Notes/Web/Common_Web_Attacks#dom-based-xss), where the vulnerability exists in client-side code rather than server-side code.
 
 
 ### Reflected XSS
