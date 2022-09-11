@@ -25,7 +25,9 @@ XSS vulnerability result in the possibility for a user to execute Java Script co
 The most basic type of cross-site scripting is ```Reflected XSS```. It occurs when an application receives data from an HTTP request and unsafely incorporates that data into the immediate response.
 
 A very simple example will be the following. Imagine a webpage that ask for the user name and execute the following ```GET``` request :
-```https://insecure-website.com/search?name=bob```
+```console
+https://insecure-website.com/search?name=bob
+```
 
 This request will then print ```Your name is : NAME``` where ```NAME``` will be replaced by the name given. If the website is vulnerable to ```Reflected XSS```, we could put a script as a name like :
 ```console
