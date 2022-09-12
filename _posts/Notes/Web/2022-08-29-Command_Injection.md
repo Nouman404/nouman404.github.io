@@ -2,7 +2,7 @@
 title: Notes | Command Injection
 author: BatBato
 date: 2022-08-25
-categories: [Notes, Command Injection]
+categories: [Notes, Web, Command Injection]
 tags: [Command Injection, Web, Bypass]
 permalink: /Notes/Web/Command_Injection
 ---
