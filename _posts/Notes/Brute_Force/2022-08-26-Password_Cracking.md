@@ -195,7 +195,7 @@ If you arrive on a machine and can access the ```passwd``` and the ```shadow``` 
 john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt unshadowed.txt
 ```
 
-### Zir and RAR files
+### Zip and RAR files
 
 You can encounter zip or rar files protected with a password. As for the SSH key, we will proceed in two steps. First we recover the hash of the password and then we crack it.
 
