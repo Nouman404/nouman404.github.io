@@ -2,7 +2,7 @@
 title: Notes | Common Web Attacks
 author: BatBato
 date: 2022-09-11
-categories: [Notes, Common Web Attacks]
+categories: [Notes, Web, Common Web Attacks]
 tags: [Web, Common Web Attacks, XSS, XXE, IDOR, SQLi]
 permalink: /Notes/Web/Common_Web_Attacks
 ---
