@@ -109,3 +109,38 @@ You can find many other payload on [PayloadsAllTheThings](https://github.com/swi
 There are many tools out here that can help you detect XSS vulnerabilities like [Nessus](https://www.tenable.com/products/nessus), [Burp Pro](https://portswigger.net/burp/pro), [ZAP](https://owasp.org/www-project-zap/). There are also some opensource tools that you can find on github like [XSStrike](https://github.com/s0md3v/XSStrike), [BruteXSS](https://github.com/rajeshmajumdar/BruteXSS) or [XSSer](https://github.com/epsylon/xsser).
 Here is a list of different payload you may want to try when looking for XSS vulnerabilities [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/README.md).
 
+## IDOR
+
+```Insecure direct object references``` (IDOR) are a type of [access control](https://portswigger.net/web-security/access-control) vulnerability that arises when an application uses user-supplied input to access objects directly.
+
+A typical example would be a get parametter that isn't sanitized :
+
+```console
+http://insecure_website/index.php?user_id=43
+```
+
+If we are the user with the ```ID 43``` what could possibly happen if we change this value to ```0``` or ```1``` ? Generally the first user is the admin.
+Just exposing a direct reference to an internal object or resource is not a vulnerability in itself. For example, if the ID we specify is for the number of a page. It's all about weak access control system. 
+
+> You can read more about access control [here](https://portswigger.net/web-security/access-control)
+{: .prompt-info}
+
+When looking, like here, for ```ID```, ```name``` or any other type of ```token``` we may want to automate the process so we don't do all the research by hand. We can use tools such as the ```Burp Intruder```, the ```ZAP fuzzer``` or even tools such as ```ffuf```. 
+
+### XXE
+
+```XML eXternal Entity``` injection (also known as XXE) is a web security vulnerability that allows an attacker to interfere with an application's processing of XML data. This allows an attackers to interact with any back-end or external systems that the program itself can access as well as examine files on the application server disk.
+
+By using the XXE vulnerability to launch ```Server-Side Request Forgery``` (SSRF) attacks, an attacker may be able to escalate a XXE assault to compromise the underlying server or other back-end infrastructure in some circumstances.
+
+```Extensible Markup Language``` (XML) is a markup language and file format for ```storing```, ```transmitting```, and ```reconstructing arbitrary data```. It defines a set of rules for encoding documents in a format that is both ```human-readable``` and ```machine-readable```.
+
+Here is a list of some of the key elements of an XML document :
+
+| Key | Definition | Example |
+| --- | ---------- | ------- |
+| Tag | The keys of an XML document, usually wrapped with (</>) characters. | \<date\> |
+| Entity | XML variables, usually wrapped with (&/;) characters. | \&lt; |
+| Element | The root element or any of its child elements, and its value is stored in between a start-tag and an end-tag. | \<date\>01-01-2022\</date\> |
+| Attribute | Optional specifications for any element that are stored in the tags, which may be used by the XML parser. | version="1.0"/encoding="UTF-8" |
+| Declaration | Usually the first line of an XML document, and defines the XML version and encoding to use when parsing it. | \<?xml version="1.0" encoding="UTF-8"?\> |
