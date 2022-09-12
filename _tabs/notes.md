@@ -27,6 +27,7 @@ order: 2
 | **Link**   | **Description**    |
 |--------------- | --------------- |
 | [Command Injection](/Notes/Web/Command_Injection) | Command injection, RFI, LFI, bypass techniques... |
+| [Common Web Attacks](/Notes/Web/Common_Web_Attacks) | Commoin Web vulnerability XSS, XXE, IDOR and SQLi |
 
 ---
 
