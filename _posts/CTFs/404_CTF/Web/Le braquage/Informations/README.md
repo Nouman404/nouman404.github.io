@@ -1,3 +1,12 @@
+---
+title: CTFs | 404CTF | Web | Le braquage | Informations
+author: BatBato
+date: 2022-11-07
+categories: [CTFs, 404CTF, Web, Informations]
+tags: [404CTF, Web]
+permalink: /CTFs/404CTF/Web/Le_braquage/Informations
+---
+
 # Informations
 
 Il nous est suggéré d'utiliser ici les ```UNION```. On cherche donc le nombre de champs pour l'injection et on trouve :</br></br>
