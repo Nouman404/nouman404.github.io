@@ -1,3 +1,12 @@
+---
+title: CTFs | 404CTF | Fiche JS
+author: BatBato
+date: 2022-11-07
+categories: [CTFs, 404CTF, Web]
+tags: [Web, Fiché JS]
+permalink: /CTFs/404CTF/Web/Fiche_JS
+---
+
 # Fiché JS 
 
 Dans ce chall on a un site assez classique :</br>
