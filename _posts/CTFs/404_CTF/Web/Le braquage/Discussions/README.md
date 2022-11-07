@@ -1,3 +1,12 @@
+---
+title: CTFs | 404CTF | Web | Le braquage | Discussions
+author: BatBato
+date: 2022-11-07
+categories: [CTFs, 404CTF, Web, Le braquage]
+tags: [404CTF, Web]
+permalink: /CTFs/404CTF/Web/Le_braquage/Discussions
+---
+
 # Discussions
 
 Dans ce challenge il s'agit simplement d'utiliser le ```OR``` pour outrepasser l'authentification :</br>
