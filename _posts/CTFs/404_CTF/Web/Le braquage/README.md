@@ -1,3 +1,12 @@
+---
+title: CTFs | 404CTF | Web | Le braquage
+author: BatBato
+date: 2022-11-07
+categories: [CTFs, 404CTF, Web]
+tags: []
+permalink: /CTFs/404CTF/Web/Le_braquage
+---
+
 # Le braquage
 
 Voici la consigne :</br>
