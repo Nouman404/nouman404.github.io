@@ -4,7 +4,7 @@ author: BatBato
 date: 2022-11-07
 categories: [CTFs, 404CTF, Stegano, Un logo obèse]
 tags: [CTF, 404CTF, Stegano]
-permalink: /CTFs/404CTF/Stegano/Un_logo_obese1
+permalink: /CTFs/404CTF/Stegano/PNG_Un_logo_obese/Un_logo_obese1
 ---
 
 # PNG : Un logo obèse 1/4
