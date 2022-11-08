@@ -21,7 +21,7 @@ In this folder there is an image of the logo of the event. So we go to [aperisol
 
 ![image](https://user-images.githubusercontent.com/73934639/164446356-3e11759e-cf00-4730-97a4-40d70079f1f3.png)
 
-The text is available [here](https://github.com/Nouman404/WrtiteUp-J-ai-perdu-le-flag/blob/main/readme).\
+The text is available [here](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/J_ai_perdu_le_flag/readme).\
 I feel like the challenge is in two parts, OSINT and retrieving the words from each file. I start a quick search for this *john nix* without success. So I create a script to retrieve the **first word of line 24 of the following files :\
 682910xecoz\
 537w3zly33p\
