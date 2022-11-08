@@ -33,5 +33,5 @@ Ressources :
 
 Bless (éditeur hexa)
 
-https://www.w3.org/TR/PNG/#11IHDR
+[w3.org](https://www.w3.org/TR/PNG/#11IHDR)
 
