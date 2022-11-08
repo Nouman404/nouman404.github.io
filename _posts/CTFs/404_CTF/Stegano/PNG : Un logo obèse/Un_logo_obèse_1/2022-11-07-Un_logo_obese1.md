@@ -1,5 +1,5 @@
 ---
-title: CTFs | 404CTF | Stegano | Un_logo_obese1
+title: CTFs | 404CTF | Stegano | Un logo obese 1
 author: BatBato
 date: 2022-11-07
 categories: [CTFs, 404CTF, Stegano, Un logo obèse]
