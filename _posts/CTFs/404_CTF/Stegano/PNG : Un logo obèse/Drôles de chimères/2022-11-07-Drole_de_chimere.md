@@ -4,7 +4,7 @@ author: BatBato
 date: 2022-11-07
 categories: [CTFs, 404CTF, Stegano, PNG : Un logo obèse]
 tags: [CTF, 404CTF, Stegano]
-permalink: /CTFs/404CTF/Stegano/PNG_Un_logo_obese/Drole_de_chimere
+permalink: /CTFs/404CTF/Stegano/Drole_de_chimere
 ---
 
 # PNG : Un logo obèse 2/4
