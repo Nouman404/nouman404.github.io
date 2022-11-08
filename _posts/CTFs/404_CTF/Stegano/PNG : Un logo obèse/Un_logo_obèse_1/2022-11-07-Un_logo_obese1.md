@@ -10,7 +10,7 @@ permalink: /CTFs/404CTF/Stegano/PNG_Un_logo_obese/Un_logo_obese1
 # PNG : Un logo obèse 1/4
 
 On commence avec une image contenant le logo de Hallebarde 
- ![image](https://github.com/Nouman404/404CTF_2022/blob/main/Stegano/steg.png)
+ ![image](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/404_CTF/Stegano/steg.png)
  
 
 En effectuant la commande "string" dessus, nous voyons un certain fichier "out/stage2.png"  
