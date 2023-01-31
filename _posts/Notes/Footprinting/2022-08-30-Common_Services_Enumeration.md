@@ -22,6 +22,9 @@ I'll leave you with the reading part and now we are going to look for the fuzzin
 
 [ffuf](https://www.kali.org/tools/ffuf/) is a fest web fuzzer written in Go that allows typical directory discovery, virtual host discovery (without DNS records) and GET and POST parameter fuzzing. And [Gobuster](https://www.kali.org/tools/gobuster/) is a tool used to brute-force URIs including directories and files as well as DNS subdomains.
 
+> Note that there are many other fuzzing tools and that I'm only presenting ```ffuf``` and ```gobuster```. You may want to use [dirbuster](https://www.kali.org/tools/dirbuster/) (Graphical user interface) or [dirb](https://www.kali.org/tools/dirb/)
+{: .prompt-info}
+
 ### Web Enumeration
 
 First we are going to look for web pages and directories.
