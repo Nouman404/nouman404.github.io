@@ -21,6 +21,6 @@ The 10th line is ```Drove by our curiosity, I found my way: patrolling our space
 
 We create a program to count each word length and replace it with the correct brainfuck character as explained on the wiki.
 
-After that we get the  value ```>]+0[>]-0+[[+0<]>[]>]``` which gives us 270 in decimal. 
+After that we get the  value ```>]+9[>]+0+0+0<]-[]>]``` which gives us 270 in decimal. 
 
 The NGC 270 is in the constellation of the whale which in French is ```baleine``` so the flag is: ```HACKDAY{baleine}```
