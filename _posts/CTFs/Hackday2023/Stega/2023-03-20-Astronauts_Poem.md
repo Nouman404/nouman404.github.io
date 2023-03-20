@@ -1,4 +1,11 @@
-
+---
+title: CTFs | HackDay2023 | Astronauts_Poem
+author: BatBato
+date: 2023-03-20
+categories: [CTFs, HackDay2023, Astronauts_Poem]
+tags: [CTF, HackDay2023, Stegano]
+permalink: /CTFs/Hackday2023/Stega/Astronauts_Poem
+---
 
 # Astronauts_Poem
 
