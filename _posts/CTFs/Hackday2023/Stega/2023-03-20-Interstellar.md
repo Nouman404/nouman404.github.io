@@ -21,4 +21,4 @@ So I created a program that will extract every request and extract the hexadecim
 
 We then download the image and we get the flag:
 
-![](./Interstellar/index.png){: width="250" height="166" }
+![](./Interstellar/index.png)
