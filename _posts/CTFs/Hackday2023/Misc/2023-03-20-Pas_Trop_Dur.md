@@ -18,7 +18,7 @@ When we filter the HTTP packet we can see a "maliciouswebshell.php".
 When we try to download it, we get a lot of unprintable characters:
 ![image](https://user-images.githubusercontent.com/73934639/226462228-b02a9d9e-b254-4f67-9d14-6f8fff2b72ef.png)
 
-We see a lot of strings that look like base64, but... aren't the "==" at the end ?
+We see a lot of strings that look like base64, but... aren't the ```==``` supposed to be at the end ?
 
 ![image](https://user-images.githubusercontent.com/73934639/226462482-61107ee7-061a-46b6-a8e6-b8493e7d8d18.png)
 
