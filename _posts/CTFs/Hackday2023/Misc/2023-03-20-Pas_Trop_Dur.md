@@ -53,9 +53,11 @@ After that, the ```login``` function calls the ```setValue``` and ```setName```.
 		}
 ```
 So this is not a big function and it only xor the string and base64 encode it. There is a ```getValue``` function in the file so we don't need to reinventing the wheel. Now is we try to intercept the request with burp, wen we send the string ```a``` we have the result ```Lg==```.
+
 ![image](https://user-images.githubusercontent.com/73934639/226467954-682c02ca-da93-45ca-998c-3779a675b9fc.png)
 
 So we know that we can reverse this value with the ```getValue``` function. To do that, we can use the console of our browser (press F12 > Console).
+
 ![image](https://user-images.githubusercontent.com/73934639/226468224-960bf0b9-2cb4-4757-bfb5-6eb4dc578f37.png)
 
 Now that we know how to reverse a given string we need to find the password the hacker used. Getting back to Wireshark, when we inspect the TCP of the penultimate ```maliciouswebshell.php``` we can find the cookies like before. The first one of these packets is not the good one but the second one gives us the password:
