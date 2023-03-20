@@ -9,7 +9,7 @@ permalink: /CTFs/Hackday2023/Stega/Chunk_of_surprises
 
 # Chunk_of_surprises
 
-In this challenge, we are given a [png image](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/Hackday2023/Stega/Chunk_of_surprises/Chunk_of_surprises.png). But when we try to open it, we get an error. So we look at the hexadecimal inside the image and we see that the headers and the tailer are not correct.
+In this challenge, we are given a [png image](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/Hackday2023/Stega/Chunk_of_surprises/Chunk_of_surprises.png). But when we try to open it, we get an error. So we look at the hexadecimal inside the image and we see that the headers and the trailer are not correct.
 
 
 
