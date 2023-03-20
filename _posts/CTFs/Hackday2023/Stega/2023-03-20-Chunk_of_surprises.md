@@ -9,7 +9,7 @@ permalink: /CTFs/Hackday2023/Stega/Chunk_of_surprises
 
 # Chunk_of_surprises
 
-In this challenge, we are given a [png image](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/Hackday2023/Stega/Chunk_of_surprises.png). But when we try to open it, we get an error. So we look at the hexadecimal inside the image and we see that the headers and the tailer are not correct.
+In this challenge, we are given a [png image](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/Hackday2023/Stega/Chunk_of_surprises/Chunk_of_surprises.png). But when we try to open it, we get an error. So we look at the hexadecimal inside the image and we see that the headers and the tailer are not correct.
 
 
 
@@ -21,6 +21,6 @@ The second header should be IHDR but there is no IHDR so we add it by replacing 
 ![image](https://user-images.githubusercontent.com/73934639/226387904-e832c415-0a12-4c1e-9c05-eb8a724d13f5.png)
 ![image](https://user-images.githubusercontent.com/73934639/226388003-b2f966a1-f007-4744-adc9-640f990cfdbc.png)
 
-And we got [the flag](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/Hackday2023/Stega/Flag.png) written in black at the top.
+And we got [the flag](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/Hackday2023/Stega/Chunk_of_surprises/Flag.png) written in black at the top.
 
 ![image](https://user-images.githubusercontent.com/73934639/226389970-38254f91-1799-4bfc-b3a8-c19b7cc6b22e.png)
