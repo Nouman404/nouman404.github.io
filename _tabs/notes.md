@@ -18,7 +18,7 @@ order: 2
 
 | **Link**   | **Description**    |
 |--------------- | --------------- |
-| [Linux Fondamentals](/Notes/Linux/) | Linux Fondamentals, must know commands |
+| [Linux Fondamentals](/Notes/Linux/Linux_Fondamentals) | Linux Fondamentals, must know commands |
 
 ---
 
@@ -37,7 +37,7 @@ order: 2
 |--------------- | --------------- |
 | [Port Enumeration](/Notes/Footprinting/Port_Enumeration) | Nmap basic commands and how to use it |
 | [OSINT](/Notes/Footprinting/OSINT) | Basic OSINT, DNS and VHOST enumeration |
-| [Common Services Enumeration](/Notes/Footprinting/Common_Services_Enumeration) | Common Services Enumeration (HTTP, FTP, SMB, SMTP, POP3...) |
+| [Common Services Enumeration](/Notes/Footprinting/Common_Services_Enumeration_&_Attacks) | Common Services Enumeration (HTTP, FTP, SMB, SMTP, POP3...) |
 
 ---
 
@@ -45,5 +45,15 @@ order: 2
 
 | **Link**   | **Description**    |
 |--------------- | --------------- |
-| [Linux Privilege Escalation](Notes/Privilege_Escalation/) | Linux basic PE |
-| [Windows Privilege Escalation](Notes/Privilege_Escalation/Windows_PE) | Windows basic PE |
+| [Linux Privilege Escalation](/Notes/Privilege_Escalation/Linux_PE) | Linux basic PE |
+| [Windows Privilege Escalation](/Notes/Privilege_Escalation/Windows_PE) | Windows basic PE |
+
+---
+
+# Reverse
+
+| **Link**   | **Description**    |
+|--------------- | --------------- |
+| [Buffer overFlow](/Notes/Reverse/BOF) | Beginner level Buffer overFlow |
+
+
