@@ -28,7 +28,7 @@ But this isn't enough to get the flag. When looking at the video, we can see ima
 
 I recovered all of them and get the following QrCode:
 
-![image](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/vishwactf/Screenshot_20.png)
+![image](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/vishwactf/Screenshot_20.png)
 
 This wasn't good enought because some part of the QrCode wasn't clean. I used a website to edit [QrCode](https://merricx.github.io/qrazybox/). 
 
