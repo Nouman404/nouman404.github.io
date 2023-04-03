@@ -1,7 +1,7 @@
 ---
 title: CTFs | vishwactf | Quick_Heal
 author: BatBato
-date: 2023-03-04
+date: 2023-04-03
 categories: [CTFs, vishwactf]
 tags: [CTF, vishwactf, Stegano]
 permalink: /CTFs/vishwactf/Stegano/Quick_Heal
