@@ -7,7 +7,7 @@ tags: [CTF, vishwactf, Stegano]
 permalink: /CTFs/vishwactf/Stegano/Quick_Heal
 ---
 
-This CTF isn't hard but a bit boring to do. We had a [video]() that, when we launched it, has Morse code in it.
+This CTF isn't hard but a bit boring to do. We had a [video](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/vishwactf/Quick_Heal.mkv) that, when we launched it, has Morse code in it.
 
 We first need to recover the sound of the audio, using any video editor online or not. Then, we can put it in audacity and look at the spectrogram:
 
@@ -28,11 +28,14 @@ But this isn't enough to get the flag. When looking at the video, we can see ima
 
 I recovered all of them and get the following QrCode:
 
-![image](https://user-images.githubusercontent.com/73934639/229460601-91b76329-b418-481a-b304-e727ec921942.png)
+![image](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/vishwactf/Screenshot_20.png)
 
 This wasn't good enought because some part of the QrCode wasn't clean. I used a website to edit [QrCode](https://merricx.github.io/qrazybox/). 
 
 > I choosed the ```Error Correction Level:``` as ```L``` and the ```Mask Pattern :``` as ```2```
+{: .prompt-tip}
+
+> PS: You can find my Photoshop project [here](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/vishwactf/QR_code_Indien.psd)
 {: .prompt-info}
 
 This gives us the text ```VishwaCTF{S3cur1ty.S1mpl1f13d``` we add the previous part of the flag to it and we get the full flag ```VishwaCTF{S3cur1ty.S1mpl1f13d.5nj0y.c0up0ns}```.
