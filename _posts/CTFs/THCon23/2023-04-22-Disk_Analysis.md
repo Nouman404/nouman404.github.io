@@ -82,3 +82,5 @@ Well...There are a few... I tried to look if there were a folder or a file with 
 
 ![image](https://user-images.githubusercontent.com/73934639/233797992-f54228c0-82a9-4f06-b2b8-cbc5e38f8c4f.png)
 
+> To remove the created folder and the mounted device you can use the following commands: ```sudo umount /mnt/disk_thcon``` and ```sudo losetup -d /dev/loop0```.
+{: .prompt-tip}
