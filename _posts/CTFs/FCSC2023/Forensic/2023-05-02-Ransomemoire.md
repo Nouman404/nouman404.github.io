@@ -1,5 +1,5 @@
 ---
-title: CTFs | FCSC2023 | Ransomémoire
+title: CTFs | FCSC2023 | Forensic | Ransomémoire
 author: BatBato
 date: 2023-05-02
 categories: [CTFs, FCSC2023, Forensic]
