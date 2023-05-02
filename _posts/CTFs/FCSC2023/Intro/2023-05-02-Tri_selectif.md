@@ -1,10 +1,10 @@
 ---
-title: CTFs | FCSC2023 |  Tri sélectif 
+title: CTFs | FCSC2023 | Intro | Tri sélectif 
 author: BatBato
 date: 2023-05-02
 categories: [CTFs, FCSC2023, Intro]
 tags: [CTF, FCSC, Math]
-permalink: /CTFs/FCSC2023/Intro/Tri_sélectif 
+permalink: /CTFs/FCSC2023/Intro/Tri_selectif 
 ---
 
 
