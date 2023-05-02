@@ -1,5 +1,5 @@
 ---
-title: CTFs | FCSC2023 | SPAnosaurus
+title: CTFs | FCSC2023 | Intro | SPAnosaurus
 author: BatBato
 date: 2023-05-02
 categories: [CTFs, FCSC2023, Intro]
