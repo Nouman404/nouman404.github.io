@@ -39,5 +39,6 @@ We go to the page `/fable/partie-4-flag-final` and we got the flag:
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/395d21e8-b13a-4248-9f41-6e134e783fe2)
 
 > Note that if you didn't click on the link from the source code but pasted it in the url, you would have been redirected (this was the challenge). You could have bypassed the redirection by intercepting the request with Burp or by using the cURL command.
+{: .prompt-info}
 
 So the flag is: `404CTF{N0_frOn1_3nD_auTh3nt1ficAti0n}`
