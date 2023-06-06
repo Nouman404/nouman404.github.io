@@ -1,7 +1,7 @@
 ---
 title: CTFs | 404CTF_2023 | Cloud | Harpagon et le magot
 author: BatBato
-date: 2023-06-05
+date: 2023-06-06
 categories: [CTFs, 404CTF_2023, Cloud]
 tags: [Cloud,Helm, K8s]
 permalink: /CTFs/404CTF_2023/Cloud/Harpagon_et_le_magot
