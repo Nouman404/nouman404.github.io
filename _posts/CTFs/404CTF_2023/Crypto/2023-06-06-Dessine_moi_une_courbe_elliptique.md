@@ -52,4 +52,50 @@ H_y**2 - H_x**3 - a*H_x = b
 b = H_y**2 - H_x**3 - a*H_x
 ```
 
-To Be Continued
+Now that we just found the equation to solve `b` for `G` and `H`, we can mix both equations because they are both equal to `b`:
+
+```python
+b = G_y**2 - G_x**3 - a*G_x
+and
+b = H_y**2 - H_x**3 - a*H_x
+
+=>
+
+G_y**2 - G_x**3 - a*G_x = H_y**2 - H_x**3 - a*H_x
+<=>
+G_y**2 - G_x**3 - H_y**2 + H_x**3 = a*G_x - a*H_x
+<=>
+G_y**2 - G_x**3 - H_y**2 + H_x**3 = a*(G_x - H_x)
+<=>
+(G_y**2 - G_x**3 - H_y**2 + H_x**3)/(G_x - H_x) = a
+<=>
+a = (G_y**2 - G_x**3 - H_y**2 + H_x**3)/(G_x - H_x)
+```
+
+Now, before replacing the `x`s and `y`s, we first need to put back the modulus. For the equation to be still valid, we need to have:
+
+```python
+a = ( (G_y**2 - G_x**3 - H_y**2 + H_x**3)* pow((G_x - H_x), -1,p) ) % p
+```
+
+This will do a division modulus `p` and the whole calculation needs to be modulus `p`.
+
+So we have:
+
+```python
+a = ( (G_y**2 - G_x**3 - H_y**2 + H_x**3)* pow((G_x - H_x), -1,p) ) % p
+
+and
+
+b = ( G_y**2 - G_x**3 - a*G_x ) % p
+```
+
+I then put everything in a python code available [here](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/404CTF_2023/Crypto/eliptic.py).
+
+We can run this code, and we have the flag:
+
+![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/bfe5b9e4-9b69-4347-a28e-7cba3e8a3e41)
+
+The flag is `404CTF{70u735_l35_gr4nd35_p3r50nn3s_0nt_d_@b0rd_373_d35_3nf4n7s}`
+
+
