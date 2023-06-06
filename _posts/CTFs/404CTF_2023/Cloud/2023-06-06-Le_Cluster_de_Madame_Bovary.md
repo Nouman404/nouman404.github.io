@@ -1,7 +1,7 @@
 ---
 title: CTFs | 404CTF_2023 | Cloud | Le Cluster de Madame Bovary
 author: BatBato
-date: 2023-06-05
+date: 2023-06-06
 categories: [CTFs, 404CTF_2023, Cloud]
 tags: [Cloud,K8s,kubctl,Pods]
 permalink: /CTFs/404CTF_2023/Cloud/Le_Cluster_de_Madame_Bovary
