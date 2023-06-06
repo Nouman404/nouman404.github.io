@@ -11,7 +11,7 @@ permalink: /CTFs/404CTF_2023/Forensique/Peche_au_livre
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/e7b8cf87-1d59-4c7c-b4b9-1f551c3ace5d)
 
-In this challenge, we are given a Wireshark capture available [here]().
+In this challenge, we are given a Wireshark capture available [here](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/404CTF_2023/Forensique/Capture.pcapng).
 
 To solve this challenge, we just have to dump all the file of the HTTP traffic like this:
 
@@ -28,6 +28,6 @@ We can now look at the images:
 
 And if we open the `Hegel-sensei-uwu.png` file, we get the flag:
 
-![image](Hegel-sensei-uwu.png)
+![image](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/404CTF_2023/Forensique/Hegel-sensei-uwu.png)
 
 The flag is `404CTF{345Y_W1r35h4rK}`
