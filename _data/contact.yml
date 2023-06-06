@@ -8,10 +8,21 @@
   icon: 'fas fa-cube'
   url: 'https://app.hackthebox.com/profile/235762'
 -
-  type: tryhackme
+  type: tryhackmer
   icon: 'far fa-cloud'
   url: 'https://tryhackme.com/p/Batbato'
-  
+-
+  type: tryhackmes
+  icon: 'fas fa-cloud'
+  url: 'https://tryhackme.com/p/Batbato'  
+-
+  type: tryhackmeb
+  icon: 'fab fa-cloud'
+  url: 'https://tryhackme.com/p/Batbato'  
+-
+  type: tryhackmel
+  icon: 'fal fa-cloud'
+  url: 'https://tryhackme.com/p/Batbato'  
 #-
 #  type: twitter
 #  icon: 'fab fa-twitter'
