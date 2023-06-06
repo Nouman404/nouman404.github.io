@@ -11,6 +11,10 @@
   type: tryhackme
   icon: 'fas fa-cloud'
   url: 'https://tryhackme.com/p/Batbato'  
+-
+  type: rootme
+  icon: 'fas fa-skull'
+  url: 'https://www.root-me.org/BatBato'  
 #-
 #  type: twitter
 #  icon: 'fab fa-twitter'
