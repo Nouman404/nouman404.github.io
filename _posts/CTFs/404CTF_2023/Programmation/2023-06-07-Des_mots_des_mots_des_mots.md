@@ -50,7 +50,12 @@ def regle4(mot):
 	return "".join(mot)
 ```
 
+Here, for each letter, we will check if it's a vowel. If it is, we will do the calculation, if not we just pass. The calculation is `a = ((vp + s) % 95) + 32`. Where `vp` is the ASCII code of the vowel preceding the consonant `c` in the alphabet (if `c = 'F'`, `vp = ord('E') = 69`). And `s = SUM{i=n-1 -> 0}(a{i}*2^(n-i)*Id(l{i} is a vowel))`, where `a{i}` is the ASCII code of the `i`-th letter of the word, `Id(x)` is `1` if `x` is true, `0` otherwise, and `l{i}` is the `i`-th letter of the word.
 
+For more information about how I did the calculation of `a`, `s` and `vp`, you can find the hole code [here](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/404CTF_2023/Programmation/desMots.py)
 
+Now that we have a code that can translate a word, we automate that to translate the given text and we get the flag:
 
-You can find the hole code [here](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/404CTF_2023/Programmation/desMots.py)
+![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/8982fc77-78ab-41dc-b0a3-8aade18139c0)
+
+So the final flag is: `404CTF{:T]cdeikm_)W_doprsu_nt_;adei}`
