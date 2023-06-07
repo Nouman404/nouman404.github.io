@@ -3,7 +3,7 @@ title: CTFs | 404CTF_2023 | Stega | Odobenus Rosmarus
 author: BatBato
 date: 2023-06-07
 categories: [CTFs, 404CTF_2023, Stega]
-tags: [Stega, Audacity]
+tags: [Stega, Morse]
 permalink: /CTFs/404CTF_2023/Stega/Odobenus_Rosmarus
 ---
 
