@@ -9,6 +9,8 @@ permalink: /CTFs/404CTF_2023/Stega/Le_Rouge_et_le_vert_avec_un_soupcon_de_bleu
 
 # Le Rouge et le vert, avec un soupçon de bleu
 
+![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/5f783882-3167-4eaa-87ad-52c7bc5381af)
+
 In this challenge, we just have [this](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/404CTF_2023/Stega/Rouge_Vert_Bleu.jpg) image, but only the end is interesting:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/b67f0484-3171-4089-8aee-8145ad9ca733)
