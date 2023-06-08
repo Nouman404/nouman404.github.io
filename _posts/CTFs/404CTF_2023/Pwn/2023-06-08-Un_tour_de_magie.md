@@ -18,6 +18,8 @@ The compiled code is a `WASM` file. `WASM` stands for` WebAssembly`, which is a 
 
 As we can see in the main source code, we have an `input` variable that is of length `20`, but then the `fgets` take an input of `200`... There should be a possibility of buffer overflow here...
 
+![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/1affc23c-c7d6-42d2-9722-62d1ea081508)
+
 We can first try to run with 21 `A`s, but we get the following error:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/72f67c7e-c95a-41d0-a3f4-562a5c572234)
