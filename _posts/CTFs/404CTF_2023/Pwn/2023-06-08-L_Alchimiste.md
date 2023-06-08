@@ -1,10 +1,10 @@
 ---
-title: CTFs | 404CTF_2023 | Reverse | L'Alchimiste
+title: CTFs | 404CTF_2023 | Pwn | L'Alchimiste
 author: BatBato
 date: 2023-06-08
-categories: [CTFs, 404CTF_2023, Reverse]
-tags: [Reverse, Ghidra]
-permalink: /CTFs/404CTF_2023/Reverse/L_Alchimiste
+categories: [CTFs, 404CTF_2023, Pwn]
+tags: [Pwn, Ghidra]
+permalink: /CTFs/404CTF_2023/Pwn/L_Alchimiste
 ---
 
 # L'Alchimiste
