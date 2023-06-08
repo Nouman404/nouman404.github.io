@@ -24,3 +24,5 @@ As we can see, we have a double free error. This is because, when we use the str
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/353f2dfe-6e0a-4cee-b309-1f5092735677)
 
 As we can see, we free the memory at the location of `param_1+0x10`. `0x10` is equal to  `16` in decimal. and if we look at the character, we can see the it is the 
+
+To be continued...
