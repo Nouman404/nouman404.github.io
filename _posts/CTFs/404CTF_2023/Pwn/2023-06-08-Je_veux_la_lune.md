@@ -1,10 +1,10 @@
 ---
-title: CTFs | 404CTF_2023 | Reverse | Je veux la lune !
+title: CTFs | 404CTF_2023 | Pwn | Je veux la lune !
 author: BatBato
 date: 2023-06-08
-categories: [CTFs, 404CTF_2023, Reverse]
-tags: [Reverse, Command Injection, Injection]
-permalink: /CTFs/404CTF_2023/Reverse/Je_veux_la_lune
+categories: [CTFs, 404CTF_2023, Pwn]
+tags: [Pwn, Command Injection, Injection]
+permalink: /CTFs/404CTF_2023/Pwn/Je_veux_la_lune
 ---
 
 # Je veux la lune !
