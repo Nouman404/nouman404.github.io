@@ -1,13 +1,16 @@
 ---
-title: CTFs | 404CTF_2023 | Hardware | Reveil
+title: CTFs | 404CTF_2023 | Hardware | Un réveil difficile
 author: BatBato
 date: 2023-06-09
 categories: [CTFs, 404CTF_2023, Hardware]
 tags: [Hardware,CIRC, Logic Gates]
-permalink: /CTFs/404CTF_2023/Hardware/Reveil
+permalink: /CTFs/404CTF_2023/Hardware/Un_reveil_difficile
 ---
 
-# Reveil
+# Un réveil difficile
+
+![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/40065c9c-5aa5-441b-8e32-4fd0ff57a3f1)
+
 
 In this challenge, we are given [this](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/404CTF_2023/Hardware/reveil.circ) CIRC file. When we open it with [Logisim](https://sourceforge.net/projects/circuit/), we can see the following:
 
