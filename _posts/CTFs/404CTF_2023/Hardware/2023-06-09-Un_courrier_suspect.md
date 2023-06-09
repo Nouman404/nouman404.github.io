@@ -1,13 +1,13 @@
 ---
-title: CTFs | 404CTF_2023 | Hardware | Bienvenue
+title: CTFs | 404CTF_2023 | Hardware | Un courrier suspect
 author: BatBato
 date: 2023-06-09
 categories: [CTFs, 404CTF_2023, Hardware]
 tags: [Hardware,CIRC, Logic Gates]
-permalink: /CTFs/404CTF_2023/Hardware/Bienvenue
+permalink: /CTFs/404CTF_2023/Hardware/Un_courrier_suspect
 ---
 
-# Bienvenue
+# Un courrier suspect
 
 In this challenge, we are given [this](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/404CTF_2023/Hardware/bienvenue.circ) `CIRC` file. By looking on the internet, I found that the tool [Logisim](https://sourceforge.net/projects/circuit/) could open such files. When we open the file we get this:
 
