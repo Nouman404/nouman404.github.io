@@ -23,9 +23,9 @@ We now go to the second section:
 
 The second and third sections are linked, so we look at what we have in the third section:
 
-![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/67b62465-30ca-40e9-a494-978b477fe997)
+![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/d51fde19-be2b-4fd6-b7fd-5f7daeacfb6e)
 
-We need to fill the matrix (In the above screenshot, the matrix was already filled up). We need to fill the matrix with the entry of the Multiplexer of the part 2 by order of their arrival in the multiplexer. Here is an example of the first four:
+We need to fill the matrix with the entry of the Multiplexer of the part 2 by order of their arrival in the multiplexer. Here is an example of the first four:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/52d1c061-6942-4af7-b6ad-5fc268436778)
 
