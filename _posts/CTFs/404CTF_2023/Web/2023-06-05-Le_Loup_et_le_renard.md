@@ -11,6 +11,9 @@ permalink: /CTFs/404CTF_2023/Web/Le_Loup_et_le_renard
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/69d209bf-1731-4a1e-99c4-a208902d8853)
 
+
+## Secret in the source code ?
+
 This is a basic web challenge. We need to recover the flag by any means.
 First we arrive on the main page, we click on start and we have a form:
 
@@ -22,6 +25,8 @@ Looking at the source code, we can see the credentials in clear text in the Java
 
 We connect with the credentials `admin:h5cf8gf2s5q7d`.
 
+## Be careful with cookies
+
 On the second part of the challenge, we have the title `Cookies` that give us a hint where to look for:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/ac5891b1-eae8-44f8-b665-149c7fdaf195)
@@ -29,6 +34,8 @@ On the second part of the challenge, we have the title `Cookies` that give us a 
 As we can see, we have a cookie `isAdmin` with the value `False`. We just need to set the value to `True` and press CTFL+F5 to refresh the page:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/f59ec661-deaa-4a90-9870-6cd0a09aa8bc)
+
+## Handle redirections
 
 Looking again at the source code, we can see a redirection of the GET form:
 
