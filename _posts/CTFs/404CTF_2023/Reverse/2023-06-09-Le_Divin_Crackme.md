@@ -1,7 +1,7 @@
 ---
 title: CTFs | 404CTF_2023 | Reverse | Le Divin Crackme
 author: BatBato
-date: 2023-06-08
+date: 2023-06-09
 categories: [CTFs, 404CTF_2023, Reverse]
 tags: [Reverse, Ghidra]
 permalink: /CTFs/404CTF_2023/Reverse/Le_Divin_Crackme
