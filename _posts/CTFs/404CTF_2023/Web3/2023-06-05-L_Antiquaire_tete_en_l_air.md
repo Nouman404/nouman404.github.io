@@ -7,12 +7,17 @@ tags: [Web3,BlockChain, Mementum, IPFS]
 permalink: /CTFs/404CTF_2023/Web3/L_Antiquaire_tete_en_l_air
 ---
 
+# L'Antiquaire, tête en l'air
+
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/e366d1f2-dc4b-48e6-8aef-57a373c00556)
 
+## Recover Information
 
 In this challenge, we have access to a [memorendum.txt](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/404CTF_2023/Web3/memorandum.txt) file. This file contains hex text. I tried decoding it using an online tool and find two links:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/b4d2c78a-a52a-4fc9-a5db-ab277d29d34f)
+
+## What is IPFS
 
 The URL `https://shorturl.ac/mysecretpassword` is a ... You guessed what... And the interesting part is `/ipfs/bafybeia5g2umnaq5x5bt5drt2jodpsvfiauv5mowjv6mu7q5tmqufmo47i/metadata.json`. 
 
@@ -21,6 +26,8 @@ The InterPlanetary File System (IPFS) is a protocol, hypermedia and file sharing
 When looking how to access IPFS files, we get to [this website](https://docs.ipfs.tech/how-to/address-ipfs-on-web/) where we can see how to access IPFS on the web:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/8a48a944-b723-4570-b47a-5152c54a0929)
+
+## Access our first IPFS
 
 We then go to the URL `https://ipfs.io/ipfs/bafybeia5g2umnaq5x5bt5drt2jodpsvfiauv5mowjv6mu7q5tmqufmo47i/metadata.json` and we found the JSON file:
 
@@ -32,6 +39,8 @@ We are given another IPFS link `ipfs://bafybeic6ea7qi5ctdp6s6msddd7hwuic3boumwkn
 
 > If you don't specify a file at the end of the IPFS address, you will see all the files shared on this IPFS.
 {: .prompt-tip}
+
+# What is Sepolia?
 
 I first thought that this was the wallet of a certain user... But didn't find anything. I then typed `Sepolia` on my browser and I found this:
 
