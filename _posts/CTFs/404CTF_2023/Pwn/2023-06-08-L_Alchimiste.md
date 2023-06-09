@@ -15,6 +15,9 @@ For this challenge, we are given [this](https://github.com/Nouman404/nouman404.g
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/94c5dae2-5430-47cc-b15f-062c27f5f2d4)
 
+
+## Recognition
+
 As we can see, we have multiple options. I first tried to buy a strength potion and to use it multiple time:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/c07af379-31f3-4391-aded-708134021734)
@@ -34,6 +37,8 @@ To better understand why this is a function, we can look at the `buyStrUpPotion`
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/02b7b3ce-76c8-4099-a7db-67c2d2230dde)
 
+## Increase Stength
+
 As we can see, we set `puVar1` some values and the last value of `puVar1` is the function `incStr` that increase the strength by 10. We can also notice that the function `incStr` is set even if we don't have enough money to buy the strength potion. So we can use repeatedly the option `1` to buy the potion and then use the option with the option `2`. This will allow us to get any amount of strength we want:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/feec0b73-d79f-4137-8ab6-4a30915e84e1)
@@ -42,6 +47,7 @@ As we can see, we now have 230 of strength. Let's have a look at how to get the 
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/f90e8daa-a620-422c-b01b-69974267ee73)
 
+## How to get the flag
 
 As we cans see, we need `*param_1 >= 0x96` and `param[1] >= 0x96` where `0x96` is equal to `150` in decimal and those parameters are the strength and the intelligence as we saw earlier.
 
@@ -49,6 +55,8 @@ As we cans see, we need `*param_1 >= 0x96` and `param[1] >= 0x96` where `0x96` i
 {: .prompt-info}
 
 We have solved the problem of the strength, but what about the intelligence??? There is no function in the program that calls the `incInt` to do the same thing as for the strength...
+
+## Increase intelligence
 
 After a bit of digging, I found something called `use after free`. As we saw earlier, the memory is free when we call the `useItem` function, but the memory is not set as null before. This is great, at least for us XD.
 
@@ -59,6 +67,9 @@ Let's see how to this now. For that we need to head back to the `buyStrPotion`. 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/2f3380e8-8b75-40c1-b80f-56535e608d66)
 
 We can then try to override the first `64` (`0x40`) characters and then put the address of `incInt` that can be found in Ghidra. But for this to work, we need to call the option `3` that will do a malloc on the same memory location that was previously free with option `2`. 
+
+
+## POC
 
 The final code I used is the following:
 
