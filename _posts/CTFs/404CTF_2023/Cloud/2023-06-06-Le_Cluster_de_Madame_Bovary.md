@@ -11,6 +11,9 @@ permalink: /CTFs/404CTF_2023/Cloud/Le_Cluster_de_Madame_Bovary
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/deb117f6-5de2-4588-9b0a-35fde4b1b190)
 
+
+## Enumeration
+
 For this challenge, we are given a virtual machine. When we arrive on the machine we first run the `kubctl` command to find pods:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/c2de7d4f-c5f0-4a12-8d29-3439db73076c)
@@ -24,6 +27,8 @@ We can access the pod and find an executable in the `/opt` folder:
 If we try to run it, we get the same result as if we ran the command `kubctl logs agent`:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/bf01d08a-331e-49fe-b2ce-b7dd3f2adf3c)
+
+## First Exploitation
 
 When looking at docker hub, we can find this container [here](https://hub.docker.com/r/404ctf/the-container). We can't just use it on our own machine because we get an error for not running it on Kubernetes (K8s). So I created a script to deploy a pod that will deploy this container:
 
@@ -59,6 +64,8 @@ kubectl apply -f deployment.yml
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/cdf60b1d-b1b0-4a18-ba4e-3696cff89dfb)
 
+## Get the first part of the flag
+
 We now can access the pod using the command `kubectl exec -it deployment.apps/thecontainer404 --namespace=404ctf -- sh`:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/e67cbc91-7e0d-40ce-9567-c5537e9ae7eb)
@@ -73,6 +80,8 @@ When executing `/opt/the-container`, we get several errors that we can correct:
 We have the first half of the flag `404CTF{A_la_decouv`. We know now that the rest of the flag is in the container `404ctf/web-server`. We do the same steps as before and once on the machine we find a `Go` program for a webserver:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/0fff8320-1a19-4f5a-82de-eca784655d02)
+
+## Get the second part of the flag
 
 We can read the content of `web-server.go` and find the flag:
 
