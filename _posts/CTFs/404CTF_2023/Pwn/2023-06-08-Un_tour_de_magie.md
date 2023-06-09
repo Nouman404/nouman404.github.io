@@ -15,6 +15,7 @@ In this challenge, we are given [this](https://github.com/Nouman404/nouman404.gi
 
 The compiled code is a `WASM` file. `WASM` stands for` WebAssembly`, which is a binary instruction format designed for the web. `WebAssembly` is a low-level virtual machine that is designed to run efficiently on web browsers and provides a portable execution environment for web applications. It allows developers to write code in languages such as `C`, `C++`, and `Rust` and compile them into `WebAssembly`, which can then be executed in a web browser alongside JavaScript.
 
+## How to exploit
 
 As we can see in the main source code, we have an `input` variable that is of length `20`, but then the `fgets` take an input of `200`... There should be a possibility of buffer overflow here...
 
@@ -35,6 +36,8 @@ We can try to add more characters, and when we get to `23`, we get the result:
 Which comes from:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/ceb521c7-8728-496f-b2d3-1f1fd6504405)
+
+## Create our payload
 
 Now that we managed to modify the address of check, we need to modify it to `0x50bada55` to be able to get the flag. So let's try to put 19 `A`s and 4 `B`s where the `B`s are representing the address of `check` that we need to override:
 
