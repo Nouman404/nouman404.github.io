@@ -37,7 +37,7 @@ To better understand why this is a function, we can look at the `buyStrUpPotion`
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/02b7b3ce-76c8-4099-a7db-67c2d2230dde)
 
-## Increase Stength
+## Increase Strength
 
 As we can see, we set `puVar1` some values and the last value of `puVar1` is the function `incStr` that increase the strength by 10. We can also notice that the function `incStr` is set even if we don't have enough money to buy the strength potion. So we can use repeatedly the option `1` to buy the potion and then use the option with the option `2`. This will allow us to get any amount of strength we want:
 
@@ -56,7 +56,7 @@ As we cans see, we need `*param_1 >= 0x96` and `param[1] >= 0x96` where `0x96` i
 
 We have solved the problem of the strength, but what about the intelligence??? There is no function in the program that calls the `incInt` to do the same thing as for the strength...
 
-## Increase intelligence
+## Increase Intelligence
 
 After a bit of digging, I found something called `use after free`. As we saw earlier, the memory is free when we call the `useItem` function, but the memory is not set as null before. This is great, at least for us XD.
 
