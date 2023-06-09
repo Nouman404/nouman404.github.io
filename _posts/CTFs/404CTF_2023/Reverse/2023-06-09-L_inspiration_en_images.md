@@ -1,13 +1,15 @@
 ---
-title: CTFs | 404CTF_2023 | Reverse | Vue sur un étrange tableau
+title: CTFs | 404CTF_2023 | Reverse | L’inspiration en images
 author: BatBato
 date: 2023-06-09
 categories: [CTFs, 404CTF_2023, Reverse]
 tags: [Reverse, Ghidra, OpenGL]
-permalink: /CTFs/404CTF_2023/Reverse/Vue_sur_un_etrange_tableau
+permalink: /CTFs/404CTF_2023/Reverse/L_inspiration_en_images
 ---
 
-# Vue sur un étrange tableau
+# L’inspiration en images
+
+![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/580cda6e-c135-434b-b859-352e38c98222)
 
 In this challenge, we are given [this](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/404CTF_2023/Reverse/vue_sur_un_etrange_tableau) executable. We need to recover the RGBA float values of the painting. But when we look at the paining, either by extracting the image using `binwalk` or running the program, we see only a black background:
 
