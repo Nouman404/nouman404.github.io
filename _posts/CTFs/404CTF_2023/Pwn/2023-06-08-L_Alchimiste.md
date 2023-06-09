@@ -58,7 +58,7 @@ Let's see how to this now. For that we need to head back to the `buyStrPotion`. 
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/2f3380e8-8b75-40c1-b80f-56535e608d66)
 
-We can then try to override the first `64` (`0x40`) characters and then put the address of `incInt` that can be found in Ghidra.
+We can then try to override the first `64` (`0x40`) characters and then put the address of `incInt` that can be found in Ghidra. But for this to work, we need to call the option `3` that will do a malloc on the same memory location that was previously free with option `2`. 
 
 The final code I used is the following:
 
