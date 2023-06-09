@@ -13,12 +13,16 @@ permalink: /CTFs/404CTF_2023/Cloud/Harpagon_et_le_magot
 
 For this challenge, we are given an `ssh` connection to a server. The hint we are given is that `Harpagon n'est pas très doué et n'a jamais réussi à utiliser sa cassette.`. Which means that we need to do something with a `cassette`.
 
+## What is Helm
+
 To reach the flag, we need to use `Helm`. 
 
 `Helm` is a powerful package manager for `Kubernetes` that facilitates the deployment and management of applications and services. It simplifies the process of `installing`, `upgrading`, and `managing` complex applications on Kubernetes clusters. With `Helm`, you can package your applications into charts, which contain all the necessary configurations, dependencies, and Kubernetes manifests. These charts can be easily shared and reused, fostering collaboration within the Kubernetes community. Helm also enables effective configuration management, allowing you to customize deployments for different environments. It provides a straightforward way to update or roll back applications, ensuring smooth updates and minimizing downtime. Overall, Helm enhances productivity, promotes consistency, and streamlines application management on Kubernetes.
 
 > Note that you could have guessed the use of `Helm` because when you connect to the server, you see information links to `K3s`, `Kubectl` and `Helm`.
 {: .prompt-info}
+
+## Basic Enumeration
 
 We now try some basic Helm command like `helm list`. This command allows us to get all the available charts:
 
@@ -31,6 +35,8 @@ As we can see, and could have guessed, there is one chart named `cassette`, as i
 
 > The `helm history` command provides information about the revision history of a release in Helm. When you deploy or upgrade a chart, `Helm` creates a new revision of that release. 
 {: .prompt-info}
+
+## Exploitation
 
 We can see that there are two `revisions` for the release `cassette`. The first one is `superseded` and the second one is `deployed`. A release is marked as `superseded` when a new revision of the release is deployed, effectively replacing the previous revision. This typically happens when you upgrade or roll back a release. The superseded revision is still stored in the release history, allowing you to `roll back` to it if needed.A release is marked as `deployed` when it represents the currently active or running revision of the release. It indicates that this particular revision is the one currently in use.
 
