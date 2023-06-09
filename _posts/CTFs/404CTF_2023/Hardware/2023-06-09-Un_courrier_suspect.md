@@ -9,6 +9,8 @@ permalink: /CTFs/404CTF_2023/Hardware/Un_courrier_suspect
 
 # Un courrier suspect
 
+![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/ba55149d-4b9d-42fd-a35b-47366b7b061f)
+
 In this challenge, we are given [this](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/404CTF_2023/Hardware/bienvenue.circ) `CIRC` file. By looking on the internet, I found that the tool [Logisim](https://sourceforge.net/projects/circuit/) could open such files. When we open the file we get this:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/e6b0e5c1-42b4-426c-a50a-d79d9d86c362)
