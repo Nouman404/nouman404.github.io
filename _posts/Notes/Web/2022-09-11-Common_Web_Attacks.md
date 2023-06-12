@@ -338,7 +338,7 @@ We look for the name of the database with ```schema_name``` from the table ```IN
 > Note the use of `group_concat(0x7c,schema_name,0x7c)`. This will display all the attributes in a single cell separated by `|`. If there is not enough space to show all the attributes, we can show them all at once with `group_concat()`. 
 {: .prompt-tip}
 
-We obtain all the databases names. Image we found the database ```SCHOOL``` from the previous example. We look for the tables it contains :
+We obtain all the databases names. Imagine we found the database ```SCHOOL``` from the previous example. We look for the tables it contains :
 
 ```sql
 ' UNION SELECT group_concat(0x7c,TABLE_NAME,0x7c),group_concat(0x7c,TABLE_SCHEMA,0x7c) FROM INFORMATION_SCHEMA.TABLES WHERE table_schema='SCHOOL' -- -
