@@ -7,7 +7,7 @@ tags: [CTF, FCSC, Windows]
 permalink: /CTFs/FCSC2023/Intro/La_gazette_de_Windows 
 ---
 
-# La_gazette_de_Windows
+# La gazette de Windows
 
 ![image](https://user-images.githubusercontent.com/73934639/235746934-bd1b360a-3fd0-4af6-991c-2e77fc9502ce.png)
 
