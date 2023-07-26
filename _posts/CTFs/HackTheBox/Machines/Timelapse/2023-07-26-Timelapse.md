@@ -49,7 +49,15 @@ We just have to provide the newly found password and we get the `pfx` file from 
 
 The pfx file is also protected, we use [pfx2john](https://www.kali.org/tools/john/#pfx2john) this time and crack again the password. After a few minutes, we cracked it:
 
+![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/6cb50c3f-41e9-4325-81a4-c38eb046cc2f)
 
 We now can use it as specified on [this](https://www.ibm.com/docs/en/arl/9.7?topic=certification-extracting-certificate-keys-from-pfx-file) webiste to recover the `certificate` and `RSA` key.
 
+![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/023a0be8-dbd3-47dc-8236-2941afd1c365)
 
+Now that we have the certificate and the private key, we can connect to the server using [evil-winrm](https://www.kali.org/tools/evil-winrm/) with `SSL`:
+
+![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/43a7f33d-6617-438c-9bba-a5fdf1690090)
+
+> Don't forget the `-S`. If you do so, you will get an error saying that you need to specify a user.
+{. prompt-warning}
