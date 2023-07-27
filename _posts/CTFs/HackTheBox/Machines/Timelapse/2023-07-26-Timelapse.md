@@ -65,7 +65,7 @@ Now that we have the certificate and the private key, we can connect to the serv
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/43a7f33d-6617-438c-9bba-a5fdf1690090)
 
 > Don't forget the `-S`. If you do so, you will get an error saying that you need to specify a user.
-: .prompt-warning}
+{: .prompt-warning}
 
 
 # User.txt
