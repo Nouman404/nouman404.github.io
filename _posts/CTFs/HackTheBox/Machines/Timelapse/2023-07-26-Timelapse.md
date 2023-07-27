@@ -79,8 +79,7 @@ When we get the shell using `evil-winrm`, we don't seem to have that many rights
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/efeda6dd-5156-46e2-9a26-67d17bc83110)
 
-After a bit of roaming on the server, I didn't find much... But when I tried to get the powershell history at `C:\Users\legacyy\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
-`, we find some credentials for the user `svc_deploy`:
+After a bit of roaming on the server, I didn't find much... But when I tried to get the powershell history at `C:\Users\legacyy\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt`, we find some credentials for the user `svc_deploy`:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/71a330d9-7a4b-42e0-b0a9-4fcc1c352ec5)
 
