@@ -47,6 +47,9 @@ We just have to provide the newly found password, and we get the `pfx` file from
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/198b71fc-a2f7-4bcf-b159-394e7da6fddd)
 
+> PFX files (Personal Information Exchange) are a type of digital certificate file that contains both the public key and private key, often used for secure data encryption and authentication.
+{: .prompt-info}
+
 The pfx file is also protected, we use [pfx2john](https://www.kali.org/tools/john/#pfx2john) this time and crack again the password. After a few minutes, we cracked it:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/6cb50c3f-41e9-4325-81a4-c38eb046cc2f)
