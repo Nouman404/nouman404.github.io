@@ -11,7 +11,7 @@ permalink: /CTFs/HackTheBox/Machines/Timelapse
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/c42c7b42-f1d8-4140-9cac-769137a9a066)
 
-# Enumeration
+## Enumeration
 
 As always, we run our nmap scan:
 
@@ -58,7 +58,7 @@ We now can use it as specified on [this](https://www.ibm.com/docs/en/arl/9.7?top
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/023a0be8-dbd3-47dc-8236-2941afd1c365)
 
-# Foothold
+## Foothold
 
 Now that we have the certificate and the private key, we can connect to the server using [evil-winrm](https://www.kali.org/tools/evil-winrm/) with `SSL`:
 
@@ -68,12 +68,12 @@ Now that we have the certificate and the private key, we can connect to the serv
 {: .prompt-warning}
 
 
-# User.txt
+## User.txt
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/fb0cff83-45e3-45fd-aec8-ec75bea204a4)
 
 
-# Horizontal Privilege Escalation
+## Horizontal Privilege Escalation
 
 When we get the shell using `evil-winrm`, we don't seem to have that many rights... 
 
@@ -83,7 +83,7 @@ After a bit of roaming on the server, I didn't find much... But when I tried to 
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/71a330d9-7a4b-42e0-b0a9-4fcc1c352ec5)
 
-# Vertical Privilege Escalation
+## Vertical Privilege Escalation
 
 Now that we have credentials, we can connect using those via `evil-winrm` as `svc_deploy`. 
 
@@ -101,7 +101,7 @@ There are a lot of technics to get this password:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/4559c39d-dd30-4ae7-a0cd-061a0ae54828)
 
-# Root.txt
+## Root.txt
 
 Now that we have the `Administrator` password, we can connect using `evil-winrm` as before. And... Voilà:
 
