@@ -39,6 +39,8 @@ After downloading the files, we can see that the files that were in the `HelpDes
 > Use the `--download PATH/TO/FILE` to download a file using smbmap.
 {: .prompt-tip}
 
+## PFX Password Cracking
+
 What is interesting, is that the zip file is protected by a password. We can use [zip2john](https://www.kali.org/tools/john/#zip2john) to get the hash and finally [john](https://www.kali.org/tools/john/) to recover the password:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/43f2f220-f20a-43ed-b143-d750eb0c8ba9)
