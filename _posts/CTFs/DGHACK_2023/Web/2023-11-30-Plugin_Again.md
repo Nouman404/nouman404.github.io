@@ -47,7 +47,7 @@ As we can see, the domain is the same as our `URL`. We can now perform an `XSS` 
 > Don't forget to launch a python (`python3 -m http.server`) server with an `ngrok` (`ngrok http 8000`) to be able to recover the cookie.
 {: .prompt-warning}
 
-After a few seconds of waiting, we get this result:
+After a few seconds, we get this result:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/ff292c23-1608-4e4c-a040-f1d3f5d083b0)
 
@@ -110,5 +110,5 @@ We can now replace the `theme=funny` by `theme=../../../../../../../FLAG`  and n
 
 So the flag is `DGHACK{WellD0ne!Bl0ggingIsS0metimeRisky}`. 
 
-> We could have tried to get RCE. Indeed, the server is using `Flask` and the `Werkzeug` (more info [here](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/werkzeug)). We could have recovered the information in the different files on the server to find the `PIN` and get `RCE` in the `Werkzeug` console.
+> We could have tried to get `RCE`. Indeed, the server is using `Flask` and the `Werkzeug` console (more info [here](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/werkzeug)). We could have recovered the information in the different files on the server to find the `PIN` and get `RCE` in the `Werkzeug` console.
 {: .prompt-info}
