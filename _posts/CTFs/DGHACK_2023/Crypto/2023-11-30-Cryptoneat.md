@@ -41,7 +41,7 @@ We can now use the `XOR` operation on `P1` with the found `KEY` and we get the p
 > Note that we decoded `P1` without its `IV`.
 {: .prompt-info}
 
-When I run [my code](/_posts/CTFs/DGHACK_2023/Crypto/xor.py), I get the content of `P1` in a file called `p1.txt`:
+When I run [my code](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/DGHACK_2023/Crypto/xor.py), I get the content of `P1` in a file called `p1.txt`:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/65e7c32f-3e2d-486b-9bcf-29875e94b0a7)
 
@@ -49,4 +49,4 @@ We can now go to the URL given and use the password `My2uperPassphras3` to acces
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/71b7cb16-7dab-425c-bd21-adac4e04b8f8)
 
-The flag is `DGHACK{w3ak_pa22word2_ar3n-t_n3at}`. You can find my full code [here](/_posts/CTFs/DGHACK_2023/Crypto/xor.py).
+The flag is `DGHACK{w3ak_pa22word2_ar3n-t_n3at}`. You can find my full code [here](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/DGHACK_2023/Crypto/xor.py).
