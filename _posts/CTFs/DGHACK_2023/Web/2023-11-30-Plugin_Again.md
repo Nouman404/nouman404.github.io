@@ -4,7 +4,7 @@ author: BatBato
 date: 2023-11-30
 categories: [CTFs, DGHACK_2023, Web]
 tags: [Web,LFI,XSS]
-permalink: /CTFs/DGHACK_2023/Web/2023-11-30-Plugin_Again.md
+permalink: /CTFs/DGHACK_2023/Web/Plugin_Again
 ---
 
 # Plugin Again
