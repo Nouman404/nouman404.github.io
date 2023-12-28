@@ -3,7 +3,7 @@ title: CTFs | 404CTF_2023 | Forensique | Note de bas de page
 author: BatBato
 date: 2023-06-06
 categories: [CTFs, 404CTF_2023, Forensique]
-tags: [Forensique,Wireshark]
+tags: [Forensique,Wireshark, Acropalypse, Crop]
 permalink: /CTFs/404CTF_2023/Forensique/Note_de_bas_de_page
 ---
 
