@@ -7,6 +7,8 @@ tags: [RDP, Mimikatz, RDPReplay, Side Quest, THM]
 permalink: /CTFs/TryHackMe/AdventOfCyber2023/SideQuest_Day1
 ---
 
+# Side Quest - Day 1
+
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/dbe5f9cb-11bf-429f-9313-c22fbbb8285b)
 
 In this challenge, we are given a wireshark capture called [VanSpy.pcapng](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/TryHackMe/AdventOfCyber2023/VanSpy.pcapng). When we open it with wireshark, we just see the following:
