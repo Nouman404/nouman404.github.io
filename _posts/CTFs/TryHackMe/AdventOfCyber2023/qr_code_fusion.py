@@ -28,4 +28,4 @@ combine_qr_parts('1.png','2.png', '3.png', '4.png', 'qr_code_combined.png')
 
 from pyzbar.pyzbar import decode
 decodeQR = decode(Image.open('qr_code_combined.png'))
-print(decodeQR[0][0].decode())
+print("URL to the challenge = "+decodeQR[0][0].decode())
