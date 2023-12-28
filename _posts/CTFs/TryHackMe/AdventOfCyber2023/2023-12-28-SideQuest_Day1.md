@@ -2,7 +2,7 @@
 title: CTFs | TryHackMe | AdventOfCyber2023 | Side Quest Day 1
 author: BatBato
 date: 2023-12-28
-categories: [CTFs, TryHackMe, RDP]
+categories: [CTFs, TryHackMe, AdventOfCyber2023, RDP]
 tags: [RDP, Mimikatz, RDPReplay, Side Quest, THM]
 permalink: /CTFs/TryHackMe/AdventOfCyber2023/SideQuest_Day1
 ---
