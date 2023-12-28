@@ -9,7 +9,7 @@ permalink: /CTFs/TryHackMe/AdventOfCyber2023/SideQuest_Day1
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/dbe5f9cb-11bf-429f-9313-c22fbbb8285b)
 
-In this challenge, we are given a wireshark capture called [VanSpy.pcapng](). When we open it with wireshark, we just see the following:
+In this challenge, we are given a wireshark capture called [VanSpy.pcapng](https://github.com/Nouman404/nouman404.github.io/blob/main/_posts/CTFs/TryHackMe/AdventOfCyber2023/VanSpy.pcapng). When we open it with wireshark, we just see the following:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/e1f1ea16-896f-48e5-ba04-1be032538c12)
 
