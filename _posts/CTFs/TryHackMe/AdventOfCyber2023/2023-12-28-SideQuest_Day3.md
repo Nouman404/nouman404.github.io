@@ -1,13 +1,13 @@
 ---
-title: CTFs | TryHackMe | AdventOfCyber2023 | Side Quest Day 2
+title: CTFs | TryHackMe | AdventOfCyber2023 | Side Quest Day 3
 author: BatBato
 date: 2023-12-28
 categories: [CTFs, TryHackMe, AdventOfCyber2023]
 tags: [Vim, Nano, Docker, Side Quest, THM]
-permalink: /CTFs/TryHackMe/AdventOfCyber2023/SideQuest_Day2
+permalink: /CTFs/TryHackMe/AdventOfCyber2023/SideQuest_Day3
 ---
 
-# Side Quest - Day 2
+# Side Quest - Day 3
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/ec91b792-59d0-4384-ab3e-d2b61869dc74)
 
