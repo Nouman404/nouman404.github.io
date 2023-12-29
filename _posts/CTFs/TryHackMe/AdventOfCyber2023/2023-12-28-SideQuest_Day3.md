@@ -14,7 +14,7 @@ permalink: /CTFs/TryHackMe/AdventOfCyber2023/SideQuest_Day3
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/ce1bde2d-6c8c-464c-8dff-02f8892a7bb6)
 
 
-# Enumeration
+## Enumeration
 
 In this challenge, we are just given the an IP address. So we start our enumeration phase by running our nmap:
 
@@ -33,7 +33,7 @@ We get the first flag in `flag-1-of-4.txt`. Now we look at the `flag-2-of-4.sh` 
 
 This means that it is stored in the environment variable of the machine. So if we can run `echo $FLAG2`, we could get the flag.
 
-# Foothold
+## Foothold
 
 As we can see, there is `Nano` and `Vim` on ports `8095` and `8085`???? What is that ???
 We know that we can run command via those editors. Lets connect to vim using the following command:
@@ -78,7 +78,7 @@ We can now run `python3` commands like the one below, but it would be better if 
 python3 import os; print(os.listdir("/tmp/"))
 ```
 
-# Getting a shell
+## Getting a shell
 
 I uploaded via the `FTP` all these binaries `sh, ls, id, cat, grep, find, mv, cp, chmod, mkdir, dirname, sed, touch, head, sleep, capsh`. This will allow me to test a lot of commands. After uploading all these commands in the `FTP`, I need to move them to the `/tmp` folder because we don't have rights on the `/tmp/ftp` one. To move all those files, I used the `python3` command:
 
@@ -99,7 +99,7 @@ Now we should be able to run `!/tmp/sh`:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/a83a2aef-6ec3-481f-bef0-d5485a352484)
 
-# Privilege Escalation
+## Privilege Escalation
 
 Now, we can try to privesc. Unfortunately, tools like `Linpeas` won't work because it needs a lot of binaries that are not on this machine... But as we saw earlier, there is a `/usr/frosty/sh` file that caught our attention. If we look at the file, it is empty:
 
@@ -117,7 +117,7 @@ And we get the root flag that is the 3rd one:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/1dde6316-dd5b-4956-b4b9-85dd6a821029)
 
-# Escaping the whale
+## Escaping the whale
 
 As we can see, we have a `.dockerenv`, that is a file generally located in docker containers. This means that we need to escape the container to be able to get the last flag.
 
