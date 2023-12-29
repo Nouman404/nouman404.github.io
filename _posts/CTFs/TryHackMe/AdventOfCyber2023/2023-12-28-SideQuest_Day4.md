@@ -13,7 +13,7 @@ permalink: /CTFs/TryHackMe/AdventOfCyber2023/SideQuest_Day4
 
 In this challenge, we need to become root, so let's start with the enumeration phase.
 
-# Enumeration
+## Enumeration
 
 As we can see, we only have two open ports:
 
@@ -27,7 +27,7 @@ If we look carfully at the source code, we can see what looks like an SQLi:
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/806f1857-083e-4329-8325-ce7c0201e2de)
 
-# SQLi
+## SQLi
 
 We try to reach the image with `id=0` and we get this beautiful error from `Flask`:
 
@@ -44,7 +44,7 @@ So, let's see if we can leverage our SQLi to get an LFI and be able to read inte
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/44b00f5f-b62f-434c-bf72-c9d784bedaa8)
 
-# LFI
+## LFI
 
 The payload `id=0' union select all concat('file:///etc/passwd')-- -` allows us to download the `/etc/passwd` file:
 
@@ -61,7 +61,7 @@ We just have to get the hexadecimal value of the `node UUID`. Here we have `02:7
 > Note that I put the `cron.service` (available in the `cgroup` file). But for some reason, sometimes it worked with it appended to the machine ID and sometimes without. So be aware of that.
 {: .prompt-warning}
 
-# RCE
+## RCE
 
 I now head back to the console and get the access:
 
@@ -93,7 +93,7 @@ As we can see, we have a password that was changed. Let's try to use it for our 
 
 ![image](https://github.com/Nouman404/nouman404.github.io/assets/73934639/4b30336a-78c0-423e-92e2-7e4debe41d76)
 
-# Privilege Escalation
+## Privilege Escalation
 
 So the deleted password was the one for the user `mcskidy`. Now we can check the `/opt/check.sh` script to try getting a root shell:
 
