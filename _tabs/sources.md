@@ -9,14 +9,17 @@ icon: fas fa-folder-open
 | **Link** | **Description** |
 |----------|-----------------|
 | **General info** |
+| [TheHackerRecipes](https://www.thehacker.recipes/) | Many information about pentesting and CTFs |
+| [HackTricks](https://book.hacktricks.xyz/) | Many information about pentesting and CTFs |
+| [Hackndo](https://en.hackndo.com/)|Many information about pentesting and CTFs |
 | [SecTools](https://sectools.org/) | Tools recommended by nmap |
 | [Explain shel](https://explainshell.com/) | Web explaining shell commands |
 | [Privacy Guides](https://privacyguides.org/) | Guide for a better privacy |
 | [Distrotest](https://distrotest.net/index.php) | Forum for Linux Distro |
-| [HackTricks](https://book.hacktricks.xyz/) | Many information about pentesting and CTFs |
 | [SecurityZines](https://securityzines.com/) | Cybersec terms |
-| [TheHackerRecipes](https://www.thehacker.recipes/) | More hacking information |
 | [samsclass](https://samsclass.info/127/ED_2020.shtml) | More hacking information |
+| **AD Bible**|
+| [Zer1t0 attacking AD](https://zer1t0.gitlab.io/posts/attacking_ad/)| All the you need to know about AD |
 | **Vulnerability Disclosures** |
 | [CVEdetails](https://www.cvedetails.com/) | Info about CVE |
 | [packet storm](https://packetstormsecurity.com/) | Info about vulnerabilities |
@@ -83,8 +86,8 @@ icon: fas fa-folder-open
 | **Link** | **Description** |
 |----------|-----------------|
 | **Machines** |
-| [Hack The Box](https://www.hackthebox.com/) | Best hacking platform |
-| [TryHackMe](https://tryhackme.com/) | One of the best page for learning |
+| [Hack The Box](https://www.hackthebox.com/) | Best hacking platform for advanced hackers |
+| [TryHackMe](https://tryhackme.com/) | Best hacking platform for beginners |
 | [HackMyVM](https://hackmyvm.eu/) | Some VMs for hacking |
 | **CTF** |
 | [CTFlearn](https://ctflearn.com/) | Page for learning CTFs |
@@ -94,7 +97,7 @@ icon: fas fa-folder-open
 | [Juice Shop](https://github.com/juice-shop/juice-shop) | OWASP challenges |
 | [CTF Challenge](https://ctfchallenge.com/) | CTFs challenges |
 | **Other** |
-| [Hackrocks](https://hackrocks.com/) | Spanish page for learn |
+| [Hackrocks](https://hackrocks.com/) | Learning plateform |
 
 ---
 
