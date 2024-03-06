@@ -14,12 +14,12 @@ permalink: /CTFs/CTF_INSA_2024/Web/Attention_au_swap/
 ---
 # Attention au swap 
 
-![[swap_sujet.png]]
+![[swap_sujet.png]](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/CTF_INSA_2024/photos/swap_sujet.png)
 
 In this challenge, we are asked to demonstrate some kind of vulnerability regarding the text editor `vim`. The name of the challenge gives us a hint on where to look for (`swap`). First I searched `swap vim` and I found this link [https://www.baeldung.com/linux/vim-swap-files](https://www.baeldung.com/linux/vim-swap-files). It explains what is a swap file and that if a file called `{filename_whit_extention}` is created then its swap file name will be `.{filename_whit_extention}.swp`. Now lets have a look at the website:
 
 
-![[swap_index.png]]
+![[swap_index.png]](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/CTF_INSA_2024/photos/swap_index.png)
 
 As we can see, we have the `index.php` file. We can try to recover its swap file by searching the following URL:
 
@@ -31,7 +31,7 @@ When the file is downloaded, we can open it with `Vim` recovery mode:
 
 When `Vim` is opened, we see the following:
 
-![[swap_vim.png]]
+![[swap_vim.png]](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/CTF_INSA_2024/photos/swap_vim.png)
 
 We can now save the file as `index.php` by running th following command in `Vim`:
 
