@@ -108,8 +108,7 @@ python firepwd/firepwd.py -d Roaming/Mozilla/Firefox/Profiles/aiaj08g4.default-r
 
 And now we have at the bottom of the terminal the password for bob's account on amazon:
 
-![[CTF-INSA/https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/CTF_INSA_2024/photos/forensic_flag(https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/CTF_INSA_2024/photos/CTF-INSA)
-.png]]
+![[CTF-INSA]](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/CTF_INSA_2024/photos/forensic_flag.png)
 
 ##  Connaissez vous le Forensic 
 
@@ -134,8 +133,7 @@ Now we can dump the memory of this process:
 
 This gives us a file called `pid.4100.dmp` and we can use the `string` and `grep` commands to recover the flag:
 
-![[forensic_flag 1.png](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/CTF_INSA_2024/photos/forensic_flag 1)
-]
+![[forensic_flag_1.png]](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/CTF_INSA_2024/photos/forensic_flag%201.png)
 
 > Note the use of `-e l` in the string command. If you dont specify to use the little endian mode, you won't be able to get any result. This is because Notepad stores text in this format.
 {: .prompt-danger}
