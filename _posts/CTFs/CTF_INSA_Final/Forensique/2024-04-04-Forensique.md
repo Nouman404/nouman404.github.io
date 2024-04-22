@@ -4,8 +4,7 @@ author: BatBato
 date: 2024-04-04
 categories:
   - CTFs
-  - CTF_INSA_2024
-  - Finale
+  - CTF_INSA_Final
   - Forensique
 tags:
   - Forensique
