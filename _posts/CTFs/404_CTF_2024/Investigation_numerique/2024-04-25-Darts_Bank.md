@@ -13,11 +13,11 @@ permalink: /CTFs/404_CTF_2024/Investigation_Numerique/Darts_Bank
 ---
 # Darts Bank
 
-![[dart_enonce.png]]
+![[dart_enonce.png]](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/404_CTF_2024/Invesigation_numerique/Photos/dart_enonce.png)
 
 In this challenge, we are given [this pcap](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/404_CTF_2024/Invesigation_numerique/dart.pcapng)  file. If we open it using wireshark, we can see a lot of `HTTP` traffic. When we click on the first one and follow the TCP stream, we get the following output on the third stream:
 
-![[Investigation_numerique/Photos/dart_wireshark.png]]
+![[dart_wireshark.png]](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/404_CTF_2024/Invesigation_numerique/Photos/dart_wireshark.png)
 
 As you can see, this is some powershell script that has been base64 encoded. Once decoded and deobfuscated, we obtain the following code (available [here](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/404_CTF_2024/Invesigation_numerique/script.ps1)):
 
@@ -80,14 +80,14 @@ The problem here was to understand what this powershell does. And it was "just" 
 
 We get the following result:
 
-![[dart_cert.png]]
+![[dart_cert.png]](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/404_CTF_2024/Invesigation_numerique/Photos/dart_cert.png)
 
 After a bit of research, I found [this article ](https://www.comparitech.com/net-admin/decrypt-ssl-with-wireshark/) on how to decrypt `SSL` traffic in `Wireshark`. So we need to save the content of all those `index.html` file decoded into a single file and put it into `Wireshark` like so:
 
-![[dart_wireshark 1.png]]
+![[dart_wireshark1.png]](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/404_CTF_2024/Invesigation_numerique/Photos/dart_wireshark1.png)
 
 Now, we can read the content of all HTTPS messages. We can use the filter `http2.data.data && data-text-lines contains "404CTF"` to find the flag easily and... Voilà:
 
-![[dart_flag.png]]
+![[dart_flag.png]](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/main/_posts/CTFs/404_CTF_2024/Invesigation_numerique/Photos/dart_flag.png)
 
 The flag is `404CTF{En_pl31n_d4ns_l3_1337_v1@_sUp3r_TLS_d3crypt0r}`.
