@@ -47,7 +47,7 @@ With this, we can fully understand the kill chain (but it isn't needed for the c
 
 ![[sec_enc_flag.png]]What does this script in the main line is creating a wallpaper to replace the one of the victim with a lot of information about the computer like the name of the user, the location, the wifi passwords saved... The string `e1ByQG5rM2Qt` wasn't in the original script of Jakoby but it didn't worked when I tried to use it as the flag... Strange... Why an attacker would print a random string on the victim desktop if it isn't the flag right ??? Well, my frind, this is where the noncese begin. This string was base64 encoded. Why ? I don't know. Why an attacker would print a base64 string on a victim computer ? The victim won't understand it so... (You may have understood that it took me a while to find that this string was base64 encoded, where finding it was pretty easy...).
 
-Well at least we have the full flag now... And... Voilà `404CTF{{Pr@nk3d-LUL}`
+Well at least we have the full flag now... And... Voilà `404CTF{Pr@nk3d-LUL}`
 
 > `{Pr@nk3d-` is the base64 decoded string of `e1ByQG5rM2Qt` and `LUL` is the name of the task executing `sound.ps1`
 {: .prompt-info}
