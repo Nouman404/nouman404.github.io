@@ -4,6 +4,11 @@ icon: fas fa-sticky-note
 order: 2
 ---
 
+# Active Directory
+
+| **Link**   | **Description**    |
+|--------------- | --------------- |
+| [Active Directory](/Notes/AD/AD_Basics)  | Information about protocols and attacks on an AD   |
 
 # Brute Force 
 
@@ -14,23 +19,6 @@ order: 2
 
 ---
 
-# Linux 
-
-| **Link**   | **Description**    |
-|--------------- | --------------- |
-| [Linux Fondamentals](/Notes/Linux/Linux_Fondamentals) | Linux Fondamentals, must know commands |
-
----
-
-# Web
-
-| **Link**   | **Description**    |
-|--------------- | --------------- |
-| [Command Injection](/Notes/Web/Command_Injection) | Command injection, RFI, LFI, bypass techniques... |
-| [Common Web Attacks](/Notes/Web/Common_Web_Attacks) | Commoin Web vulnerability XSS, XXE, IDOR and SQLi |
-
----
-
 # Footprinting
 
 | **Link**   | **Description**    |
@@ -38,6 +26,14 @@ order: 2
 | [Port Enumeration](/Notes/Footprinting/Port_Enumeration) | Nmap basic commands and how to use it |
 | [OSINT](/Notes/Footprinting/OSINT) | Basic OSINT, DNS and VHOST enumeration |
 | [Common Services Enumeration](/Notes/Footprinting/Common_Services_Enumeration_&_Attacks) | Common Services Enumeration (HTTP, FTP, SMB, SMTP, POP3...) |
+
+---
+
+# Linux 
+
+| **Link**   | **Description**    |
+|--------------- | --------------- |
+| [Linux Fondamentals](/Notes/Linux/Linux_Fondamentals) | Linux Fondamentals, must know commands |
 
 ---
 
@@ -56,4 +52,11 @@ order: 2
 |--------------- | --------------- |
 | [Buffer overFlow](/Notes/Reverse/BOF) | Beginner level Buffer overFlow |
 
+
+# Web
+
+| **Link**   | **Description**    |
+|--------------- | --------------- |
+| [Command Injection](/Notes/Web/Command_Injection) | Command injection, RFI, LFI, bypass techniques... |
+| [Common Web Attacks](/Notes/Web/Common_Web_Attacks) | Commoin Web vulnerability XSS, XXE, IDOR and SQLi |
 
