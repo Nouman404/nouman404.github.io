@@ -13,7 +13,7 @@ permalink: /CTFs/HeroCTF_2024/Steganographie/Subliminal2
 # Subliminal#2
 
 
-![[https://raw.githubusercontent.com/Nouman404/nouman404.github.io/refs/heads/main/_posts/CTFs/HeroCTF_2024/photos/HeroCTF_2024_Stega_subliminal_enonce.png]]
+![image](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/refs/heads/main/_posts/CTFs/HeroCTF_2024/photos/HeroCTF_2024_Stega_subliminal_enonce.png)
 
 Here we are given a video with a square that appears on each frame. We need to recover every square, reassemble them into one image and save it to get the flag. I used the following code:
 
@@ -98,6 +98,6 @@ cap.release()
 
 We get the following image:
 
-![[https://raw.githubusercontent.com/Nouman404/nouman404.github.io/refs/heads/main/_posts/CTFs/HeroCTF_2024/photos/HeroCTF_2024_Stega_subliminal_flag.png]]
+![image](https://raw.githubusercontent.com/Nouman404/nouman404.github.io/refs/heads/main/_posts/CTFs/HeroCTF_2024/photos/HeroCTF_2024_Stega_subliminal_flag.png)
 
 Because the last part is a bit dark, we have to guess the last part. We have `Hero{The_demon..._eated!!!!}` and we guess that the flag is `Hero{The_demon_is_defeated!!!!}`.
