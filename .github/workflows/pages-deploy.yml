@@ -22,7 +22,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.4.dev
+          ruby-version: 3.4.5
           bundler-cache: true
 
       - name: Deploy
