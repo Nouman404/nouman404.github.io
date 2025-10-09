@@ -8,6 +8,11 @@ icon: fas fa-folder-open
 
 | **Link** | **Description** |
 |----------|-----------------|
+| **Coupaing** |
+| [Kaiba404](https://congkhainguyen.github.io) | Kaiba404's blog |
+| [Camliaroth](https://axelinsa.github.io) | Camliaroth's blog |
+| [Felix](https://felixbillieres.github.io/) | Felix's blog |
+| [Samuel](https://samuel-tellier.fr/) | Samuel's blog |
 | **General info** |
 | [TheHackerRecipes](https://www.thehacker.recipes/) | Many information about pentesting and CTFs |
 | [HackTricks](https://book.hacktricks.xyz/) | Many information about pentesting and CTFs |
