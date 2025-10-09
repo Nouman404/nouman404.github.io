@@ -11,6 +11,8 @@ icon: fas fa-folder-open
 | **Coupaing** |
 | [Kaiba404](https://congkhainguyen.github.io) | Kaiba404's blog |
 | [Camliaroth](https://axelinsa.github.io) | Camliaroth's blog |
+| [Anatharr](https://anatharr.github.io/writeups/) | Anatharr's Blog |
+| [Than Ng](https://thng01.github.io/) | Thanh Ng's Blog |
 | [Felix](https://felixbillieres.github.io/) | Felix's blog |
 | [Samuel](https://samuel-tellier.fr/) | Samuel's blog |
 | **General info** |
