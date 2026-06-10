@@ -1,5 +1,5 @@
 ---
-title: CTFs | 404CTF_2026 | Forensique | Exfiltration Kantik 1/3
+title: CTFs | 404CTF_2026 | Forensique | Exfiltration Kantik
 author: BatBato
 date: 2026-05-22
 categories:
